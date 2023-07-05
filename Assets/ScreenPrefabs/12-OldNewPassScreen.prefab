@@ -1558,7 +1558,7 @@ GameObject:
   - component: {fileID: 4319736449150438275}
   - component: {fileID: 309736304232157527}
   m_Layer: 5
-  m_Name: 12-OldNewPass
+  m_Name: 12-OldNewPassScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

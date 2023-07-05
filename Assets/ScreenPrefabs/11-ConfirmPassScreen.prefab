@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6586979870771975428}
   - component: {fileID: 8270462051644473247}
   m_Layer: 5
-  m_Name: 11-ConfirmPass
+  m_Name: 11-ConfirmPassScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
