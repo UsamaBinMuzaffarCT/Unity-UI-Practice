@@ -19,7 +19,7 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private GameObject wannaLoginScreenPrefab;
     [SerializeField] private Canvas canvas;
     private GameObject currentScreen;
-    
+
     #endregion
     
     #endregion
@@ -27,7 +27,7 @@ public class UI_Manager : MonoBehaviour
     #region datastructures
 
     private Stack<GameObject> backStack = new Stack<GameObject>();
-
+    
     #endregion
 
     #region delegates
@@ -76,6 +76,11 @@ public class UI_Manager : MonoBehaviour
         return screen;
     }
 
+    private void ClearStack()
+    {
+        backStack.Clear();
+    }
+
     private string CloneName(GameObject obj)
     {
         string name = obj.transform.name;
@@ -86,11 +91,26 @@ public class UI_Manager : MonoBehaviour
         }
         return obj_name;
     }
-    
+
+    private void CheckPrevious()
+    {
+        GameObject prevScreen = backStack.Pop();
+        GameObject prevprevScreen = backStack.Pop();
+        if( CloneName(prevScreen) == CloneName(backStack.Peek())) 
+        {
+            return;
+        }
+        else
+        {
+            PushToStack(prevprevScreen);
+            PushToStack(prevScreen);
+        }
+    }
+
     #endregion
-   
+
     #region public-functions
-    
+
     public void Back()
     {
         currentScreen.SetActive(false);
@@ -100,9 +120,13 @@ public class UI_Manager : MonoBehaviour
 
     }
 
-    public void NextScreen(GameObject nextScreen)
+    public void NextScreen(GameObject nextScreen, bool clear=false)
     {
         bool isPresent = false;
+        if (clear)
+        {
+            ClearStack();
+        }
         foreach (Transform child in canvas.transform)
         {
             if(CloneName(child.gameObject) == nextScreen.transform.name)
@@ -112,6 +136,10 @@ public class UI_Manager : MonoBehaviour
                 PushToStack(currentScreen);
                 child.gameObject.SetActive(true);
                 currentScreen = child.gameObject;
+                if(backStack.Count > 2)
+                {
+                    CheckPrevious();
+                }
             }
         }
         if (!isPresent)
@@ -121,6 +149,10 @@ public class UI_Manager : MonoBehaviour
             currentScreen.SetActive(false);
             PushToStack(currentScreen);
             currentScreen = loadedScreen;
+            if (backStack.Count > 2)
+            {
+                CheckPrevious();
+            }
         }
         Debug.Log("Stack Size : " + backStack.Count.ToString());
     }

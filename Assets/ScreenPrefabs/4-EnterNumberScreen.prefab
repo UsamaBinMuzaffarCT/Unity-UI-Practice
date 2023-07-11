@@ -122,10 +122,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 5014399341787392848}
+        m_TargetAssemblyTypeName: EnterNumberScript, Assembly-CSharp
+        m_MethodName: LoadPasswordScreen
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1325,7 +1325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830655bd2a31fe44e9bc3dccb1e0e01a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  A: {fileID: 0}
+  setPasswordPrefab: {fileID: 8327374347446619391, guid: 85d4145b69d804747a9ad11780cacc6b, type: 3}
   manager: {fileID: 0}
 --- !u!1 &8952734036286598173
 GameObject:

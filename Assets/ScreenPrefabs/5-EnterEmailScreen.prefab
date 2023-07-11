@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e80a12cdb880394495a729a6943b6fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  A: {fileID: 0}
+  setPasswordPrefab: {fileID: 8327374347446619391, guid: 85d4145b69d804747a9ad11780cacc6b, type: 3}
   manager: {fileID: 0}
 --- !u!1 &2123338760239504512
 GameObject:
@@ -428,10 +428,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 7963036573742134235}
+        m_TargetAssemblyTypeName: EnterEmailScript, Assembly-CSharp
+        m_MethodName: LoadPasswordScreen
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

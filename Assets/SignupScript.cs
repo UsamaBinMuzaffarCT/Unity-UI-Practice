@@ -5,9 +5,10 @@ using UnityEngine;
 public class SignupScript : MonoBehaviour
 {
     #region variables
-    [SerializeField] private GameObject phoneNumber;
-    [SerializeField] private GameObject email;
-    [SerializeField] private GameObject wallet;
+    [SerializeField] private GameObject phoneNumberPrefab;
+    [SerializeField] private GameObject emailPrefab;
+    [SerializeField] private GameObject walletPrefab;
+    [SerializeField] private GameObject loginPrefab;
     [SerializeField] private UI_Manager manager;
     #endregion
 
@@ -30,12 +31,18 @@ public class SignupScript : MonoBehaviour
 
     public void LoadNumberScreen()
     {
-        manager.NextScreen(phoneNumber);
+        manager.NextScreen(phoneNumberPrefab);
     }
     public void LoadEmailScreen()
     {
-        manager.NextScreen(email);
+        manager.NextScreen(emailPrefab);
     }
+    public void LoadLoginScreen()
+    {
+        manager.NextScreen(loginPrefab);
+    }
+
+
 
     #endregion
 

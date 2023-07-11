@@ -1473,6 +1473,7 @@ GameObject:
   - component: {fileID: 3650165829696186561}
   - component: {fileID: 4047617732798353208}
   - component: {fileID: 9049277071646269648}
+  - component: {fileID: 8537698403270583437}
   m_Layer: 5
   m_Name: 11-ConfirmPassScreen
   m_TagString: Untagged
@@ -1541,6 +1542,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8537698403270583437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5301567112478352896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dd119efbc8f534a9e6b6ca6c85eb71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loginPrefab: {fileID: 7358531185751211617, guid: a449729fba5477049b648534cc9e00d2, type: 3}
+  manager: {fileID: 0}
 --- !u!1 &6039742309052160218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,7 +1677,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8290874626558213124}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8537698403270583437}
+        m_TargetAssemblyTypeName: ConfirmPasswordScript, Assembly-CSharp
+        m_MethodName: Back
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6595528145049642289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1920,10 +1947,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 8537698403270583437}
+        m_TargetAssemblyTypeName: ConfirmPasswordScript, Assembly-CSharp
+        m_MethodName: LoadLoginScreen
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

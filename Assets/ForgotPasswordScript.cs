@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnterNumberScript : MonoBehaviour
+public class ForgotPasswordScript : MonoBehaviour
 {
     #region variables
-    [SerializeField] private GameObject setPasswordPrefab;
+
+    [SerializeField] private GameObject confirmPasswordPrefab;
+    [SerializeField] private GameObject signupPrefab;
     [SerializeField] private UI_Manager manager;
+    
     #endregion
 
     #region functions
@@ -26,9 +29,14 @@ public class EnterNumberScript : MonoBehaviour
         manager.Back();
     }
 
-    public void LoadPasswordScreen()
+    public void LoadConfirmPasswordScreen()
     {
-        manager.NextScreen(setPasswordPrefab);
+        manager.NextScreen(confirmPasswordPrefab);
+    }
+
+    public void LoadSignupScreen()
+    {
+        manager.NextScreen(signupPrefab);
     }
 
     #endregion

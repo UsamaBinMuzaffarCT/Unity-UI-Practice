@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 8608919017991776929}
   - component: {fileID: 3825643869968176886}
   - component: {fileID: 421055011249874435}
+  - component: {fileID: 4999409945954471904}
   m_Layer: 5
   m_Name: 6-OTPScreen
   m_TagString: Untagged
@@ -214,6 +215,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4999409945954471904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708730870409451132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 815b829f09830fe49b4e34b7a72af95a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enterNamePrefab: {fileID: 7493077421391546939, guid: c9956b3f9ee53b847a459a2320c01319, type: 3}
+  manager: {fileID: 0}
 --- !u!1 &893242480478195932
 GameObject:
   m_ObjectHideFlags: 0
@@ -3093,7 +3108,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 333033744547327584}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4999409945954471904}
+        m_TargetAssemblyTypeName: OTPScript, Assembly-CSharp
+        m_MethodName: Back
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8143891921604596428
 GameObject:
   m_ObjectHideFlags: 0
@@ -3216,10 +3243,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 4999409945954471904}
+        m_TargetAssemblyTypeName: OTPScript, Assembly-CSharp
+        m_MethodName: LoadEnterNameScreen
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnterEmailScript : MonoBehaviour
 {
     #region variables
-    [SerializeField] private GameObject A;
+    [SerializeField] private GameObject setPasswordPrefab;
     [SerializeField] private UI_Manager manager;
     #endregion
 
@@ -26,13 +26,9 @@ public class EnterEmailScript : MonoBehaviour
         manager.Back();
     }
 
-    public void LoadNumberScreen()
+    public void LoadPasswordScreen()
     {
-        //manager.NextScreen();
-    }
-    public void LoadEmailScreen()
-    {
-        //manager.NextScreen();
+        manager.NextScreen(setPasswordPrefab);
     }
 
     #endregion
