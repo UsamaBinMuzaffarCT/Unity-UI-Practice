@@ -122,10 +122,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: -711485957954705254}
+        m_TargetAssemblyTypeName: WannaLoginScript, Assembly-CSharp
+        m_MethodName: LoadSignupScreen
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -871,10 +871,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: -711485957954705254}
+        m_TargetAssemblyTypeName: WannaLoginScript, Assembly-CSharp
+        m_MethodName: LoadLoginScreen
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -894,6 +894,7 @@ GameObject:
   - component: {fileID: 2493230899736937346}
   - component: {fileID: 8045672093794308702}
   - component: {fileID: 2278803768992318823}
+  - component: {fileID: -711485957954705254}
   m_Layer: 5
   m_Name: 1-WannaLoginScreen
   m_TagString: Untagged
@@ -961,6 +962,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-711485957954705254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6608264727899034409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c8af1dd9d4d419498865a4ae54bb52d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loginScreenPrefab: {fileID: 7358531185751211617, guid: a449729fba5477049b648534cc9e00d2, type: 3}
+  signupScreenPrefab: {fileID: 3609658329975206820, guid: a7cc2f6b679543e4d8f797011f31f212, type: 3}
+  manager: {fileID: 0}
 --- !u!1 &7500655111898966546
 GameObject:
   m_ObjectHideFlags: 0

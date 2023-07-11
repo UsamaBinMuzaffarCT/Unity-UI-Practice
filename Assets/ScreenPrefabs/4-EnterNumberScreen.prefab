@@ -1244,6 +1244,7 @@ GameObject:
   - component: {fileID: 4945328843923293667}
   - component: {fileID: 6211619395655941143}
   - component: {fileID: 3385878003938355982}
+  - component: {fileID: 5014399341787392848}
   m_Layer: 5
   m_Name: 4-EnterNumberScreen
   m_TagString: Untagged
@@ -1312,6 +1313,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5014399341787392848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7867511516727226524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 830655bd2a31fe44e9bc3dccb1e0e01a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  A: {fileID: 0}
+  manager: {fileID: 0}
 --- !u!1 &8952734036286598173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,4 +1447,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8152498734192581232}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5014399341787392848}
+        m_TargetAssemblyTypeName: EnterNumberScript, Assembly-CSharp
+        m_MethodName: Back
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -435,6 +435,7 @@ GameObject:
   - component: {fileID: 7879294089924780312}
   - component: {fileID: 7801903053931029041}
   - component: {fileID: 2926697886732842802}
+  - component: {fileID: 5088876118367496680}
   m_Layer: 5
   m_Name: 3-SignUpScreen
   m_TagString: Untagged
@@ -504,6 +505,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5088876118367496680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3609658329975206820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f6f37ebfd390044a6e2ce99807f4f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phoneNumber: {fileID: 7867511516727226524, guid: 73655c82c512c374eb1536856a2b0035, type: 3}
+  email: {fileID: 1594854578208731123, guid: 94a1c458f6bc0d74db0b63023fce08d1, type: 3}
+  wallet: {fileID: 0}
+  manager: {fileID: 0}
 --- !u!1 &4156159544958515063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,10 +1146,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 5088876118367496680}
+        m_TargetAssemblyTypeName: SignupScript, Assembly-CSharp
+        m_MethodName: LoadEmailScreen
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1340,7 +1357,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5930108905379193907}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5088876118367496680}
+        m_TargetAssemblyTypeName: SignupScript, Assembly-CSharp
+        m_MethodName: Back
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7005631251070688220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1464,10 +1493,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 5088876118367496680}
+        m_TargetAssemblyTypeName: SignupScript, Assembly-CSharp
+        m_MethodName: LoadNumberScreen
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
