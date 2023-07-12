@@ -322,6 +322,7 @@ GameObject:
   - component: {fileID: 1851779898517904120}
   - component: {fileID: 8976508571549471024}
   - component: {fileID: 8453838586674386668}
+  - component: {fileID: 3147961977344023476}
   m_Layer: 5
   m_Name: 12-OldNewPassScreen
   m_TagString: Untagged
@@ -390,6 +391,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3147961977344023476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768186346109834404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74fb0c70488113b48a64467e1b03c4ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loginPrefab: {fileID: 7358531185751211617, guid: a449729fba5477049b648534cc9e00d2, type: 3}
+  forgotPasswordPrefab: {fileID: 5342429312933001634, guid: a9dda55874588c8479a3bbc933518466, type: 3}
+  manager: {fileID: 0}
 --- !u!1 &1911486803105552965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,10 +1484,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 3147961977344023476}
+        m_TargetAssemblyTypeName: OldNewPassScript, Assembly-CSharp
+        m_MethodName: DelayedLoadLoginScreen
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1600,7 +1616,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1027536829638126011}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3147961977344023476}
+        m_TargetAssemblyTypeName: OldNewPassScript, Assembly-CSharp
+        m_MethodName: Back
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5919344037085821975
 GameObject:
   m_ObjectHideFlags: 0
@@ -1951,7 +1979,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8424538115916063229}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3147961977344023476}
+        m_TargetAssemblyTypeName: OldNewPassScript, Assembly-CSharp
+        m_MethodName: DelayedLoadForgotPasswordScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6508157793247352597
 GameObject:
   m_ObjectHideFlags: 0

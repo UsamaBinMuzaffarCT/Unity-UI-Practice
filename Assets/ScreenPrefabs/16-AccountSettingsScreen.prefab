@@ -1715,7 +1715,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2918375875723433781}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5387914317923913551}
+        m_TargetAssemblyTypeName: AccountSettingsScript, Assembly-CSharp
+        m_MethodName: LoadOldNewPasswordScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2885787094868367715
 GameObject:
   m_ObjectHideFlags: 0
@@ -5024,7 +5036,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9202726188605886199}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5387914317923913551}
+        m_TargetAssemblyTypeName: AccountSettingsScript, Assembly-CSharp
+        m_MethodName: LogOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7535956310507437598
 GameObject:
   m_ObjectHideFlags: 0
@@ -5171,6 +5195,7 @@ GameObject:
   - component: {fileID: 1356648320960324742}
   - component: {fileID: 3128770743729173087}
   - component: {fileID: 4847407211155549480}
+  - component: {fileID: 5387914317923913551}
   m_Layer: 5
   m_Name: 16-AccountSettingsScreen
   m_TagString: Untagged
@@ -5240,6 +5265,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5387914317923913551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7663471611149478839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 036b407c257bf284da274732d8f5785f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wannaLoginPrefab: {fileID: 6608264727899034409, guid: 77cc092cb1402bc4b84b010a3ff204a0, type: 3}
+  oldNewPasswordPrefab: {fileID: 1768186346109834404, guid: df5d3206586a673428621e78bb1c6e21, type: 3}
+  manager: {fileID: 0}
 --- !u!1 &7711358225731143209
 GameObject:
   m_ObjectHideFlags: 0
@@ -5765,7 +5805,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2862528250004182112}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5387914317923913551}
+        m_TargetAssemblyTypeName: AccountSettingsScript, Assembly-CSharp
+        m_MethodName: Back
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8375882626457712914
 GameObject:
   m_ObjectHideFlags: 0

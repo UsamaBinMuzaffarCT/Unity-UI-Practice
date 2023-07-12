@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ViewProfileScript : MonoBehaviour
+public class Artboard2Script : MonoBehaviour
 {
     #region variables
-    [SerializeField] private GameObject editProfilePrefab;
-    [SerializeField] private GameObject settingPrefab;
-    [SerializeField] private GameObject ardBoard1Prefab;
+    [SerializeField] private GameObject artBoardColorsPrefab;
+    [SerializeField] private GameObject artBoardColorPanelPrefab;
     [SerializeField] private UI_Manager manager;
     #endregion
 
@@ -28,18 +27,13 @@ public class ViewProfileScript : MonoBehaviour
         manager.Back();
     }
 
-    public void LoadEditProfileScreen()
+    public void LoadArtBoardColorsScreen()
     {
-        manager.NextScreen(editProfilePrefab);
+        manager.NextScreen(artBoardColorsPrefab);
     }
-
-    public void LoadSettingsScreen()
+    public void LoadArtBoardColorPanelScreen()
     {
-        manager.NextScreen(settingPrefab);
-    }
-    public void LoadArtBoardScreen()
-    {
-        manager.NextScreen(ardBoard1Prefab);
+        manager.NextScreen(artBoardColorPanelPrefab);
     }
 
     #endregion

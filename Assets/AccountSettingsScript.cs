@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ViewProfileScript : MonoBehaviour
+public class AccountSettingsScript : MonoBehaviour
 {
     #region variables
-    [SerializeField] private GameObject editProfilePrefab;
-    [SerializeField] private GameObject settingPrefab;
-    [SerializeField] private GameObject ardBoard1Prefab;
+    [SerializeField] private GameObject wannaLoginPrefab;
+    [SerializeField] private GameObject oldNewPasswordPrefab;
     [SerializeField] private UI_Manager manager;
     #endregion
 
@@ -28,18 +27,14 @@ public class ViewProfileScript : MonoBehaviour
         manager.Back();
     }
 
-    public void LoadEditProfileScreen()
+    public void LogOut()
     {
-        manager.NextScreen(editProfilePrefab);
+        manager.NextScreen(wannaLoginPrefab, true, true);
     }
 
-    public void LoadSettingsScreen()
+    public void LoadOldNewPasswordScreen()
     {
-        manager.NextScreen(settingPrefab);
-    }
-    public void LoadArtBoardScreen()
-    {
-        manager.NextScreen(ardBoard1Prefab);
+        manager.NextScreen(oldNewPasswordPrefab);
     }
 
     #endregion
