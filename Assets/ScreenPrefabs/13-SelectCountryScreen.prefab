@@ -8563,7 +8563,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7231342757636606666}
         m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
-        m_MethodName: Back
+        m_MethodName: LoadViewProfileScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
