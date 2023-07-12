@@ -200,7 +200,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1459227756287782661}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7231342757636606666}
+        m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
+        m_MethodName: LoadViewProfileScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3786323250963584057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,7 +492,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7304323248132011217}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7231342757636606666}
+        m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
+        m_MethodName: LoadViewProfileScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7030583873993895611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1165,7 +1189,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2264326177257967876}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7231342757636606666}
+        m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
+        m_MethodName: LoadViewProfileScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7276588084292220434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1445,7 +1481,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4751451382412853871}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7231342757636606666}
+        m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
+        m_MethodName: LoadViewProfileScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3307077583540167787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2164,7 +2212,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6822025949208944263}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7231342757636606666}
+        m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
+        m_MethodName: LoadViewProfileScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8205975154016073008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2925,7 +2985,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 861097285718937382}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7231342757636606666}
+        m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
+        m_MethodName: LoadViewProfileScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3071176445850622684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3070,7 +3142,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3810893787898080826}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7231342757636606666}
+        m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
+        m_MethodName: LoadViewProfileScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &441244998360551159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3215,7 +3299,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1258321440274377204}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7231342757636606666}
+        m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
+        m_MethodName: LoadViewProfileScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8872520267603309214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3512,7 +3608,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5374788421354124759}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7231342757636606666}
+        m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
+        m_MethodName: LoadViewProfileScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1890801009100120793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3657,7 +3765,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6410284760135627246}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7231342757636606666}
+        m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
+        m_MethodName: LoadViewProfileScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &9143931665790860036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3689,6 +3809,7 @@ GameObject:
   - component: {fileID: 2429983437358338008}
   - component: {fileID: 8327105018646989122}
   - component: {fileID: 4433837092387421346}
+  - component: {fileID: 7231342757636606666}
   m_Layer: 5
   m_Name: 13-SelectCountryScreen
   m_TagString: Untagged
@@ -3757,6 +3878,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7231342757636606666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2511093767327370450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb83869a8e1eaf45a2861d5d2acad77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewProfilePrefab: {fileID: 5433392657229212963, guid: 115d6c83d9c387445966e8bbe097df23, type: 3}
+  manager: {fileID: 0}
 --- !u!1 &2527207150434338731
 GameObject:
   m_ObjectHideFlags: 0
@@ -4151,7 +4286,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7877518918298372698}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7231342757636606666}
+        m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
+        m_MethodName: LoadViewProfileScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4515163208661113106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4701,7 +4848,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4611737544610791512}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7231342757636606666}
+        m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
+        m_MethodName: LoadViewProfileScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7974635323123750373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5133,7 +5292,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 91620409793827993}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7231342757636606666}
+        m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
+        m_MethodName: LoadViewProfileScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7082289473461495785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6390,7 +6561,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3819757545760798571}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7231342757636606666}
+        m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
+        m_MethodName: LoadViewProfileScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8691595640108600328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6535,7 +6718,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5741656533548806834}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7231342757636606666}
+        m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
+        m_MethodName: LoadViewProfileScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1713719522645776537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6680,7 +6875,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7022772378747078945}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7231342757636606666}
+        m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
+        m_MethodName: LoadViewProfileScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8143258491204586519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6825,7 +7032,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 767051098284744812}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7231342757636606666}
+        m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
+        m_MethodName: LoadViewProfileScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7037972958254353628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7257,7 +7476,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4957296133127766527}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7231342757636606666}
+        m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
+        m_MethodName: LoadViewProfileScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4735172525239023971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7826,7 +8057,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2637612398924494972}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7231342757636606666}
+        m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
+        m_MethodName: LoadViewProfileScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2307231974590892802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8207,6 +8450,7 @@ GameObject:
   - component: {fileID: 2079244604169288433}
   - component: {fileID: 6864378437807779537}
   - component: {fileID: 802554898036422776}
+  - component: {fileID: 7743202292994891703}
   m_Layer: 5
   m_Name: Button-Cancel
   m_TagString: Untagged
@@ -8316,7 +8560,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6864378437807779537}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7231342757636606666}
+        m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
+        m_MethodName: Back
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7743202292994891703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6201186126812129459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb83869a8e1eaf45a2861d5d2acad77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewProfilePrefab: {fileID: 0}
+  manager: {fileID: 0}
 --- !u!1 &6227466706087758997
 GameObject:
   m_ObjectHideFlags: 0
@@ -10903,7 +11173,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6137240824819254005}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7231342757636606666}
+        m_TargetAssemblyTypeName: SelectCountryScript, Assembly-CSharp
+        m_MethodName: LoadViewProfileScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &9223308492187101487
 MonoBehaviour:
   m_ObjectHideFlags: 0

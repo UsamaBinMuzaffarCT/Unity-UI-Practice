@@ -19,6 +19,7 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private GameObject wannaLoginScreenPrefab;
     [SerializeField] private Canvas canvas;
     private GameObject currentScreen;
+    private GameObject mainScreen;
 
     #endregion
     
@@ -63,6 +64,7 @@ public class UI_Manager : MonoBehaviour
         loadedScreen.transform.SetParent(canvas.transform, false);
         currentScreen.SetActive(false);
         currentScreen = loadedScreen;
+        mainScreen = loadedScreen;
     }
 
     private void PushToStack(GameObject stackScreen)
@@ -126,6 +128,7 @@ public class UI_Manager : MonoBehaviour
         if (clear)
         {
             ClearStack();
+            PushToStack(mainScreen);
         }
         foreach (Transform child in canvas.transform)
         {
@@ -133,7 +136,10 @@ public class UI_Manager : MonoBehaviour
             {
                 isPresent = true;
                 currentScreen.SetActive(false);
-                PushToStack(currentScreen);
+                if (!clear)
+                {
+                    PushToStack(currentScreen);
+                }
                 child.gameObject.SetActive(true);
                 currentScreen = child.gameObject;
                 if(backStack.Count > 2)
@@ -147,7 +153,10 @@ public class UI_Manager : MonoBehaviour
             GameObject loadedScreen = Instantiate(nextScreen);
             loadedScreen.transform.SetParent(canvas.transform, false);
             currentScreen.SetActive(false);
-            PushToStack(currentScreen);
+            if (!clear)
+            {
+                PushToStack(currentScreen);
+            }
             currentScreen = loadedScreen;
             if (backStack.Count > 2)
             {
