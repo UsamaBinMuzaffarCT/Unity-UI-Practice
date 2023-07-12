@@ -40,6 +40,11 @@ public class LoginScript : MonoBehaviour
     {
         manager.NextScreen(forgotPasswordPrefab);
     }
+    public void DelayedLoadViewProfile()
+    {
+        manager.MakeLoader();
+        Invoke(nameof(LoadViewProfileScreen), 2);
+    }
     #endregion
 
     #endregion

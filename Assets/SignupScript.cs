@@ -7,12 +7,13 @@ public class SignupScript : MonoBehaviour
     #region variables
     [SerializeField] private GameObject phoneNumberPrefab;
     [SerializeField] private GameObject emailPrefab;
-    [SerializeField] private GameObject walletPrefab;
+    [SerializeField] private GameObject setPasswordPrefab;
     [SerializeField] private GameObject loginPrefab;
     [SerializeField] private UI_Manager manager;
     #endregion
 
     #region functions
+
     #region private-functions
 
     private void Awake()
@@ -29,6 +30,11 @@ public class SignupScript : MonoBehaviour
         manager.Back();
     }
 
+    public void LoadSetPasswordScreen()
+    {
+        manager.NextScreen(setPasswordPrefab);
+    }
+
     public void LoadNumberScreen()
     {
         manager.NextScreen(phoneNumberPrefab);
@@ -42,6 +48,11 @@ public class SignupScript : MonoBehaviour
         manager.NextScreen(loginPrefab);
     }
 
+    public void DelayedLoadViewProfile()
+    {
+        manager.MakeLoader();
+        Invoke(nameof(LoadSetPasswordScreen), 2);
+    }
 
 
     #endregion

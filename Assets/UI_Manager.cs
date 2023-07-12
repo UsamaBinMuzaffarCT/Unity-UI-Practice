@@ -17,6 +17,7 @@ public class UI_Manager : MonoBehaviour
     
     [SerializeField] private GameObject welcomScreenPrefab;
     [SerializeField] private GameObject wannaLoginScreenPrefab;
+    [SerializeField] private GameObject loadingPrefab;
     [SerializeField] private Canvas canvas;
     private GameObject currentScreen;
     private GameObject mainScreen;
@@ -28,7 +29,11 @@ public class UI_Manager : MonoBehaviour
     #region datastructures
 
     private Stack<GameObject> backStack = new Stack<GameObject>();
-    
+
+    #endregion
+
+    #region events
+
     #endregion
 
     #region delegates
@@ -36,9 +41,9 @@ public class UI_Manager : MonoBehaviour
     #endregion
 
     #region functions
-    
+
     #region private-functions
-    
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -113,6 +118,12 @@ public class UI_Manager : MonoBehaviour
 
     #region public-functions
 
+    public void MakeLoader()
+    {
+        GameObject loadingScreen = Instantiate(loadingPrefab);
+        loadingScreen.transform.SetParent(canvas.transform, false);
+    }
+
     public void Back()
     {
         currentScreen.SetActive(false);
@@ -122,16 +133,23 @@ public class UI_Manager : MonoBehaviour
 
     }
 
-    public void NextScreen(GameObject nextScreen, bool clear=false)
+    public void NextScreen(GameObject nextScreen, bool clear=false, bool logout=false)
     {
         bool isPresent = false;
         if (clear)
         {
             ClearStack();
-            PushToStack(mainScreen);
+            if (!logout)
+            {
+                PushToStack(mainScreen);
+            }
         }
         foreach (Transform child in canvas.transform)
         {
+            if(child.transform.tag == "loading")
+            {
+                Destroy(child.gameObject);
+            }
             if(CloneName(child.gameObject) == nextScreen.transform.name)
             {
                 isPresent = true;
