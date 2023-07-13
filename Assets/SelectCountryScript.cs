@@ -7,31 +7,24 @@ public class SelectCountryScript : MonoBehaviour
     #region variables
 
     [SerializeField] private GameObject viewProfilePrefab;
-    [SerializeField] private UI_Manager manager;
-
+    
     #endregion
 
     #region functions
 
     #region private-functions
-
-    private void Awake()
-    {
-        manager = GameObject.Find("UI Manager").GetComponent<UI_Manager>();
-    }
-
     #endregion
 
     #region public-functions
 
     public void Back()
     {
-        manager.Back();
+        UI_Manager.instance.Back();
     }
 
     public void LoadViewProfileScreen()
     {
-        manager.NextScreen(viewProfilePrefab);
+        UI_Manager.instance.NextScreen(viewProfilePrefab);
     }
 
     #endregion

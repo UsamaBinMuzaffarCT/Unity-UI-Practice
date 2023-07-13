@@ -2,21 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EditProfileScript : MonoBehaviour
+public class ScreenParent : MonoBehaviour
 {
     #region variables
+    [SerializeField] protected UI_Manager manager;
     #endregion
 
     #region functions
 
-    #region private-functions
+    #region protected-functions
+
     #endregion
 
     #region public-functions
 
     public void Back()
     {
-        UI_Manager.instance.Back();
+        manager.Back();
     }
 
     #endregion

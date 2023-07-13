@@ -6,28 +6,21 @@ public class ArtboardColorsScript : MonoBehaviour
 {
     #region variables
     [SerializeField] private GameObject artBoardColorPanelPrefab;
-    [SerializeField] private UI_Manager manager;
     #endregion
 
     #region functions
     #region private-functions
-
-    private void Awake()
-    {
-        manager = GameObject.Find("UI Manager").GetComponent<UI_Manager>();
-    }
-
     #endregion
 
     #region public-functions
 
     public void Back()
     {
-        manager.Back();
+        UI_Manager.instance.Back();
     }
     public void LoadArtBoardColorPanelScreen()
     {
-        manager.NextScreen(artBoardColorPanelPrefab);
+        UI_Manager.instance.NextScreen(artBoardColorPanelPrefab);
     }
 
     #endregion

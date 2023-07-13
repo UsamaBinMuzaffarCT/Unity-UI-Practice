@@ -6,29 +6,23 @@ public class SetPasswordScript : MonoBehaviour
 {
     #region variables
     [SerializeField] private GameObject OTPPrefab;
-    [SerializeField] private UI_Manager manager;
     #endregion
 
     #region functions
+
     #region private-functions
-
-    private void Awake()
-    {
-        manager = GameObject.Find("UI Manager").GetComponent<UI_Manager>();
-    }
-
     #endregion
 
     #region public-functions
 
     public void Back()
     {
-        manager.Back();
+        UI_Manager.instance.Back();
     }
 
     public void LoadOTPScreen()
     {
-        manager.NextScreen(OTPPrefab);
+        UI_Manager.instance.NextScreen(OTPPrefab);
     }
 
     #endregion

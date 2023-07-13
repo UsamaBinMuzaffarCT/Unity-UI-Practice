@@ -6,29 +6,23 @@ public class EnterNameScript : MonoBehaviour
 {
     #region variables
     [SerializeField] private GameObject selectCountryPrefab;
-    [SerializeField] private UI_Manager manager;
     #endregion
 
     #region functions
+
     #region private-functions
-
-    private void Awake()
-    {
-        manager = GameObject.Find("UI Manager").GetComponent<UI_Manager>();
-    }
-
     #endregion
 
     #region public-functions
 
     public void Back()
     {
-        manager.Back();
+        UI_Manager.instance.Back();
     }
 
     public void LoadSelectCountryScreen()
     {
-        manager.NextScreen(selectCountryPrefab);
+        UI_Manager.instance.NextScreen(selectCountryPrefab);
     }
 
     #endregion

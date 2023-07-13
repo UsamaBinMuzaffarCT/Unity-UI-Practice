@@ -6,16 +6,10 @@ public class EnterEmailScript : MonoBehaviour
 {
     #region variables
     [SerializeField] private GameObject setPasswordPrefab;
-    [SerializeField] private UI_Manager manager;
     #endregion
 
     #region functions
     #region private-functions
-
-    private void Awake()
-    {
-        manager = GameObject.Find("UI Manager").GetComponent<UI_Manager>();
-    }
 
     #endregion
 
@@ -23,12 +17,12 @@ public class EnterEmailScript : MonoBehaviour
 
     public void Back()
     {
-        manager.Back();
+        UI_Manager.instance.Back();
     }
 
     public void LoadPasswordScreen()
     {
-        manager.NextScreen(setPasswordPrefab);
+        UI_Manager.instance.NextScreen(setPasswordPrefab);
     }
 
     #endregion

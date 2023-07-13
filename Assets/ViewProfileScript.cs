@@ -8,38 +8,32 @@ public class ViewProfileScript : MonoBehaviour
     [SerializeField] private GameObject editProfilePrefab;
     [SerializeField] private GameObject settingPrefab;
     [SerializeField] private GameObject ardBoard1Prefab;
-    [SerializeField] private UI_Manager manager;
     #endregion
 
     #region functions
+
     #region private-functions
-
-    private void Awake()
-    {
-        manager = GameObject.Find("UI Manager").GetComponent<UI_Manager>();
-    }
-
     #endregion
 
     #region public-functions
 
     public void Back()
     {
-        manager.Back();
+        UI_Manager.instance.Back();
     }
 
     public void LoadEditProfileScreen()
     {
-        manager.NextScreen(editProfilePrefab);
+        UI_Manager.instance.NextScreen(editProfilePrefab);
     }
 
     public void LoadSettingsScreen()
     {
-        manager.NextScreen(settingPrefab);
+        UI_Manager.instance.NextScreen(settingPrefab);
     }
     public void LoadArtBoardScreen()
     {
-        manager.NextScreen(ardBoard1Prefab);
+        UI_Manager.instance.NextScreen(ardBoard1Prefab);
     }
 
     #endregion

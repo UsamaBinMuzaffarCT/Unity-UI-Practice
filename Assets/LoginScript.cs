@@ -8,16 +8,10 @@ public class LoginScript : MonoBehaviour
     [SerializeField] private GameObject viewProfilePrefab;
     [SerializeField] private GameObject forgotPasswordPrefab;
     [SerializeField] private GameObject signupPrefab;
-    [SerializeField] private UI_Manager manager;
     #endregion
 
     #region functions
     #region private-functions
- 
-    private void Awake()
-    {
-        manager = GameObject.Find("UI Manager").GetComponent<UI_Manager>();
-    }
 
     #endregion
 
@@ -25,24 +19,24 @@ public class LoginScript : MonoBehaviour
 
     public void Back()
     {
-        manager.Back();
+        UI_Manager.instance.Back();
     }
 
     public void LoadSignupScreen()
     {
-        manager.NextScreen(signupPrefab);
+        UI_Manager.instance.NextScreen(signupPrefab);
     }
     public void LoadViewProfileScreen()
     {
-        manager.NextScreen(viewProfilePrefab);
+        UI_Manager.instance.NextScreen(viewProfilePrefab);
     }
     public void LoadForgotPasswordScreen()
     {
-        manager.NextScreen(forgotPasswordPrefab);
+        UI_Manager.instance.NextScreen(forgotPasswordPrefab);
     }
     public void DelayedLoadViewProfile()
     {
-        manager.MakeLoader();
+        UI_Manager.instance.MakeLoader();
         Invoke(nameof(LoadViewProfileScreen), 2);
     }
     #endregion

@@ -9,17 +9,11 @@ public class SignupScript : MonoBehaviour
     [SerializeField] private GameObject emailPrefab;
     [SerializeField] private GameObject setPasswordPrefab;
     [SerializeField] private GameObject loginPrefab;
-    [SerializeField] private UI_Manager manager;
     #endregion
 
     #region functions
 
     #region private-functions
-
-    private void Awake()
-    {
-        manager = GameObject.Find("UI Manager").GetComponent<UI_Manager>();
-    }
 
     #endregion
 
@@ -27,30 +21,30 @@ public class SignupScript : MonoBehaviour
 
     public void Back()
     {
-        manager.Back();
+        UI_Manager.instance.Back();
     }
 
     public void LoadSetPasswordScreen()
     {
-        manager.NextScreen(setPasswordPrefab);
+        UI_Manager.instance.NextScreen(setPasswordPrefab);
     }
 
     public void LoadNumberScreen()
     {
-        manager.NextScreen(phoneNumberPrefab);
+        UI_Manager.instance.NextScreen(phoneNumberPrefab);
     }
     public void LoadEmailScreen()
     {
-        manager.NextScreen(emailPrefab);
+        UI_Manager.instance.NextScreen(emailPrefab);
     }
     public void LoadLoginScreen()
     {
-        manager.NextScreen(loginPrefab);
+        UI_Manager.instance.NextScreen(loginPrefab);
     }
 
     public void DelayedLoadViewProfile()
     {
-        manager.MakeLoader();
+        UI_Manager.instance.MakeLoader();
         Invoke(nameof(LoadSetPasswordScreen), 2);
     }
 
