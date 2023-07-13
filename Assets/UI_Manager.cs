@@ -10,11 +10,14 @@ public class UI_Manager : MonoBehaviour
     #region public-variables
     
     public static UI_Manager instance { get; private set; }
-    
+    //public GameObject[] screensArray;
+
     #endregion
-    
+
     #region private-variables
-    
+
+    [SerializeField] private ScriptableObjectScreens screens;
+
     [SerializeField] private GameObject welcomScreenPrefab;
     [SerializeField] private GameObject wannaLoginScreenPrefab;
     [SerializeField] private GameObject loadingPrefab;
@@ -46,6 +49,7 @@ public class UI_Manager : MonoBehaviour
 
     private void Awake()
     {
+        screens.Load();
         if (instance != null && instance != this)
         {
             Destroy(this);
