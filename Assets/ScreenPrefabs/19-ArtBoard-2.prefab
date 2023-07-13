@@ -8065,8 +8065,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095d507bd2558ee4abefcd890217585f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  artBoardColorsPrefab: {fileID: 0}
-  artBoardColorPanelPrefab: {fileID: 0}
+  artBoardColorsPrefab: {fileID: 8388080338638855952, guid: e458ba835c372a648a14ef776112ceee, type: 3}
+  artBoardColorPanelPrefab: {fileID: 7871340539602907624, guid: 378149b029d5d72439144813dd6e6670, type: 3}
   manager: {fileID: 0}
 --- !u!1 &8482414724219840356
 GameObject:
