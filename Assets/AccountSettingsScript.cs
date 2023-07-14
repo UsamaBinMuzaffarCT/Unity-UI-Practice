@@ -5,8 +5,7 @@ using UnityEngine;
 public class AccountSettingsScript : MonoBehaviour
 {
     #region variables
-    [SerializeField] private GameObject wannaLoginPrefab;
-    [SerializeField] private GameObject oldNewPasswordPrefab;
+
     #endregion
 
     #region functions
@@ -22,12 +21,12 @@ public class AccountSettingsScript : MonoBehaviour
 
     public void LogOut()
     {
-        UI_Manager.instance.NextScreen(wannaLoginPrefab, true, true);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.B_WannaLoginScreen, true, true);
     }
 
     public void LoadOldNewPasswordScreen()
     {
-        UI_Manager.instance.NextScreen(oldNewPasswordPrefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.M_OldNewPassScreen);
     }
 
     #endregion

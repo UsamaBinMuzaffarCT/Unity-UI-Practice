@@ -5,10 +5,46 @@ using UnityEngine;
 
 public class UI_Manager : MonoBehaviour
 {
+    #region enumerators
+
+    public enum Screen
+    {
+        A_LoadingPanel,
+        B_WannaLoginScreen,
+        C_LoginScreen,
+        D_SignUpScreen,
+        E_EnterNumberScreen,
+        F_EnterEmailScreen,
+        G_OTPScreen,
+        H_SetPasswordScreen,
+        I_LogoScreen,
+        J_EnterNameScreen,
+        K_ForgoPassScreen,
+        L_ConfirmPassScreen,
+        M_OldNewPassScreen,
+        N_SelectCountryScreen,
+        O_ViewProfileScreen,
+        P_SettingsScreen,
+        Q_AccountSettingsScreen,
+        R_EditProfileScreen,
+        S_ArtBoard1,
+        T_ArtBoard2,
+        U_ArtBoard3,
+        V_ArtBoard4,
+        W_ArtBoard5,
+        X_ArtBoardColorPanel,
+        Y_ArtBoardColors,
+        Z_ArtBoardFace,
+        ZA_ArtBoardWishlist,
+        ZB_ArtBoardSave
+    }
+
+    #endregion
+
     #region variables
 
     #region public-variables
-    
+
     public static UI_Manager instance { get; private set; }
     //public GameObject[] screensArray;
 
@@ -16,14 +52,9 @@ public class UI_Manager : MonoBehaviour
 
     #region private-variables
 
-    [SerializeField] private ScriptableObjectScreens screens;
-
-    [SerializeField] private GameObject welcomScreenPrefab;
-    [SerializeField] private GameObject wannaLoginScreenPrefab;
-    [SerializeField] private GameObject loadingPrefab;
+    [SerializeField] private ScreenScriptableObject screens;
     [SerializeField] private Canvas canvas;
     private GameObject currentScreen;
-    private GameObject mainScreen;
 
     #endregion
     
@@ -49,7 +80,6 @@ public class UI_Manager : MonoBehaviour
 
     private void Awake()
     {
-        screens.Load();
         if (instance != null && instance != this)
         {
             Destroy(this);
@@ -62,18 +92,17 @@ public class UI_Manager : MonoBehaviour
 
     void Start()
     {
-       GameObject loadedScreen = Instantiate(welcomScreenPrefab);
+       GameObject loadedScreen = Instantiate(screens.Screens.Find(x=>x.screen==Screen.I_LogoScreen).prefab);
        loadedScreen.transform.SetParent(canvas.transform, false);
        currentScreen = loadedScreen;
        Invoke("GoToLogin", 3f);
     }
     private void GoToLogin()
     {
-        GameObject loadedScreen = Instantiate(wannaLoginScreenPrefab);
+        GameObject loadedScreen = Instantiate(screens.Screens.Find(x => x.screen == Screen.B_WannaLoginScreen).prefab);
         loadedScreen.transform.SetParent(canvas.transform, false);
         currentScreen.SetActive(false);
         currentScreen = loadedScreen;
-        mainScreen = loadedScreen;
     }
 
     private void PushToStack(GameObject stackScreen)
@@ -85,6 +114,19 @@ public class UI_Manager : MonoBehaviour
     {
         GameObject screen = backStack.Pop();
         return screen;
+    }
+
+    private void ClearTill(GameObject screen)
+    {
+        while(backStack.Count > 0)
+        {
+            GameObject top = PopFromStack();
+            if (screen.transform.name == CloneName(top))
+            {
+                return;
+            }
+        }
+        return;
     }
 
     private void ClearStack()
@@ -124,7 +166,7 @@ public class UI_Manager : MonoBehaviour
 
     public void MakeLoader()
     {
-        GameObject loadingScreen = Instantiate(loadingPrefab);
+        GameObject loadingScreen = Instantiate(screens.Screens.Find(x => x.screen == Screen.A_LoadingPanel).prefab);
         loadingScreen.transform.SetParent(canvas.transform, false);
     }
 
@@ -137,16 +179,18 @@ public class UI_Manager : MonoBehaviour
 
     }
 
-    public void NextScreen(GameObject nextScreen, bool clear=false, bool logout=false)
+    public void NextScreen(Screen screen, bool clear=false, bool logout=false)
     {
+        GameObject nextScreen = screens.Screens.Find(x => x.screen == screen).prefab;
         bool isPresent = false;
         if (clear)
         {
-            ClearStack();
-            if (!logout)
-            {
-                PushToStack(mainScreen);
-            }
+            //ClearStack();
+            //if (!logout)
+            //{
+            //    PushToStack(mainScreen);
+            //}
+            ClearTill(nextScreen);
         }
         foreach (Transform child in canvas.transform)
         {

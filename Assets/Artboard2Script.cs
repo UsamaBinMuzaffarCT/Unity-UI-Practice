@@ -5,8 +5,7 @@ using UnityEngine;
 public class Artboard2Script : MonoBehaviour
 {
     #region variables
-    [SerializeField] private GameObject artBoardColorsPrefab;
-    [SerializeField] private GameObject artBoardColorPanelPrefab;
+
     #endregion
 
     #region functions
@@ -22,11 +21,26 @@ public class Artboard2Script : MonoBehaviour
 
     public void LoadArtBoardColorsScreen()
     {
-        UI_Manager.instance.NextScreen(artBoardColorsPrefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.Y_ArtBoardColors);
     }
     public void LoadArtBoardColorPanelScreen()
     {
-        UI_Manager.instance.NextScreen(artBoardColorPanelPrefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.X_ArtBoardColorPanel);
+    }
+
+    public void LoadArtBoard4()
+    {
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.V_ArtBoard4);
+    }
+
+    public void LoadArtBoardFace()
+    {
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.Z_ArtBoardFace);
+    }
+
+    public void LoadArtBoardSave()
+    {
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ZB_ArtBoardSave);
     }
 
     #endregion

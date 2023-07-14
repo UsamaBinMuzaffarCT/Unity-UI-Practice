@@ -3565,7 +3565,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5623552601817601874}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8682861140376460213}
+        m_TargetAssemblyTypeName: ArtboardColorsScript, Assembly-CSharp
+        m_MethodName: LoadArtBoardSave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4954259579771187243
 GameObject:
   m_ObjectHideFlags: 0
@@ -4790,7 +4802,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3981484523515873648}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8682861140376460213}
+        m_TargetAssemblyTypeName: ArtboardColorsScript, Assembly-CSharp
+        m_MethodName: LoadArtBoardFace
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5679536343175141743
 GameObject:
   m_ObjectHideFlags: 0
@@ -6489,8 +6513,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1e110da12dc0f14093c4dfd7c7e3374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  artBoardColorPanelPrefab: {fileID: 7871340539602907624, guid: 378149b029d5d72439144813dd6e6670, type: 3}
-  manager: {fileID: 0}
 --- !u!1 &8395036188326190475
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,10 +5,7 @@ using UnityEngine;
 public class SignupScript : MonoBehaviour
 {
     #region variables
-    [SerializeField] private GameObject phoneNumberPrefab;
-    [SerializeField] private GameObject emailPrefab;
-    [SerializeField] private GameObject setPasswordPrefab;
-    [SerializeField] private GameObject loginPrefab;
+
     #endregion
 
     #region functions
@@ -26,20 +23,20 @@ public class SignupScript : MonoBehaviour
 
     public void LoadSetPasswordScreen()
     {
-        UI_Manager.instance.NextScreen(setPasswordPrefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.H_SetPasswordScreen);
     }
 
     public void LoadNumberScreen()
     {
-        UI_Manager.instance.NextScreen(phoneNumberPrefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.E_EnterNumberScreen);
     }
     public void LoadEmailScreen()
     {
-        UI_Manager.instance.NextScreen(emailPrefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.F_EnterEmailScreen);
     }
     public void LoadLoginScreen()
     {
-        UI_Manager.instance.NextScreen(loginPrefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.C_LoginScreen);
     }
 
     public void DelayedLoadViewProfile()

@@ -11,8 +11,8 @@ public class ScriptableObjectScreens : ScriptableObject
 
     public void Load()
     {
-        
+
         screensArray = Resources.LoadAll<GameObject>("Prefabs");
-        
+
     }
 }

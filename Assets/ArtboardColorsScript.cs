@@ -5,7 +5,7 @@ using UnityEngine;
 public class ArtboardColorsScript : MonoBehaviour
 {
     #region variables
-    [SerializeField] private GameObject artBoardColorPanelPrefab;
+
     #endregion
 
     #region functions
@@ -20,7 +20,16 @@ public class ArtboardColorsScript : MonoBehaviour
     }
     public void LoadArtBoardColorPanelScreen()
     {
-        UI_Manager.instance.NextScreen(artBoardColorPanelPrefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.X_ArtBoardColorPanel);
+    }
+    public void LoadArtBoardSave()
+    {
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ZB_ArtBoardSave);
+    }
+
+    public void LoadArtBoardFace()
+    {
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.Z_ArtBoardFace);
     }
 
     #endregion

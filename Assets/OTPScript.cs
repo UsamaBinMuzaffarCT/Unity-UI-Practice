@@ -22,7 +22,7 @@ public class OTPScript : MonoBehaviour
 
     public void LoadEnterNameScreen()
     {
-        UI_Manager.instance.NextScreen(enterNamePrefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.J_EnterNameScreen);
     }
 
     #endregion

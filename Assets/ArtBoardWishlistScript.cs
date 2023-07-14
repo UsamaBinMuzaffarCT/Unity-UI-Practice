@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SelectCountryScript : MonoBehaviour
+public class ArtBoardWishlistScript : MonoBehaviour
 {
     #region variables
-    
+
     #endregion
 
     #region functions
-
     #region private-functions
     #endregion
 
@@ -20,13 +19,17 @@ public class SelectCountryScript : MonoBehaviour
         UI_Manager.instance.Back();
     }
 
-    public void LoadViewProfileScreen()
+    public void LoadArtBoardFace()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.O_ViewProfileScreen);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.Z_ArtBoardFace);
+    }
+
+    public void LoadArtBoardSave()
+    {
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ZB_ArtBoardSave);
     }
 
     #endregion
-
 
     #endregion
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ConfirmPasswordScript : MonoBehaviour
 {
     #region variables
-    [SerializeField] private GameObject loginPrefab;
+
     #endregion
 
     #region functions
@@ -22,7 +22,7 @@ public class ConfirmPasswordScript : MonoBehaviour
 
     public void LoadLoginScreen()
     {
-        UI_Manager.instance.NextScreen(loginPrefab,true);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.C_LoginScreen,true);
     }
 
     #endregion

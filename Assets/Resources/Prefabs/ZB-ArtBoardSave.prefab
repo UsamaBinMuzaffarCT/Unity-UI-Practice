@@ -2080,7 +2080,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4993322553917313002}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7506628341973502284}
+        m_TargetAssemblyTypeName: ArtBoardSaveScript, Assembly-CSharp
+        m_MethodName: LoadViewProfile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3322177428530604264
 GameObject:
   m_ObjectHideFlags: 0
@@ -2834,7 +2846,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9111666618771182273}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7506628341973502284}
+        m_TargetAssemblyTypeName: ArtBoardSaveScript, Assembly-CSharp
+        m_MethodName: LoadArtBoardFace
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5240222439311946037
 GameObject:
   m_ObjectHideFlags: 0
@@ -4292,6 +4316,7 @@ GameObject:
   - component: {fileID: 285099093887332979}
   - component: {fileID: 2145196087092674229}
   - component: {fileID: 6655476800237975424}
+  - component: {fileID: 7506628341973502284}
   m_Layer: 5
   m_Name: ZB-ArtBoardSave
   m_TagString: Untagged
@@ -4360,6 +4385,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7506628341973502284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5990172661046180561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f61bd78dfae9a5945aae94402fbe5eae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6101274250434943988
 GameObject:
   m_ObjectHideFlags: 0
@@ -5818,4 +5855,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7437785219806085997}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7506628341973502284}
+        m_TargetAssemblyTypeName: ArtBoardSaveScript, Assembly-CSharp
+        m_MethodName: Back
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArtboardColorPanelScript : MonoBehaviour
+public class ArtBoard5Script : MonoBehaviour
 {
     #region variables
 
@@ -19,14 +19,18 @@ public class ArtboardColorPanelScript : MonoBehaviour
         UI_Manager.instance.Back();
     }
 
-    public void LoadArtBoardFace() 
+    public void LoadArtBoardWishlist()
+    {
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ZA_ArtBoardWishlist);
+    }
+    public void LoadArtBoardFace()
     {
         UI_Manager.instance.NextScreen(UI_Manager.Screen.Z_ArtBoardFace);
     }
 
-    public void LoadArtBoardColorsScreen()
+    public void LoadArtBoardSave()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.Y_ArtBoardColors);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ZB_ArtBoardSave);
     }
 
     #endregion

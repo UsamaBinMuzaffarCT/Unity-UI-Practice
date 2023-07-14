@@ -5,9 +5,7 @@ using UnityEngine;
 public class LoginScript : MonoBehaviour
 {
     #region variables
-    [SerializeField] private GameObject viewProfilePrefab;
-    [SerializeField] private GameObject forgotPasswordPrefab;
-    [SerializeField] private GameObject signupPrefab;
+
     #endregion
 
     #region functions
@@ -24,15 +22,15 @@ public class LoginScript : MonoBehaviour
 
     public void LoadSignupScreen()
     {
-        UI_Manager.instance.NextScreen(signupPrefab);
+        UI_Manager.instance.NextScreen(/*signupPrefab*/UI_Manager.Screen.D_SignUpScreen);
     }
     public void LoadViewProfileScreen()
     {
-        UI_Manager.instance.NextScreen(viewProfilePrefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.O_ViewProfileScreen);
     }
     public void LoadForgotPasswordScreen()
     {
-        UI_Manager.instance.NextScreen(forgotPasswordPrefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.K_ForgoPassScreen);
     }
     public void DelayedLoadViewProfile()
     {

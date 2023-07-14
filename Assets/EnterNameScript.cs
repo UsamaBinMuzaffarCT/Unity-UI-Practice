@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnterNameScript : MonoBehaviour
 {
     #region variables
-    [SerializeField] private GameObject selectCountryPrefab;
     #endregion
 
     #region functions
@@ -22,7 +21,7 @@ public class EnterNameScript : MonoBehaviour
 
     public void LoadSelectCountryScreen()
     {
-        UI_Manager.instance.NextScreen(selectCountryPrefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.N_SelectCountryScreen);
     }
 
     #endregion

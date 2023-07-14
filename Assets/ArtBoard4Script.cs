@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Artboard1Script : MonoBehaviour
+public class ArtBoard4Script : MonoBehaviour
 {
     #region variables
 
@@ -19,9 +19,18 @@ public class Artboard1Script : MonoBehaviour
         UI_Manager.instance.Back();
     }
 
-    public void LoadArtBoard2Screen()
+    public void LoadArtBoardWishlist()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.T_ArtBoard2);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ZA_ArtBoardWishlist);
+    }
+    public void LoadArtBoardFace()
+    {
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.Z_ArtBoardFace);
+    }
+
+    public void LoadArtBoard5()
+    {
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.W_ArtBoard5);
     }
 
     public void LoadArtBoardSave()

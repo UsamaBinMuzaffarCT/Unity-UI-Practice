@@ -6,9 +6,6 @@ public class ForgotPasswordScript : MonoBehaviour
 {
     #region variables
 
-    [SerializeField] private GameObject confirmPasswordPrefab;
-    [SerializeField] private GameObject signupPrefab;
-    
     #endregion
 
     #region functions
@@ -25,12 +22,12 @@ public class ForgotPasswordScript : MonoBehaviour
 
     public void LoadConfirmPasswordScreen()
     {
-        UI_Manager.instance.NextScreen(confirmPasswordPrefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.L_ConfirmPassScreen);
     }
 
     public void LoadSignupScreen()
     {
-        UI_Manager.instance.NextScreen(signupPrefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.D_SignUpScreen);
     }
 
     #endregion

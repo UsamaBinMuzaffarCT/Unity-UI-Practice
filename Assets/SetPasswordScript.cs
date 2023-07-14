@@ -5,7 +5,7 @@ using UnityEngine;
 public class SetPasswordScript : MonoBehaviour
 {
     #region variables
-    [SerializeField] private GameObject OTPPrefab;
+
     #endregion
 
     #region functions
@@ -22,7 +22,7 @@ public class SetPasswordScript : MonoBehaviour
 
     public void LoadOTPScreen()
     {
-        UI_Manager.instance.NextScreen(OTPPrefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.G_OTPScreen);
     }
 
     #endregion

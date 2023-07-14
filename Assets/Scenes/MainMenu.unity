@@ -567,10 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76ab32d5b2a669b4ba94f949ac5050eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screens: {fileID: 11400000, guid: 199c32dd33fb4d8408ad5978d65e9139, type: 2}
-  welcomScreenPrefab: {fileID: 7996847393918759122, guid: bc57af47978ac17439337d61e163a551, type: 3}
-  wannaLoginScreenPrefab: {fileID: 6608264727899034409, guid: 77cc092cb1402bc4b84b010a3ff204a0, type: 3}
-  loadingPrefab: {fileID: 4689629022609474368, guid: 0045a38dd2faa54438454c48ba9a21dc, type: 3}
+  screens: {fileID: 11400000, guid: 48248095ce8cdc74cba93f465ca27cb6, type: 2}
   canvas: {fileID: 914126102}
 --- !u!4 &1857913091
 Transform:

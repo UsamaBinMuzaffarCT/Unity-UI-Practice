@@ -5,19 +5,18 @@ using UnityEngine;
 public class WannaLoginScript : MonoBehaviour
 {
     #region variables
-    [SerializeField] private GameObject loginScreenPrefab;
-    [SerializeField] private GameObject signupScreenPrefab;
+
     #endregion
 
     #region functions
 
     public void LoadLoginScreen()
     {
-        UI_Manager.instance.NextScreen(loginScreenPrefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.C_LoginScreen);
     }
     public void LoadSignupScreen()
     {
-        UI_Manager.instance.NextScreen(signupScreenPrefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.D_SignUpScreen);
     }
 
     #endregion

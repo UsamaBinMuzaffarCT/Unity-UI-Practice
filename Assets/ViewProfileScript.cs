@@ -1,13 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ViewProfileScript : MonoBehaviour
 {
     #region variables
-    [SerializeField] private GameObject editProfilePrefab;
-    [SerializeField] private GameObject settingPrefab;
-    [SerializeField] private GameObject ardBoard1Prefab;
+    [SerializeField] Image photo;
+    [SerializeField] GameObject photoContainer;
     #endregion
 
     #region functions
@@ -24,19 +25,31 @@ public class ViewProfileScript : MonoBehaviour
 
     public void LoadEditProfileScreen()
     {
-        UI_Manager.instance.NextScreen(editProfilePrefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.R_EditProfileScreen);
     }
 
     public void LoadSettingsScreen()
     {
-        UI_Manager.instance.NextScreen(settingPrefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.P_SettingsScreen);
     }
     public void LoadArtBoardScreen()
     {
-        UI_Manager.instance.NextScreen(ardBoard1Prefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.S_ArtBoard1);
+    }
+
+    public void AddPhoto()
+    {
+        Instantiate(photo).transform.SetParent(photoContainer.transform);
     }
 
     #endregion
 
     #endregion
+}
+
+
+[Serializable]
+public class Stats
+{
+
 }

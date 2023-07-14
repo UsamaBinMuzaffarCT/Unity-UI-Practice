@@ -5,7 +5,7 @@ using UnityEngine;
 public class SettingsScript : MonoBehaviour
 {
     #region variables
-    [SerializeField] private GameObject accountSettingsPrefab;
+
     #endregion
 
     #region functions
@@ -22,7 +22,7 @@ public class SettingsScript : MonoBehaviour
 
     public void LoadaccountSettingsScreen()
     {
-        UI_Manager.instance.NextScreen(accountSettingsPrefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.Q_AccountSettingsScreen);
     }
 
     #endregion

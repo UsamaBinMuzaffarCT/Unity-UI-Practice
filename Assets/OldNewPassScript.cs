@@ -23,12 +23,12 @@ public class OldNewPassScript : MonoBehaviour
 
     public void LoadLoginScreen()
     {
-        UI_Manager.instance.NextScreen(loginPrefab,true);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.C_LoginScreen,true);
     }
 
     public void LoadForgotPasswordScreen()
     {
-        UI_Manager.instance.NextScreen(forgotPasswordPrefab);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.K_ForgoPassScreen);
     }
 
     public void DelayedLoadLoginScreen()
