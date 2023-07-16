@@ -2,10 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Newtonsoft.Json;
+using System.IO;
 
 public class UI_Manager : MonoBehaviour
 {
     #region enumerators
+
+    [Serializable]
+    public class PlayerInfo
+    {
+        public string email;
+        public string phoneNumber;
+        public string password;
+        public List<string> imagesList;
+    }
 
     public enum Screen
     {
@@ -78,8 +89,56 @@ public class UI_Manager : MonoBehaviour
 
     #region private-functions
 
+    private string ReadJSON(string path)
+    {
+        if(File.Exists(path))
+        {
+            using(StreamReader reader =  new StreamReader(path))
+            {
+                string json = reader.ReadToEnd();
+                return json;
+            }
+        }
+        else { 
+            return ""; 
+        }
+    }
+
+    private void TestFunction()
+    {
+        List<string> images = new List<string> {
+            "Assets/Test/image1.jpg", 
+            "Assets/Test/image2.jpg", 
+            "Assets/Test/image3.jpg" 
+        };
+        PlayerInfo playerInfo = new PlayerInfo
+        {
+            imagesList = images,
+            email = "abc@gmail.com",
+            phoneNumber = "1234567890",
+            password = "password",
+        };
+
+        List<PlayerInfo> playerInfos = new List<PlayerInfo>();
+        playerInfos.Add(playerInfo);
+        playerInfos.Add(playerInfo);
+
+
+        //string json = JsonUtility.ToJson(playerInfos);
+        string json = JsonConvert.SerializeObject(playerInfos);
+        FileStream fileStream = new FileStream("Assets/save.json", FileMode.Create);
+        using(StreamWriter writer = new StreamWriter(fileStream)) 
+        { 
+            writer.Write(json);
+        }
+        string readJSON = ReadJSON("Assets/save.json");
+        List<PlayerInfo> playerInfos1 = JsonConvert.DeserializeObject<List<PlayerInfo>>(readJSON);
+        Debug.Log(playerInfos1[0].email);
+    }
+
     private void Awake()
     {
+        TestFunction();
         if (instance != null && instance != this)
         {
             Destroy(this);
@@ -185,11 +244,6 @@ public class UI_Manager : MonoBehaviour
         bool isPresent = false;
         if (clear)
         {
-            //ClearStack();
-            //if (!logout)
-            //{
-            //    PushToStack(mainScreen);
-            //}
             ClearTill(nextScreen);
         }
         foreach (Transform child in canvas.transform)
