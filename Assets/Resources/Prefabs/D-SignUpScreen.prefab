@@ -517,12 +517,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f6f37ebfd390044a6e2ce99807f4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phoneNumberPrefab: {fileID: 7867511516727226524, guid: 73655c82c512c374eb1536856a2b0035, type: 3}
-  emailPrefab: {fileID: 1594854578208731123, guid: 94a1c458f6bc0d74db0b63023fce08d1, type: 3}
-  setPasswordPrefab: {fileID: 8327374347446619391, guid: 85d4145b69d804747a9ad11780cacc6b, type: 3}
-  loginPrefab: {fileID: 7358531185751211617, guid: a449729fba5477049b648534cc9e00d2, type: 3}
-  loadingPrefab: {fileID: 4689629022609474368, guid: 0045a38dd2faa54438454c48ba9a21dc, type: 3}
-  manager: {fileID: 0}
+  emailSignup: {fileID: 4394600821821105294}
+  phoneSignup: {fileID: 7488215697031676632}
+  walletSignup: {fileID: 6892972817933076230}
 --- !u!1 &4156159544958515063
 GameObject:
   m_ObjectHideFlags: 0

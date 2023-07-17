@@ -235,7 +235,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1325,8 +1325,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830655bd2a31fe44e9bc3dccb1e0e01a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  setPasswordPrefab: {fileID: 8327374347446619391, guid: 85d4145b69d804747a9ad11780cacc6b, type: 3}
-  manager: {fileID: 0}
+  phoneNumber: {fileID: 7463771678158037228}
+  signupScript: {fileID: 5088876118367496680, guid: b5062177aad02cd48a0c9bd9d8ae8703, type: 3}
 --- !u!1 &8952734036286598173
 GameObject:
   m_ObjectHideFlags: 0

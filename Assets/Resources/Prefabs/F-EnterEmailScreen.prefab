@@ -304,8 +304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e80a12cdb880394495a729a6943b6fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  setPasswordPrefab: {fileID: 8327374347446619391, guid: 85d4145b69d804747a9ad11780cacc6b, type: 3}
-  manager: {fileID: 0}
+  email: {fileID: 8456118980827152627}
+  signupScript: {fileID: 5088876118367496680, guid: b5062177aad02cd48a0c9bd9d8ae8703, type: 3}
 --- !u!1 &2123338760239504512
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1109,7 +1109,7 @@ GameObject:
   - component: {fileID: 3207243807419734509}
   - component: {fileID: 8456118980827152627}
   m_Layer: 5
-  m_Name: InputField-Phone
+  m_Name: InputField-Email
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -620,7 +620,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1111,8 +1111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df850fe225afa8468ba400346129d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectCountryPrefab: {fileID: 2511093767327370450, guid: 419a3e0c27c8ce7449dc3ab2f243f734, type: 3}
-  manager: {fileID: 0}
+  nameField: {fileID: 8801695506487395694}
+  signupScript: {fileID: 5088876118367496680, guid: b5062177aad02cd48a0c9bd9d8ae8703, type: 3}
 --- !u!1 &8765371849970544431
 GameObject:
   m_ObjectHideFlags: 0

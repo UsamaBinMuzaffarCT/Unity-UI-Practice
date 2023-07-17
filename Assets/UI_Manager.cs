@@ -4,19 +4,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
 using System.IO;
+using TMPro;
+using static UnityEditor.Progress;
 
 public class UI_Manager : MonoBehaviour
 {
-    #region enumerators
+    #region classes
 
     [Serializable]
     public class PlayerInfo
     {
+        public string name;
         public string email;
         public string phoneNumber;
         public string password;
         public List<string> imagesList;
+        public List<string> itemsList;
+
+        public PlayerInfo() 
+        {
+            itemsList = null;
+            imagesList = null;
+            email = "";
+            phoneNumber = "";
+            password = "";
+            name = "";
+        }
     }
+
+    #endregion
+
+    #region enumerators
 
     public enum Screen
     {
@@ -57,12 +75,15 @@ public class UI_Manager : MonoBehaviour
     #region public-variables
 
     public static UI_Manager instance { get; private set; }
-    //public GameObject[] screensArray;
+    public List<PlayerInfo> playerInfos;
+    public SignupScript signupScript;
+    public int currentUser;
 
     #endregion
 
     #region private-variables
 
+    [SerializeField] private GameObject popup;
     [SerializeField] private ScreenScriptableObject screens;
     [SerializeField] private Canvas canvas;
     private GameObject currentScreen;
@@ -77,17 +98,19 @@ public class UI_Manager : MonoBehaviour
 
     #endregion
 
-    #region events
-
-    #endregion
-
-    #region delegates
-
-    #endregion
-
     #region functions
 
     #region private-functions
+
+    private void WriteJSON(string path, List<PlayerInfo>playerInfos)
+    {
+        string json = JsonConvert.SerializeObject(playerInfos);
+        FileStream fileStream = new FileStream(path, FileMode.Create);
+        using (StreamWriter writer = new StreamWriter(fileStream))
+        {
+            writer.Write(json);
+        }
+    }
 
     private string ReadJSON(string path)
     {
@@ -104,41 +127,12 @@ public class UI_Manager : MonoBehaviour
         }
     }
 
-    private void TestFunction()
-    {
-        List<string> images = new List<string> {
-            "Assets/Test/image1.jpg", 
-            "Assets/Test/image2.jpg", 
-            "Assets/Test/image3.jpg" 
-        };
-        PlayerInfo playerInfo = new PlayerInfo
-        {
-            imagesList = images,
-            email = "abc@gmail.com",
-            phoneNumber = "1234567890",
-            password = "password",
-        };
-
-        List<PlayerInfo> playerInfos = new List<PlayerInfo>();
-        playerInfos.Add(playerInfo);
-        playerInfos.Add(playerInfo);
-
-
-        //string json = JsonUtility.ToJson(playerInfos);
-        string json = JsonConvert.SerializeObject(playerInfos);
-        FileStream fileStream = new FileStream("Assets/save.json", FileMode.Create);
-        using(StreamWriter writer = new StreamWriter(fileStream)) 
-        { 
-            writer.Write(json);
-        }
-        string readJSON = ReadJSON("Assets/save.json");
-        List<PlayerInfo> playerInfos1 = JsonConvert.DeserializeObject<List<PlayerInfo>>(readJSON);
-        Debug.Log(playerInfos1[0].email);
-    }
-
     private void Awake()
     {
-        TestFunction();
+        currentUser = -1;
+        string readJSON = ReadJSON("Assets/JSON/save.json");
+        playerInfos = JsonConvert.DeserializeObject<List<PlayerInfo>>(readJSON);
+        Debug.Log(playerInfos.Count);
         if (instance != null && instance != this)
         {
             Destroy(this);
@@ -219,9 +213,38 @@ public class UI_Manager : MonoBehaviour
         }
     }
 
+    private void HidePopup()
+    {
+        foreach(Transform child in canvas.transform)
+        {
+            if(child.tag == "popup")
+            {
+                Destroy(child.gameObject);
+            }
+        }
+    }
+
     #endregion
 
     #region public-functions
+
+    public void UpdateJson()
+    {
+        WriteJSON("Assets/JSON/save.json", playerInfos);
+    }
+
+    public GameObject PeekTop()
+    {
+        return backStack.Peek();
+    }
+
+    public void MakePopup(string text)
+    {
+        GameObject instantiated = Instantiate(popup);
+        instantiated.transform.SetParent(canvas.transform, false);
+        popup.GetComponent<TMP_Text>().text = text;
+        Invoke(nameof(HidePopup), 2);
+    }
 
     public void MakeLoader()
     {
@@ -281,6 +304,10 @@ public class UI_Manager : MonoBehaviour
             if (backStack.Count > 2)
             {
                 CheckPrevious();
+            }
+            if(CloneName(loadedScreen) == "D-SignUpScreen")
+            {
+                signupScript = loadedScreen.GetComponent<SignupScript>();
             }
         }
         Debug.Log("Stack Size : " + backStack.Count.ToString());
