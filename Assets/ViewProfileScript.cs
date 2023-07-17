@@ -14,6 +14,20 @@ public class ViewProfileScript : MonoBehaviour
     #region functions
 
     #region private-functions
+
+    private void Awake()
+    {
+        List<string> imagePaths = new List<string>();
+        imagePaths = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].imagesList;
+        foreach(string imagePath in imagePaths)
+        {
+            Debug.Log(imagePath);
+            Image loadedPhoto = Instantiate(photo);
+            loadedPhoto.transform.SetParent(photoContainer.transform);
+            loadedPhoto.sprite = Resources.Load<Sprite>(imagePath);
+        }
+    }
+
     #endregion
 
     #region public-functions

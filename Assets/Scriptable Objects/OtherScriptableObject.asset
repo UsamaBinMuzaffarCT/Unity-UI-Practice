@@ -24,7 +24,7 @@ MonoBehaviour:
   - screen: 4
     prefab: {fileID: 7867511516727226524, guid: d4b2d04366db5714cbf581b89be42b0f, type: 3}
   - screen: 5
-    prefab: {fileID: 7867511516727226524, guid: d4b2d04366db5714cbf581b89be42b0f, type: 3}
+    prefab: {fileID: 1594854578208731123, guid: 1a5498f9486a75b4eb442207f5c3d575, type: 3}
   - screen: 6
     prefab: {fileID: 708730870409451132, guid: 1d71242ac22a0534681107ae6c3634e3, type: 3}
   - screen: 7

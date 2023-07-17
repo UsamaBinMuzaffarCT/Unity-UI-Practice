@@ -29,9 +29,7 @@ public class SignupScript : MonoBehaviour
     #region private-functions
 
     private UI_Manager.PlayerInfo CreateNewPlayer()
-    {
-        List<string> images = new List<string>();
-        List<string> items = new List<string>();
+    { 
         playerInfo = new UI_Manager.PlayerInfo();
         return playerInfo;
     }
@@ -53,17 +51,11 @@ public class SignupScript : MonoBehaviour
     public void LoadNumberScreen()
     {
         playerInfo = CreateNewPlayer();
-        Debug.Log("Player infos: \n name: " + playerInfo.name + "\n ");
-        Debug.Log("email: " + playerInfo.email);
-        Debug.Log("phone: " + playerInfo.phoneNumber);
         UI_Manager.instance.NextScreen(UI_Manager.Screen.E_EnterNumberScreen);
     }
     public void LoadEmailScreen()
     {
         playerInfo = CreateNewPlayer();
-        Debug.Log("Player infos: \n name: " + playerInfo.name + "\n ");
-        Debug.Log("email: " + playerInfo.email);
-        Debug.Log("phone: " + playerInfo.phoneNumber);
         UI_Manager.instance.NextScreen(UI_Manager.Screen.F_EnterEmailScreen);
     }
     public void LoadLoginScreen()
@@ -75,8 +67,8 @@ public class SignupScript : MonoBehaviour
     {
         UI_Manager.instance.MakeLoader();
         playerInfo = CreateNewPlayer();
-        playerInfo.email = "WALLET-" + UI_Manager.instance.currentUser.ToString();
-        playerInfo.phoneNumber = "WALLET-" + UI_Manager.instance.currentUser.ToString();
+        playerInfo.email = "WALLET-" + (UI_Manager.instance.playerInfos.Count - 1).ToString();
+        playerInfo.phoneNumber = "WALLET-" + (UI_Manager.instance.playerInfos.Count - 1).ToString();
         Invoke(nameof(LoadSetPasswordScreen), 2);
     }
 

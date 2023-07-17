@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - loading
+  - popup
   layers:
   - Default
   - TransparentFX
