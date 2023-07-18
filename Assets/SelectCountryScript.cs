@@ -70,11 +70,13 @@ public class SelectCountryScript : MonoBehaviour
         UI_Manager.instance.playerInfos.Add(signupScript.playerInfo);
         try
         {
-            System.IO.Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name);
-            System.IO.Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name + "/Images");
-            System.IO.Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name + "/Items");
+            Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name);
+            Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name + "/Images");
+            Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name + "/Items");
+            Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name + "/Avatars");
             signupScript.playerInfo.itemsFolder = "Users/" + signupScript.playerInfo.name + "/Items";
             signupScript.playerInfo.imageFolder = "Users/" + signupScript.playerInfo.name + "/Images";
+            signupScript.playerInfo.avatarFolder = "Users/" + signupScript.playerInfo.name + "/Avatars";
         }
         catch (IOException ex)
         {

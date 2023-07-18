@@ -16,6 +16,15 @@ public class ViewProfileScript : MonoBehaviour
 
     #region functions
 
+    #region public-functions
+
+    public void CallUpdate()
+    {
+        UpdateProfile();
+    }
+
+    #endregion
+
     #region private-functions
 
     private bool CheckExtention(String input)
@@ -28,8 +37,17 @@ public class ViewProfileScript : MonoBehaviour
         return true;
     }
 
-    private void Awake()
+    private void ClearScrollView()
     {
+        foreach(Transform child in  photoContainer.transform)
+        {
+            Destroy(child);
+        }
+    }
+
+    private void UpdateProfile()
+    {
+        ClearScrollView();   
         username.text = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].name;
         List<string> imagePaths = new List<string>();
         DirectoryInfo dir = new DirectoryInfo("Assets/Resources/" + UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].imageFolder);
@@ -37,10 +55,9 @@ public class ViewProfileScript : MonoBehaviour
 
         foreach (FileInfo f in info)
         {
-            //imagePaths.Add(f.ToString());
             if (CheckExtention(f.FullName))
             {
-                imagePaths.Add(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].imageFolder + "/" + f.Name.ToString().Substring(0, f.Name.ToString().Length-4));
+                imagePaths.Add(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].imageFolder + "/" + f.Name.ToString().Substring(0, f.Name.ToString().Length - 4));
             }
         }
 
@@ -51,6 +68,11 @@ public class ViewProfileScript : MonoBehaviour
             Debug.Log(imagePath);
             loadedPhoto.sprite = Resources.Load<Sprite>(imagePath);
         }
+    }
+
+    private void Awake()
+    {
+        UpdateProfile();
     }
 
     #endregion

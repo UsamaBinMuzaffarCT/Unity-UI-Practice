@@ -1486,7 +1486,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4833ca2929b6eb74ea85a1a375dcc2de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
 --- !u!1 &2467543509922214220
 GameObject:
   m_ObjectHideFlags: 0
@@ -4157,7 +4156,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3184535640235115719}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9130392495381731940}
+        m_TargetAssemblyTypeName: EditProfileScript, Assembly-CSharp
+        m_MethodName: LoadArdBoardScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8097710231179543240
 GameObject:
   m_ObjectHideFlags: 0

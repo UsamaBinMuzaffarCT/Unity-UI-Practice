@@ -5,6 +5,7 @@ using UnityEngine;
 public class EditProfileScript : MonoBehaviour
 {
     #region variables
+    [SerializeField] private GameObject profileAvatarPrefab;
     #endregion
 
     #region functions
@@ -17,6 +18,11 @@ public class EditProfileScript : MonoBehaviour
     public void Back()
     {
         UI_Manager.instance.Back();
+    }
+
+    public void LoadArdBoardScreen()
+    {
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.S_ArtBoard1);
     }
 
     #endregion

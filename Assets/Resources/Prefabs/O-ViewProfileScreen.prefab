@@ -3954,7 +3954,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5459621847926537257}
         m_TargetAssemblyTypeName: ViewProfileScript, Assembly-CSharp
-        m_MethodName: LoadArtBoardScreen
+        m_MethodName: AddPhoto
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

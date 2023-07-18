@@ -20,9 +20,11 @@ public class UI_Manager : MonoBehaviour
         public string password;
         public string imageFolder;
         public string itemsFolder;
+        public string avatarFolder;
 
         public PlayerInfo() 
         {
+            avatarFolder = "";
             itemsFolder = "";
             imageFolder = "";
             email = "";
@@ -179,6 +181,7 @@ public class UI_Manager : MonoBehaviour
             {
                 return;
             }
+            Destroy(top);
         }
         return;
     }
