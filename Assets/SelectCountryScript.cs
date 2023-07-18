@@ -68,7 +68,20 @@ public class SelectCountryScript : MonoBehaviour
     public void LoadViewProfileScreen()
     {
         UI_Manager.instance.playerInfos.Add(signupScript.playerInfo);
+        try
+        {
+            System.IO.Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name);
+            System.IO.Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name + "/Images");
+            System.IO.Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name + "/Items");
+            signupScript.playerInfo.itemsFolder = "Users/" + signupScript.playerInfo.name + "/Items";
+            signupScript.playerInfo.imageFolder = "Users/" + signupScript.playerInfo.name + "/Images";
+        }
+        catch (IOException ex)
+        {
+            UI_Manager.instance.MakePopup(ex.Message);
+        }
         UI_Manager.instance.UpdateJson();
+        UI_Manager.instance.currentUser = UI_Manager.instance.playerInfos.Count-1;
         UI_Manager.instance.NextScreen(UI_Manager.Screen.O_ViewProfileScreen);
     }
 

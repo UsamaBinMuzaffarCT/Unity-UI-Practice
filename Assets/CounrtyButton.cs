@@ -9,6 +9,7 @@ public class CounrtyButton : MonoBehaviour
 
     [SerializeField] private TMP_Text countryName;
     [SerializeField] private TMP_Text countryCode;
+    private GameObject parentScreen;
 
     #endregion
 

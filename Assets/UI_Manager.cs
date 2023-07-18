@@ -18,13 +18,13 @@ public class UI_Manager : MonoBehaviour
         public string email;
         public string phoneNumber;
         public string password;
-        public List<string> imagesList;
-        public List<string> itemsList;
+        public string imageFolder;
+        public string itemsFolder;
 
         public PlayerInfo() 
         {
-            itemsList = null;
-            imagesList = null;
+            itemsFolder = "";
+            imageFolder = "";
             email = "";
             phoneNumber = "";
             password = "";
@@ -122,7 +122,8 @@ public class UI_Manager : MonoBehaviour
                 return json;
             }
         }
-        else { 
+        else 
+        { 
             return ""; 
         }
     }

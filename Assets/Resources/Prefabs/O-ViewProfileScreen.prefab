@@ -3509,6 +3509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   photo: {fileID: 1771765353890327644, guid: 6fc395d27cc96c648adf3089e73b8a72, type: 3}
   photoContainer: {fileID: 8639106346689326405}
+  username: {fileID: 5287406843311236786}
 --- !u!1 &5494594271951617226
 GameObject:
   m_ObjectHideFlags: 0
@@ -5542,8 +5543,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -42, y: -53}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 78.65137, y: -53}
+  m_SizeDelta: {x: 441.3026, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6576140636834214202
 CanvasRenderer:
@@ -5636,7 +5637,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -74.290924, w: 0}
+  m_margin: {x: 0, y: 0, z: -2.9490051, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Windows;
 
 public class EnterNameScript : MonoBehaviour
 {
@@ -21,6 +23,18 @@ public class EnterNameScript : MonoBehaviour
         signupScript = UI_Manager.instance.signupScript;
     }
 
+    private bool CheckNames()
+    {
+        foreach(UI_Manager.PlayerInfo playerInfo in UI_Manager.instance.playerInfos)
+        {
+            if(playerInfo.name == nameField.text)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
     #endregion
 
     #region public-functions
@@ -32,8 +46,16 @@ public class EnterNameScript : MonoBehaviour
 
     public void LoadSelectCountryScreen()
     {
-        signupScript.playerInfo.name = nameField.text;
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.N_SelectCountryScreen);
+        if(CheckNames())
+        {
+            signupScript.playerInfo.name = nameField.text;
+            UI_Manager.instance.NextScreen(UI_Manager.Screen.N_SelectCountryScreen);
+        }
+        else
+        {
+            UI_Manager.instance.MakePopup("Username Already Exists");
+        }
+
     }
 
     #endregion
