@@ -1575,7 +1575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4833ca2929b6eb74ea85a1a375dcc2de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profileAvatarPrefab: {fileID: 0}
+  namePlaceholder: {fileID: 8501883495532753217}
 --- !u!1 &2467543509922214220
 GameObject:
   m_ObjectHideFlags: 0
