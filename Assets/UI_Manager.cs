@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using System.IO;
 using TMPro;
 using static UnityEditor.Progress;
+using UnityEngine.UI;
 
 public class UI_Manager : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class UI_Manager : MonoBehaviour
         public string imageFolder;
         public string itemsFolder;
         public string avatarFolder;
+        public string currentAvatar;
 
         public PlayerInfo() 
         {
@@ -31,6 +33,7 @@ public class UI_Manager : MonoBehaviour
             phoneNumber = "";
             password = "";
             name = "";
+            currentAvatar = "";
         }
     }
 
@@ -72,6 +75,19 @@ public class UI_Manager : MonoBehaviour
 
     #endregion
 
+    #region delegates
+
+    public delegate void ButtonClickEvent();
+
+    #endregion
+
+    #region events
+
+    public static event ButtonClickEvent OnAvatarButtonClick;
+
+    #endregion
+
+
     #region variables
 
     #region public-variables
@@ -79,6 +95,7 @@ public class UI_Manager : MonoBehaviour
     public static UI_Manager instance { get; private set; }
     public List<PlayerInfo> playerInfos;
     public SignupScript signupScript;
+    public Image currentAvatar;
     public int currentUser;
 
     #endregion
@@ -231,6 +248,14 @@ public class UI_Manager : MonoBehaviour
     #endregion
 
     #region public-functions
+
+    public static void RaiseButtonClickEvent()
+    {
+        if (OnAvatarButtonClick != null)
+        {
+            OnAvatarButtonClick.Invoke();
+        }
+    }
 
     public void UpdateJson()
     {

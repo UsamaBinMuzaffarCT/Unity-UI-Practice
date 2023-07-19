@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using Newtonsoft.Json;
 using System.IO;
 using System;
+using System.Globalization;
+using UnityEditor;
 
 public class SelectCountryScript : MonoBehaviour
 {
@@ -27,12 +29,26 @@ public class SelectCountryScript : MonoBehaviour
     [SerializeField] private GameObject scrollViewContent;
     [SerializeField] private SignupScript signupScript;
     [SerializeField] private Button cancelButton;
+    [SerializeField] private Image defaultAvatar;
 
     #endregion
 
     #region functions
 
     #region private-functions
+
+    private void CopyDefaultAvatar(string sourceFilePath, string destinationFilePath)
+    {
+        if (File.Exists(sourceFilePath))
+        {
+            File.Copy(sourceFilePath, destinationFilePath, true);
+            Debug.Log("Image copied successfully!");
+        }
+        else
+        {
+            Debug.LogError("Source image file does not exist!");
+        }
+    }
 
     private void Awake()
     {
@@ -65,6 +81,8 @@ public class SelectCountryScript : MonoBehaviour
         UI_Manager.instance.Back();
     }
 
+
+
     public void LoadViewProfileScreen()
     {
         UI_Manager.instance.playerInfos.Add(signupScript.playerInfo);
@@ -77,6 +95,8 @@ public class SelectCountryScript : MonoBehaviour
             signupScript.playerInfo.itemsFolder = "Users/" + signupScript.playerInfo.name + "/Items";
             signupScript.playerInfo.imageFolder = "Users/" + signupScript.playerInfo.name + "/Images";
             signupScript.playerInfo.avatarFolder = "Users/" + signupScript.playerInfo.name + "/Avatars";
+            CopyDefaultAvatar("Assets/Sprites/character.png","Assets/Resources/"+signupScript.playerInfo.avatarFolder+ "/character.png");
+            signupScript.playerInfo.currentAvatar = signupScript.playerInfo.avatarFolder + "/character";
         }
         catch (IOException ex)
         {
@@ -84,11 +104,17 @@ public class SelectCountryScript : MonoBehaviour
         }
         UI_Manager.instance.UpdateJson();
         UI_Manager.instance.currentUser = UI_Manager.instance.playerInfos.Count-1;
+        UI_Manager.instance.MakeLoader();
+        AssetDatabase.Refresh();
         UI_Manager.instance.NextScreen(UI_Manager.Screen.O_ViewProfileScreen);
     }
 
     #endregion
 
+    #region Coroutines
+
+
+    #endregion
 
     #endregion
 }

@@ -3858,6 +3858,7 @@ GameObject:
   - component: {fileID: 8454716718355614020}
   - component: {fileID: 1711275563550295484}
   - component: {fileID: 3616748101433918615}
+  - component: {fileID: 796241686695412777}
   m_Layer: 5
   m_Name: Image-Character
   m_TagString: Untagged
@@ -3915,7 +3916,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 058f8bdb9f97e5540bbabad64d447579, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -3923,6 +3924,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &796241686695412777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7318364630300267856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ccc6cbed236fb439dc9029e2ea2ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7458041804651485838
 GameObject:
   m_ObjectHideFlags: 0
@@ -4458,7 +4471,7 @@ MonoBehaviour:
   colorPalette: {fileID: 2488628197181985983, guid: ad3227d086fc15f4f83ff165cf9113f4, type: 3}
   colorContentZone: {fileID: 6667838505909277192}
   centerColor: {r: 0.2264151, g: 0.093519285, b: 0, a: 0}
-  numColors: 24
+  numColors: 50
   colors: []
 --- !u!1 &8710652525395052905
 GameObject:

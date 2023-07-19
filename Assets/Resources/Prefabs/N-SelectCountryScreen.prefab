@@ -3617,6 +3617,7 @@ MonoBehaviour:
   scrollViewContent: {fileID: 4444655479811034886}
   signupScript: {fileID: 5088876118367496680, guid: b5062177aad02cd48a0c9bd9d8ae8703, type: 3}
   cancelButton: {fileID: 802554898036422776}
+  defaultAvatar: {fileID: 3913706347442460561, guid: 430c281b35a1d0540bd2c56347971634, type: 3}
 --- !u!1 &2527207150434338731
 GameObject:
   m_ObjectHideFlags: 0
