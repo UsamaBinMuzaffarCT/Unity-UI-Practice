@@ -35,6 +35,11 @@ public class EnterNameScript : MonoBehaviour
         return true;
     }
 
+    private void ClearInputFields()
+    {
+        nameField.text = string.Empty;
+    }
+
     #endregion
 
     #region public-functions
@@ -50,6 +55,7 @@ public class EnterNameScript : MonoBehaviour
         {
             signupScript.playerInfo.name = nameField.text;
             UI_Manager.instance.NextScreen(UI_Manager.Screen.N_SelectCountryScreen);
+            ClearInputFields();
         }
         else
         {

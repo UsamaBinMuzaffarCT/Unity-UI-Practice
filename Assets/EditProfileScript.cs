@@ -27,6 +27,12 @@ public class EditProfileScript : MonoBehaviour
         UI_Manager.instance.Back();
     }
 
+    public void LoadViewProfileScreen()
+    {
+
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.O_ViewProfileScreen,true);
+    }
+
     public void LoadArdBoardScreen()
     {
         UI_Manager.instance.NextScreen(UI_Manager.Screen.S_ArtBoard1);

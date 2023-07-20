@@ -105,6 +105,7 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private GameObject popup;
     [SerializeField] private ScreenScriptableObject screens;
     [SerializeField] private Canvas canvas;
+    [SerializeField] private Canvas popupCanvas;
     private GameObject currentScreen;
 
     #endregion
@@ -240,7 +241,7 @@ public class UI_Manager : MonoBehaviour
         {
             if(child.tag == "popup")
             {
-                Destroy(child.gameObject);
+                child.gameObject.SetActive(false);
             }
         }
     }
@@ -269,10 +270,16 @@ public class UI_Manager : MonoBehaviour
 
     public void MakePopup(string text)
     {
-        GameObject instantiated = Instantiate(popup);
-        instantiated.transform.SetParent(canvas.transform, false);
-        popup.GetComponent<TMP_Text>().text = text;
-        Invoke(nameof(HidePopup), 2);
+        foreach (Transform child in canvas.transform)
+        {
+            if (child.tag == "popup")
+            {
+                child.transform.SetAsLastSibling();
+                child.GetComponent<TMP_Text>().text = text;
+                child.gameObject.SetActive(true);
+                Invoke(nameof(HidePopup), 2);
+            }
+        }
     }
 
     public void MakeLoader()
@@ -281,7 +288,7 @@ public class UI_Manager : MonoBehaviour
         loadingScreen.transform.SetParent(canvas.transform, false);
     }
 
-    public void Back()
+    public void Back(bool add = true)
     {
         currentScreen.SetActive(false);
         currentScreen = PopFromStack();
@@ -290,7 +297,7 @@ public class UI_Manager : MonoBehaviour
 
     }
 
-    public void NextScreen(Screen screen, bool clear=false, bool logout=false)
+    public void NextScreen(Screen screen, bool clear=false, bool add=true)
     {
         GameObject nextScreen = screens.Screens.Find(x => x.screen == screen).prefab;
         bool isPresent = false;
@@ -310,7 +317,10 @@ public class UI_Manager : MonoBehaviour
                 currentScreen.SetActive(false);
                 if (!clear)
                 {
-                    PushToStack(currentScreen);
+                    if (add)
+                    {
+                        PushToStack(currentScreen);
+                    }
                 }
                 child.gameObject.SetActive(true);
                 currentScreen = child.gameObject;
@@ -327,7 +337,10 @@ public class UI_Manager : MonoBehaviour
             currentScreen.SetActive(false);
             if (!clear)
             {
-                PushToStack(currentScreen);
+                if (add)
+                {
+                    PushToStack(currentScreen);
+                }
             }
             currentScreen = loadedScreen;
             if (backStack.Count > 2)
