@@ -95,8 +95,8 @@ public class SelectCountryScript : MonoBehaviour
             signupScript.playerInfo.itemsFolder = "Users/" + signupScript.playerInfo.name + "/Items";
             signupScript.playerInfo.imageFolder = "Users/" + signupScript.playerInfo.name + "/Images";
             signupScript.playerInfo.avatarFolder = "Users/" + signupScript.playerInfo.name + "/Avatars";
-            CopyDefaultAvatar("Assets/Sprites/character.png","Assets/Resources/"+signupScript.playerInfo.avatarFolder+ "/character.png");
-            signupScript.playerInfo.currentAvatar = signupScript.playerInfo.avatarFolder + "/character";
+            CopyDefaultAvatar("Assets/RenderTextures/Avatar1View.renderTexture", "Assets/Resources/"+signupScript.playerInfo.avatarFolder+ "/Avatar1View.renderTexture");
+            signupScript.playerInfo.currentAvatar = signupScript.playerInfo.avatarFolder + "/Avatar1View";
         }
         catch (IOException ex)
         {

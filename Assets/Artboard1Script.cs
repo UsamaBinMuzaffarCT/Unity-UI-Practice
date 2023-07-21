@@ -45,7 +45,7 @@ public class Artboard1Script : MonoBehaviour
         {
             if (CheckExtention(f.FullName))
             {
-                avatarPaths.Add(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].avatarFolder + "/" + f.Name.ToString().Substring(0, f.Name.ToString().Length - 4));
+                avatarPaths.Add(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].avatarFolder + "/" + f.Name.ToString().Substring(0, f.Name.ToString().Length - 14));
             }
         }
 
@@ -53,7 +53,7 @@ public class Artboard1Script : MonoBehaviour
         {
             Image loadedPhoto = Instantiate(photo);
             loadedPhoto.transform.SetParent(photoContainer.transform);
-            loadedPhoto.sprite = Resources.Load<Sprite>(avatarPath);
+            loadedPhoto.GetComponentInChildren<RawImage>().texture = Resources.Load<Texture>(avatarPath);
             loadedPhoto.gameObject.transform.GetComponent<Button>().onClick.AddListener(() => UpdateCurrentAssetPath(loadedPhoto.sprite.name));
         }
     }
