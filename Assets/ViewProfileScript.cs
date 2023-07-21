@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+//using NativeGalleryNamespace;
 
 public class ViewProfileScript : MonoBehaviour
 {
@@ -41,14 +43,12 @@ public class ViewProfileScript : MonoBehaviour
     {
         foreach(Transform child in  photoContainer.transform)
         {
-            Destroy(child);
+            Destroy(child.gameObject);
         }
     }
 
-    private void UpdateProfile()
+    private List<string> GetImagePaths()
     {
-        ClearScrollView();   
-        username.text = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].name;
         List<string> imagePaths = new List<string>();
         DirectoryInfo dir = new DirectoryInfo("Assets/Resources/" + UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].imageFolder);
         FileInfo[] info = dir.GetFiles("*.*");
@@ -60,7 +60,15 @@ public class ViewProfileScript : MonoBehaviour
                 imagePaths.Add(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].imageFolder + "/" + f.Name.ToString().Substring(0, f.Name.ToString().Length - 4));
             }
         }
+        return imagePaths;
+    }
 
+    private void UpdateProfile()
+    {
+        AssetDatabase.Refresh();
+        ClearScrollView();   
+        username.text = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].name;
+        List<string> imagePaths = GetImagePaths();
         foreach (string imagePath in imagePaths)
         {
             Image loadedPhoto = Instantiate(photo);
@@ -73,6 +81,19 @@ public class ViewProfileScript : MonoBehaviour
     private void Awake()
     {
         UpdateProfile();
+    }
+
+    private void CopyFile(string sourceFilePath, string destinationFilePath)
+    {
+        if (File.Exists(sourceFilePath))
+        {
+            File.Copy(sourceFilePath, destinationFilePath, true);
+            Debug.Log("Image copied successfully!");
+        }
+        else
+        {
+            Debug.LogError("Source image file does not exist!");
+        }
     }
 
     #endregion
@@ -100,7 +121,14 @@ public class ViewProfileScript : MonoBehaviour
 
     public void AddPhoto()
     {
-        Instantiate(photo).transform.SetParent(photoContainer.transform);
+        string getPath = "";
+        NativeGallery.Permission permission = NativeGallery.GetImageFromGallery((path) =>
+        {
+            getPath = path;
+        }, "Add New Photo", mime: "image/*");
+        List<string> imagePaths = GetImagePaths();
+        CopyFile(getPath,"Assets\\Resources\\"+ UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].imageFolder+"\\image"+imagePaths.Count.ToString()+ Path.GetExtension(getPath));
+        UpdateProfile();   
     }
 
     #endregion

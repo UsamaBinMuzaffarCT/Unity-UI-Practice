@@ -148,6 +148,7 @@ public class UI_Manager : MonoBehaviour
         }
     }
 
+    // make init function
     private void Awake()
     {
         currentUser = -1;
@@ -164,6 +165,7 @@ public class UI_Manager : MonoBehaviour
         }
     }
 
+    // make starting UI function
     void Start()
     {
        GameObject loadedScreen = Instantiate(screens.Screens.Find(x=>x.screen==Screen.I_LogoScreen).prefab);
@@ -171,6 +173,8 @@ public class UI_Manager : MonoBehaviour
        currentScreen = loadedScreen;
        Invoke("GoToLogin", 3f);
     }
+
+    // Naming convention for loading
     private void GoToLogin()
     {
         GameObject loadedScreen = Instantiate(screens.Screens.Find(x => x.screen == Screen.B_WannaLoginScreen).prefab);
@@ -209,6 +213,7 @@ public class UI_Manager : MonoBehaviour
         backStack.Clear();
     }
 
+    // Rename to RemoveCloneFromName
     private string CloneName(GameObject obj)
     {
         string name = obj.transform.name;
