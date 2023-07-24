@@ -6,12 +6,19 @@ using UnityEngine.UI;
 public class ChangeAvatar : MonoBehaviour
 {
 
+    #region variables
+
+    private RawImage rawImage;
+
+    #endregion
 
     #region functions
 
     private void Awake()
     {
+        rawImage = GetComponent<RawImage>();
         UpdateAvatar();
+
         UI_Manager.OnAvatarButtonClick += UpdateAvatar;
     }
 
@@ -22,7 +29,7 @@ public class ChangeAvatar : MonoBehaviour
 
     public void UpdateAvatar()
     {
-        GetComponent<RawImage>().texture = Resources.Load<Texture>("RenderTextures/" + UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatar);
+        rawImage.texture = Resources.Load<Texture>("RenderTextures/" + UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatar);
     }
     
     #endregion

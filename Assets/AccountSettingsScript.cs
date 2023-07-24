@@ -26,7 +26,6 @@ public class AccountSettingsScript : MonoBehaviour
 
     public void LoadOldNewPasswordScreen()
     {
-        UI_Manager.instance.currentUser = -1;
         UI_Manager.instance.NextScreen(UI_Manager.Screen.M_OldNewPassScreen);
     }
 

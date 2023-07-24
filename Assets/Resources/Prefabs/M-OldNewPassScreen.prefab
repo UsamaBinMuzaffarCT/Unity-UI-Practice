@@ -403,9 +403,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74fb0c70488113b48a64467e1b03c4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loginPrefab: {fileID: 7358531185751211617, guid: a449729fba5477049b648534cc9e00d2, type: 3}
-  forgotPasswordPrefab: {fileID: 5342429312933001634, guid: a9dda55874588c8479a3bbc933518466, type: 3}
-  manager: {fileID: 0}
+  oldPassword: {fileID: 2626064685061239483}
+  newPassword: {fileID: 5902351683393998976}
+  confirmNewPassword: {fileID: 8209024717968287241}
 --- !u!1 &1911486803105552965
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,7 +959,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1328,7 +1328,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -3217,7 +3217,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
