@@ -1,12 +1,11 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
 using System.IO;
 using TMPro;
-using static UnityEditor.Progress;
 using UnityEngine.UI;
+using UnityEditor;
 
 public class UI_Manager : MonoBehaviour
 {
@@ -122,6 +121,54 @@ public class UI_Manager : MonoBehaviour
 
     #region private-functions
 
+    private bool CheckExtention(String input)
+    {
+        String result = input.Substring(input.Length - 4);
+        if (result == "meta")
+        {
+            return false;
+        }
+        return true;
+    }
+
+    private void CreateAvatarPNGs(RenderTexture renderTexture, string path)
+    {
+        RenderTexture.active = renderTexture;
+        Texture2D texture = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.ARGB32, false);
+        texture.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
+        var bytes = texture.EncodeToPNG();
+        File.WriteAllBytes(path + "/" + renderTexture.name + ".png", bytes);
+    }
+
+    private void CreateAllAvatarViews()
+    {
+        List<string> avatarPaths = new List<string>();
+        DirectoryInfo dir = new DirectoryInfo("Assets/Resources/RenderTextures");
+        FileInfo[] info = dir.GetFiles("*.*");
+
+        foreach (FileInfo f in info)
+        {
+            if (CheckExtention(f.FullName))
+            {
+                avatarPaths.Add("RenderTextures/" + f.Name.ToString().Substring(0, f.Name.ToString().Length - 14));
+            }
+        }
+
+        foreach(string path in avatarPaths)
+        {
+            RenderTexture renderTexture = Resources.Load<RenderTexture>(path);
+            if (renderTexture != null)
+            {
+                if (!File.Exists("Assets/Resources/Test/" + renderTexture.name + ".png"))
+                {
+                    CreateAvatarPNGs(renderTexture, "Assets/Resources/Test");
+                }
+            }
+            //DestroyImmediate(renderTexture);
+        }
+        AssetDatabase.Refresh();
+    }
+
     private void WriteJSON(string path, List<PlayerInfo>playerInfos)
     {
         string json = JsonConvert.SerializeObject(playerInfos);
@@ -151,6 +198,7 @@ public class UI_Manager : MonoBehaviour
     // make init function
     private void Awake()
     {
+
         currentUser = -1;
         string readJSON = ReadJSON("Assets/JSON/save.json");
         playerInfos = JsonConvert.DeserializeObject<List<PlayerInfo>>(readJSON);
@@ -181,6 +229,7 @@ public class UI_Manager : MonoBehaviour
         loadedScreen.transform.SetParent(canvas.transform, false);
         currentScreen.SetActive(false);
         currentScreen = loadedScreen;
+        CreateAllAvatarViews();
     }
 
     private void PushToStack(GameObject stackScreen)

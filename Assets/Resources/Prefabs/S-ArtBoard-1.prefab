@@ -902,7 +902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd2ae3f24903c0d429cd5bc61dcc1bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  photo: {fileID: 5445884964098971317, guid: a3a0b115757e2ea4791acfd429222502, type: 3}
+  photo: {fileID: 9219736826734154417, guid: 5ec1e8ea1d183f641b698bdf27e27152, type: 3}
   photoContainer: {fileID: 6522102061488134511}
 --- !u!1 &3499619587741500705
 GameObject:
@@ -915,6 +915,7 @@ GameObject:
   - component: {fileID: 5481799721585644860}
   - component: {fileID: 3995206849178793332}
   - component: {fileID: 8059566064890574608}
+  - component: {fileID: 4935307163318501718}
   m_Layer: 5
   m_Name: RawImage
   m_TagString: Untagged
@@ -977,6 +978,18 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &4935307163318501718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3499619587741500705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ccc6cbed236fb439dc9029e2ea2ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4397233726192223616
 GameObject:
   m_ObjectHideFlags: 0

@@ -45,7 +45,7 @@ public class Artboard1Script : MonoBehaviour
         {
             if (CheckExtention(f.FullName))
             {
-                avatarPaths.Add(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].avatarFolder + "/" + f.Name.ToString().Substring(0, f.Name.ToString().Length - 14));
+                avatarPaths.Add(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].avatarFolder + "/" + f.Name.ToString().Substring(0, f.Name.ToString().Length - 4));
             }
         }
 
@@ -53,16 +53,16 @@ public class Artboard1Script : MonoBehaviour
         {
             Image loadedPhoto = Instantiate(photo);
             loadedPhoto.transform.SetParent(photoContainer.transform);
-            loadedPhoto.GetComponentInChildren<RawImage>().texture = Resources.Load<Texture>(avatarPath);
-            loadedPhoto.gameObject.transform.GetComponent<Button>().onClick.AddListener(() => UpdateCurrentAssetPath(loadedPhoto.GetComponentInChildren<RawImage>().texture.name));
+            loadedPhoto.sprite = Resources.Load<Sprite>(avatarPath);
+            loadedPhoto.gameObject.transform.GetComponent<Button>().onClick.AddListener(() => UpdateCurrentAssetPath(loadedPhoto.sprite.name));
         }
     }
 
     private void UpdateCurrentAssetPath(string name)
     {
-        string path = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].avatarFolder;
-        path = path + "/" + name;
-        UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatar = path;
+        //string path = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].avatarFolder;
+        //path = path + "/" + name;
+        UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatar = name;
         UI_Manager.RaiseButtonClickEvent();
     }
 

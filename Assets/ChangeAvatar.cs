@@ -22,7 +22,7 @@ public class ChangeAvatar : MonoBehaviour
 
     public void UpdateAvatar()
     {
-        GetComponent<RawImage>().texture = Resources.Load<Texture>(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatar);
+        GetComponent<RawImage>().texture = Resources.Load<Texture>("RenderTextures/" + UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatar);
     }
     
     #endregion

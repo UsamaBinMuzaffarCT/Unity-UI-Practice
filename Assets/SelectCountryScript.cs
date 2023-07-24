@@ -37,17 +37,13 @@ public class SelectCountryScript : MonoBehaviour
 
     #region private-functions
 
-    private void CopyDefaultAvatar(string sourceFilePath, string destinationFilePath)
+    private void CopyDefaultAvatar(RenderTexture renderTexture, string path)
     {
-        if (File.Exists(sourceFilePath))
-        {
-            File.Copy(sourceFilePath, destinationFilePath, true);
-            Debug.Log("Image copied successfully!");
-        }
-        else
-        {
-            Debug.LogError("Source image file does not exist!");
-        }
+        RenderTexture.active = renderTexture;
+        Texture2D texture = new Texture2D(renderTexture.width,renderTexture.height, TextureFormat.ARGB32,false);
+        texture.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height),0,0);
+        var bytes = texture.EncodeToPNG();
+        File.WriteAllBytes(path+"/"+renderTexture.name+".png", bytes);
     }
 
     private void Awake()
@@ -95,8 +91,9 @@ public class SelectCountryScript : MonoBehaviour
             signupScript.playerInfo.itemsFolder = "Users/" + signupScript.playerInfo.name + "/Items";
             signupScript.playerInfo.imageFolder = "Users/" + signupScript.playerInfo.name + "/Images";
             signupScript.playerInfo.avatarFolder = "Users/" + signupScript.playerInfo.name + "/Avatars";
-            CopyDefaultAvatar("Assets/RenderTextures/Avatar1View.renderTexture", "Assets/Resources/"+signupScript.playerInfo.avatarFolder+ "/Avatar1View.renderTexture");
-            signupScript.playerInfo.currentAvatar = signupScript.playerInfo.avatarFolder + "/Avatar1View";
+            RenderTexture renderTexture = Resources.Load<RenderTexture>("RenderTextures/Avatar1View");
+            CopyDefaultAvatar(renderTexture, "Assets/Resources/"+signupScript.playerInfo.avatarFolder);
+            signupScript.playerInfo.currentAvatar = "Avatar1View";
         }
         catch (IOException ex)
         {
