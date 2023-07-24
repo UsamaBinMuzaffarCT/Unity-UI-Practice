@@ -54,7 +54,7 @@ public class Artboard1Script : MonoBehaviour
             Image loadedPhoto = Instantiate(photo);
             loadedPhoto.transform.SetParent(photoContainer.transform);
             loadedPhoto.GetComponentInChildren<RawImage>().texture = Resources.Load<Texture>(avatarPath);
-            loadedPhoto.gameObject.transform.GetComponent<Button>().onClick.AddListener(() => UpdateCurrentAssetPath(loadedPhoto.sprite.name));
+            loadedPhoto.gameObject.transform.GetComponent<Button>().onClick.AddListener(() => UpdateCurrentAssetPath(loadedPhoto.GetComponentInChildren<RawImage>().texture.name));
         }
     }
 
