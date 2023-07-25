@@ -28,6 +28,7 @@ public class ViewProfileScript : MonoBehaviour
     // Unity Functions
     private void Awake()
     {
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.CameraPositionNames.Front);
         imagesFolderPath = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].imageFolder;
     }
 
