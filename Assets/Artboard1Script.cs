@@ -16,6 +16,15 @@ public class Artboard1Script : MonoBehaviour
 
     #region private-functions
 
+    //Unity Functions
+
+    private void Start()
+    {
+        PopulateScrollView();
+    }
+
+    //Non-Unity Functions
+
     private bool CheckExtention(String input)
     {
         String result = input.Substring(input.Length - 4);
@@ -34,13 +43,11 @@ public class Artboard1Script : MonoBehaviour
         }
     }
 
-    private void UpdateProfile()
+    private List<string> GetButtonSpritePaths()
     {
-        ClearScrollView();
         List<string> avatarPaths = new List<string>();
         DirectoryInfo dir = new DirectoryInfo("Assets/Resources/" + UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].avatarFolder);
         FileInfo[] info = dir.GetFiles("*.*");
-
         foreach (FileInfo f in info)
         {
             if (CheckExtention(f.FullName))
@@ -48,7 +55,13 @@ public class Artboard1Script : MonoBehaviour
                 avatarPaths.Add(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].avatarFolder + "/" + f.Name.ToString().Substring(0, f.Name.ToString().Length - 4));
             }
         }
+        return avatarPaths;
+    }
 
+    private void PopulateScrollView()
+    {
+        ClearScrollView();
+        List<string> avatarPaths = GetButtonSpritePaths();
         foreach (string avatarPath in avatarPaths)
         {
             Image loadedPhoto = Instantiate(photo);
@@ -61,12 +74,7 @@ public class Artboard1Script : MonoBehaviour
     private void UpdateCurrentAssetPath(string name)
     {
         UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatar = name;
-        UI_Manager.RaiseButtonClickEvent();
-    }
-
-    private void Start()
-    {
-        UpdateProfile();
+        UI_Manager.TriggerAvatarButtonEvent();
     }
 
     #endregion

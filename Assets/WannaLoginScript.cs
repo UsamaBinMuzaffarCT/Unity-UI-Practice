@@ -10,7 +10,7 @@ public class WannaLoginScript : MonoBehaviour
 
     #region functions
 
-    public void LoadLoginScreen()
+    public void LoadWannaLoginScreen()
     {
         UI_Manager.instance.NextScreen(UI_Manager.Screen.LoginScreen);
     }

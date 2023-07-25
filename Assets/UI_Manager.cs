@@ -121,6 +121,41 @@ public class UI_Manager : MonoBehaviour
 
     #region private-functions
 
+    // Unity Functions
+    private void Awake()
+    {
+        Initializations();
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+    void Start()
+    {
+        LoadLogoScreen();
+    }
+
+    // Non-Unity Functions
+
+    private void Initializations()
+    {
+        currentUser = -1;
+        string readJSON = ReadJSON("Assets/JSON/save.json");
+        playerInfos = JsonConvert.DeserializeObject<List<PlayerInfo>>(readJSON);
+    }
+
+    private void LoadLogoScreen()
+    {
+        GameObject loadedScreen = Instantiate(screens.Screens.Find(x => x.screen == Screen.LogoScreen).prefab);
+        loadedScreen.transform.SetParent(canvas.transform, false);
+        currentScreen = loadedScreen;
+        Invoke("LoadWannaLoginScreen", 3f);
+    }
+
     private bool CheckExtention(String input)
     {
         String result = input.Substring(input.Length - 4);
@@ -164,7 +199,6 @@ public class UI_Manager : MonoBehaviour
                     CreateAvatarPNGs(renderTexture, "Assets/Resources/Test");
                 }
             }
-            //DestroyImmediate(renderTexture);
         }
         AssetDatabase.Refresh();
     }
@@ -196,34 +230,9 @@ public class UI_Manager : MonoBehaviour
     }
 
     // make init function
-    private void Awake()
-    {
+    
 
-        currentUser = -1;
-        string readJSON = ReadJSON("Assets/JSON/save.json");
-        playerInfos = JsonConvert.DeserializeObject<List<PlayerInfo>>(readJSON);
-        Debug.Log(playerInfos.Count);
-        if (instance != null && instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            instance = this;
-        }
-    }
-
-    // make starting UI function
-    void Start()
-    {
-       GameObject loadedScreen = Instantiate(screens.Screens.Find(x=>x.screen==Screen.LogoScreen).prefab);
-       loadedScreen.transform.SetParent(canvas.transform, false);
-       currentScreen = loadedScreen;
-       Invoke("GoToLogin", 3f);
-    }
-
-    // Naming convention for loading
-    private void GoToLogin()
+    private void LoadWannaLoginScreen()
     {
         GameObject loadedScreen = Instantiate(screens.Screens.Find(x => x.screen == Screen.WannaLoginScreen).prefab);
         loadedScreen.transform.SetParent(canvas.transform, false);
@@ -248,7 +257,7 @@ public class UI_Manager : MonoBehaviour
         while(backStack.Count > 0)
         {
             GameObject top = PopFromStack();
-            if (screen.transform.name == CloneName(top))
+            if (screen.transform.name == RemoveCloneFromName(top))
             {
                 return;
             }
@@ -262,8 +271,7 @@ public class UI_Manager : MonoBehaviour
         backStack.Clear();
     }
 
-    // Rename to RemoveCloneFromName
-    private string CloneName(GameObject obj)
+    private string RemoveCloneFromName(GameObject obj)
     {
         string name = obj.transform.name;
         string obj_name = "";
@@ -278,7 +286,7 @@ public class UI_Manager : MonoBehaviour
     {
         GameObject prevScreen = backStack.Pop();
         GameObject prevprevScreen = backStack.Pop();
-        if( CloneName(prevScreen) == CloneName(backStack.Peek())) 
+        if( RemoveCloneFromName(prevScreen) == RemoveCloneFromName(backStack.Peek())) 
         {
             return;
         }
@@ -304,7 +312,7 @@ public class UI_Manager : MonoBehaviour
 
     #region public-functions
 
-    public static void RaiseButtonClickEvent()
+    public static void TriggerAvatarButtonEvent()
     {
         OnAvatarButtonClick?.Invoke();
     }
@@ -339,7 +347,7 @@ public class UI_Manager : MonoBehaviour
         loadingScreen.transform.SetParent(canvas.transform, false);
     }
 
-    public void Back(bool add = true)
+    public void Back()
     {
         currentScreen.SetActive(false);
         currentScreen = PopFromStack();
@@ -362,7 +370,7 @@ public class UI_Manager : MonoBehaviour
             {
                 Destroy(child.gameObject);
             }
-            if(CloneName(child.gameObject) == nextScreen.transform.name)
+            if(RemoveCloneFromName(child.gameObject) == nextScreen.transform.name)
             {
                 isPresent = true;
                 currentScreen.SetActive(false);
@@ -398,7 +406,7 @@ public class UI_Manager : MonoBehaviour
             {
                 CheckPrevious();
             }
-            if(CloneName(loadedScreen) == "D-SignUpScreen")
+            if(RemoveCloneFromName(loadedScreen) == "D-SignUpScreen")
             {
                 signupScript = loadedScreen.GetComponent<SignupScript>();
             }

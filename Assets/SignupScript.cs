@@ -58,7 +58,7 @@ public class SignupScript : MonoBehaviour
         playerInfo = CreateNewPlayer();
         UI_Manager.instance.NextScreen(UI_Manager.Screen.EnterEmailScreen);
     }
-    public void LoadLoginScreen()
+    public void LoadWannaLoginScreen()
     {
         UI_Manager.instance.NextScreen(UI_Manager.Screen.LoginScreen);
     }

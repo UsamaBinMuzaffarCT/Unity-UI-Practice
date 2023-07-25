@@ -31,7 +31,7 @@ public class ConfirmPasswordScript : MonoBehaviour
         UI_Manager.instance.Back();
     }
 
-    public void LoadLoginScreen()
+    public void LoadWannaLoginScreen()
     {
         if(newPassword.text == confirmPassword.text)
         {
