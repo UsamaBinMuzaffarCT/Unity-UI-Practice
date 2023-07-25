@@ -10,7 +10,7 @@ public class ConfirmPasswordScript : MonoBehaviour
     [SerializeField] TMP_Text username;
     [SerializeField] TMP_InputField newPassword;
     [SerializeField] TMP_InputField confirmPassword;
-
+    
     #endregion
 
     #region functions

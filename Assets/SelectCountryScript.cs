@@ -1,11 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Newtonsoft.Json;
 using System.IO;
 using System;
-using System.Globalization;
 using UnityEditor;
 
 public class SelectCountryScript : MonoBehaviour
@@ -89,17 +87,14 @@ public class SelectCountryScript : MonoBehaviour
         Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name);
         Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name + "/Images");
         Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name + "/Items");
-        Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name + "/Avatars");
     }
 
     private void AddPathsToLocalPlayerInfo()
     {
         signupScript.playerInfo.itemsFolder = "Users/" + signupScript.playerInfo.name + "/Items";
         signupScript.playerInfo.imageFolder = "Users/" + signupScript.playerInfo.name + "/Images";
-        signupScript.playerInfo.avatarFolder = "Users/" + signupScript.playerInfo.name + "/Avatars";
-        RenderTexture renderTexture = Resources.Load<RenderTexture>("RenderTextures/Avatar1View");
-        CopyDefaultAvatar(renderTexture, "Assets/Resources/" + signupScript.playerInfo.avatarFolder);
-        signupScript.playerInfo.currentAvatar = "Avatar1View";
+        signupScript.playerInfo.avatarIDs.Add(0);
+        signupScript.playerInfo.currentAvatarID = 0;
     }
 
     private void UpdatePlayerInfos()

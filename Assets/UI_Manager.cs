@@ -20,19 +20,19 @@ public class UI_Manager : MonoBehaviour
         public string password;
         public string imageFolder;
         public string itemsFolder;
-        public string avatarFolder;
-        public string currentAvatar;
+        public List<int> avatarIDs;
+        public int currentAvatarID;
 
         public PlayerInfo() 
         {
-            avatarFolder = "";
+            avatarIDs = new List<int>();
             itemsFolder = "";
             imageFolder = "";
             email = "";
             phoneNumber = "";
             password = "";
             name = "";
-            currentAvatar = "";
+            currentAvatarID = 0;
         }
     }
 

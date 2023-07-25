@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
@@ -13,7 +12,8 @@ public class SettingsScript : MonoBehaviour
     [SerializeField] Image photo;
     [SerializeField] GameObject photoContainer;
     [SerializeField] TMP_Text username;
-    
+    private UI_Manager.PlayerInfo playerInfo;
+
     #endregion
 
     #region functions
@@ -24,6 +24,7 @@ public class SettingsScript : MonoBehaviour
 
     private void Awake()
     {
+        playerInfo = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser];
         ClearScrollView();
         username.text = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].name;
         PopulateImages();
@@ -47,14 +48,14 @@ public class SettingsScript : MonoBehaviour
     private List<string> GetImagePaths()
     {
         List<string> imagePaths = new List<string>();
-        DirectoryInfo dir = new DirectoryInfo("Assets/Resources/" + UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].imageFolder);
+        DirectoryInfo dir = new DirectoryInfo("Assets/Resources/" + playerInfo.imageFolder);
         FileInfo[] info = dir.GetFiles("*.*");
 
         foreach (FileInfo f in info)
         {
             if (CheckExtention(f.FullName))
             {
-                imagePaths.Add(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].imageFolder + "/" + f.Name.ToString().Substring(0, f.Name.ToString().Length - 4));
+                imagePaths.Add(playerInfo.imageFolder + "/" + f.Name.ToString().Substring(0, f.Name.ToString().Length - 4));
             }
         }
         return imagePaths;

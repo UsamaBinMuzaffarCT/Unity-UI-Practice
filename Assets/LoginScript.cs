@@ -7,27 +7,48 @@ using UnityEngine.UI;
 public class LoginScript : MonoBehaviour
 {
     #region variables
+
+    #region public-variables
+    
     public string email;
+
+    #endregion
+
+    #region private-variables
+
     [SerializeField] private TMP_InputField phoneOrEmail;
     [SerializeField] private TMP_InputField password;
+    private List<UI_Manager.PlayerInfo> playerInfos;
+
+    #endregion
+
     #endregion
 
     #region functions
+
     #region private-functions
 
-    #endregion
+    // Unity Functions
+
+    private void Awake()
+    {
+        playerInfos = UI_Manager.instance.playerInfos;
+    }
+
+    // Non-Unity Functions
 
     private bool CheckLogin()
     {
-        if(!(UI_Manager.instance.playerInfos.Count == 0))
+        playerInfos = UI_Manager.instance.playerInfos;
+        if (!(playerInfos.Count == 0))
         {
-            for(int i = 0; i < UI_Manager.instance.playerInfos.Count; i++)
+            for (int i = 0; i < playerInfos.Count; i++)
             {
-                if (phoneOrEmail.text == UI_Manager.instance.playerInfos[i].phoneNumber || 
-                    phoneOrEmail.text == UI_Manager.instance.playerInfos[i].email)
+                if (phoneOrEmail.text == playerInfos[i].phoneNumber ||
+                    phoneOrEmail.text == playerInfos[i].email)
                 {
 
-                    if (password.text == UI_Manager.instance.playerInfos[i].password)
+                    if (password.text == playerInfos[i].password)
                     {
                         UI_Manager.instance.currentUser = i;
                         return true;
@@ -42,6 +63,8 @@ public class LoginScript : MonoBehaviour
         }
         return false;
     }
+
+    #endregion
 
     #region public-functions
 
@@ -70,6 +93,7 @@ public class LoginScript : MonoBehaviour
         UI_Manager.instance.MakeLoader();
         Invoke(nameof(LoadViewProfileScreen), 2);
     }
+
     #endregion
 
     #endregion

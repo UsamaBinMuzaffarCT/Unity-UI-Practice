@@ -7,9 +7,11 @@ using UnityEngine;
 public class OldNewPassScript : MonoBehaviour
 {
     #region variables
+
     [SerializeField] private TMP_InputField oldPassword;
     [SerializeField] private TMP_InputField newPassword;
     [SerializeField] private TMP_InputField confirmNewPassword;
+    
     #endregion
 
     #region functions
@@ -104,3 +106,4 @@ public class OldNewPassScript : MonoBehaviour
 
     #endregion
 }
+

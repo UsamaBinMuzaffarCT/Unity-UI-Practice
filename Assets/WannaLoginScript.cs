@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WannaLoginScript : MonoBehaviour
@@ -10,7 +8,7 @@ public class WannaLoginScript : MonoBehaviour
 
     #region functions
 
-    public void LoadWannaLoginScreen()
+    public void LoadLoginScreen()
     {
         UI_Manager.instance.NextScreen(UI_Manager.Screen.LoginScreen);
     }

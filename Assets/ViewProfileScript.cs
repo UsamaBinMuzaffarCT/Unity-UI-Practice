@@ -1,12 +1,10 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
-//using NativeGalleryNamespace;
 
 public class ViewProfileScript : MonoBehaviour
 {
@@ -15,6 +13,7 @@ public class ViewProfileScript : MonoBehaviour
     [SerializeField] Image photo;
     [SerializeField] GameObject photoContainer;
     [SerializeField] TMP_Text username;
+    private string imagesFolderPath;
     
     #endregion
 
@@ -22,20 +21,19 @@ public class ViewProfileScript : MonoBehaviour
 
     #region public-functions
 
-    public void CallUpdate()
-    {
-        UpdateProfile();
-    }
-
     #endregion
 
     #region private-functions
 
     // Unity Functions
+    private void Awake()
+    {
+        imagesFolderPath = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].imageFolder;
+    }
 
     private void Start()
     {
-        UpdateProfile();
+        UpdateProfileAndImages();
     }
 
     // Non-Unity Functions
@@ -61,23 +59,24 @@ public class ViewProfileScript : MonoBehaviour
     private List<string> GetImagePaths()
     {
         List<string> imagePaths = new List<string>();
-        DirectoryInfo dir = new DirectoryInfo("Assets/Resources/" + UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].imageFolder);
+        DirectoryInfo dir = new DirectoryInfo("Assets/Resources/" + imagesFolderPath);
         FileInfo[] info = dir.GetFiles("*.*");
 
         foreach (FileInfo f in info)
         {
             if (CheckExtention(f.FullName))
             {
-                imagePaths.Add(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].imageFolder + "/" + f.Name.ToString().Substring(0, f.Name.ToString().Length - 4));
+                imagePaths.Add(imagesFolderPath + "/" + f.Name.ToString().Substring(0, f.Name.ToString().Length - 4));
             }
         }
         return imagePaths;
     }
 
-    private void UpdateProfile()
+    private void UpdateProfileAndImages()
     {
         AssetDatabase.Refresh();
-        ClearScrollView();   
+        ClearScrollView();
+        CustomizationManager.instance.UpdateAvatar(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarID);
         username.text = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].name;
         List<string> imagePaths = GetImagePaths();
         foreach (string imagePath in imagePaths)
@@ -134,7 +133,7 @@ public class ViewProfileScript : MonoBehaviour
         }, "Add New Photo", mime: "image/*");
         List<string> imagePaths = GetImagePaths();
         CopyFile(getPath,"Assets\\Resources\\"+ UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].imageFolder+"\\image"+imagePaths.Count.ToString()+ Path.GetExtension(getPath));
-        UpdateProfile();   
+        UpdateProfileAndImages();   
     }
 
     #endregion

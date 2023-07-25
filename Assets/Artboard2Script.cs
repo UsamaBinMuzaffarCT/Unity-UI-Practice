@@ -12,6 +12,7 @@ public class Artboard2Script : MonoBehaviour
 
     [SerializeField] private Image photo;
     [SerializeField] private GameObject photoContainer;
+    private string itemsFolderPath;
 
     #endregion
 
@@ -22,6 +23,7 @@ public class Artboard2Script : MonoBehaviour
 
     private void Awake()
     {
+        itemsFolderPath = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].itemsFolder;
         PopulateScrollView();
     }
 
@@ -48,14 +50,14 @@ public class Artboard2Script : MonoBehaviour
     private List<string> GetItemsPaths()
     {
         List<string> itemPaths = new List<string>();
-        DirectoryInfo dir = new DirectoryInfo("Assets/Resources/" + UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].itemsFolder);
+        DirectoryInfo dir = new DirectoryInfo("Assets/Resources/" + itemsFolderPath);
         FileInfo[] info = dir.GetFiles("*.*");
 
         foreach (FileInfo f in info)
         {
             if (CheckExtention(f.FullName))
             {
-                itemPaths.Add(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].itemsFolder + "/" + f.Name.ToString().Substring(0, f.Name.ToString().Length - 4));
+                itemPaths.Add(itemsFolderPath + "/" + f.Name.ToString().Substring(0, f.Name.ToString().Length - 4));
             }
         }
         return itemPaths;

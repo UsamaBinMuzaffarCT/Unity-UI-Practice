@@ -33,7 +33,7 @@ public class ChangeAvatar : MonoBehaviour
 
     public void UpdateAvatar()
     {
-        rawImage.texture = Resources.Load<Texture>("RenderTextures/" + UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatar);
+        //rawImage.texture = Resources.Load<Texture>("RenderTextures/" + UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatar);
     }
     
     #endregion

@@ -8,8 +8,10 @@ using UnityEngine.UI;
 public class Artboard1Script : MonoBehaviour
 {
     #region variables
+
     [SerializeField] private Image photo;
     [SerializeField] private GameObject photoContainer;
+    private List<int> avatarIDs;
     #endregion
 
     #region functions
@@ -18,22 +20,17 @@ public class Artboard1Script : MonoBehaviour
 
     //Unity Functions
 
+    private void Awake()
+    {
+        avatarIDs = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].avatarIDs;
+    }
+
     private void Start()
     {
         PopulateScrollView();
     }
 
     //Non-Unity Functions
-
-    private bool CheckExtention(String input)
-    {
-        String result = input.Substring(input.Length - 4);
-        if (result == "meta")
-        {
-            return false;
-        }
-        return true;
-    }
 
     private void ClearScrollView()
     {
@@ -43,38 +40,24 @@ public class Artboard1Script : MonoBehaviour
         }
     }
 
-    private List<string> GetButtonSpritePaths()
-    {
-        List<string> avatarPaths = new List<string>();
-        DirectoryInfo dir = new DirectoryInfo("Assets/Resources/" + UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].avatarFolder);
-        FileInfo[] info = dir.GetFiles("*.*");
-        foreach (FileInfo f in info)
-        {
-            if (CheckExtention(f.FullName))
-            {
-                avatarPaths.Add(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].avatarFolder + "/" + f.Name.ToString().Substring(0, f.Name.ToString().Length - 4));
-            }
-        }
-        return avatarPaths;
-    }
-
     private void PopulateScrollView()
     {
         ClearScrollView();
-        List<string> avatarPaths = GetButtonSpritePaths();
-        foreach (string avatarPath in avatarPaths)
+        foreach (int id in avatarIDs)
         {
             Image loadedPhoto = Instantiate(photo);
             loadedPhoto.transform.SetParent(photoContainer.transform);
-            loadedPhoto.sprite = Resources.Load<Sprite>(avatarPath);
-            loadedPhoto.gameObject.transform.GetComponent<Button>().onClick.AddListener(() => UpdateCurrentAssetPath(loadedPhoto.sprite.name));
+            loadedPhoto.sprite = CustomizationManager.instance.avatars.avatars.Find(x=>x.id == id).image;
+            loadedPhoto.GetComponent<AvatarInfo>().id = id;
+            loadedPhoto.gameObject.transform.GetComponent<Button>().onClick.AddListener(() => UpdateCurrentAssetPath(id));
         }
     }
 
-    private void UpdateCurrentAssetPath(string name)
+    private void UpdateCurrentAssetPath(int id)
     {
-        UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatar = name;
+        UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarID = id;
         UI_Manager.TriggerAvatarButtonEvent();
+        CustomizationManager.instance.UpdateAvatar(id);
     }
 
     #endregion
