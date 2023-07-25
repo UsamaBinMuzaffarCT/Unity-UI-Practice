@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e9f3fdf44edef4b9231963b998e534, type: 3}
   m_Name: AvatarsScriptableObject
   m_EditorClassIdentifier: 
-  avatars: []
+  avatars:
+  - id: 0
+    avatar: {fileID: 919132149155446097, guid: d0ef25d3636426745a164f73af952f98, type: 3}
+    image: {fileID: 21300000, guid: 02edb70d8417c2a45b5a0a27b77f5a1d, type: 3}
+  - id: 1
+    avatar: {fileID: 919132149155446097, guid: 6d20e2786fbbaec4e9d4663a1f975190, type: 3}
+    image: {fileID: 21300000, guid: 02edb70d8417c2a45b5a0a27b77f5a1d, type: 3}
