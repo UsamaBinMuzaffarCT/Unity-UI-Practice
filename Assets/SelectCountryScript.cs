@@ -37,6 +37,18 @@ public class SelectCountryScript : MonoBehaviour
 
     #region private-functions
 
+    // Unity Functions
+
+    private void Awake()
+    {
+        cancelButton.onClick.AddListener(LoadViewProfileScreen);
+        signupScript = UI_Manager.instance.signupScript;
+        PopulateCountriesScrollView();
+        return;
+    }
+
+    // Non-Unity Functions
+
     private void CopyDefaultAvatar(RenderTexture renderTexture, string path)
     {
         RenderTexture.active = renderTexture;
@@ -46,19 +58,23 @@ public class SelectCountryScript : MonoBehaviour
         File.WriteAllBytes(path+"/"+renderTexture.name+".png", bytes);
     }
 
-    private void Awake()
+    private string LoadCountriesInfoFromJson()
     {
-        cancelButton.onClick.AddListener(LoadViewProfileScreen);
-        signupScript = UI_Manager.instance.signupScript;
         string jsonCountryInfo = "";
         using (StreamReader reader = new StreamReader("Assets/JSON/CountryData.json"))
         {
             jsonCountryInfo = reader.ReadToEnd();
         }
-        List<CountryInfo>countryInfos = new List<CountryInfo>();
+        return jsonCountryInfo;
+    }
+
+    private void PopulateCountriesScrollView()
+    {
+        string jsonCountryInfo = LoadCountriesInfoFromJson();
+        List<CountryInfo> countryInfos = new List<CountryInfo>();
         countryInfos = JsonConvert.DeserializeObject<List<CountryInfo>>(jsonCountryInfo);
         Debug.Log("Countries: " + countryInfos.Count);
-        foreach(CountryInfo countryInfo in countryInfos)
+        foreach (CountryInfo countryInfo in countryInfos)
         {
             GameObject loaded = Instantiate(countryButtonPrefab);
             loaded.GetComponent<Button>().onClick.AddListener(LoadViewProfileScreen);
@@ -66,8 +82,34 @@ public class SelectCountryScript : MonoBehaviour
             loaded.GetComponent<CounrtyButton>().SetCountryName(countryInfo.countryName);
             loaded.transform.SetParent(scrollViewContent.transform, false);
         }
-        return;
     }
+
+    private void CreatePlayerDirectories()
+    {
+        Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name);
+        Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name + "/Images");
+        Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name + "/Items");
+        Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name + "/Avatars");
+    }
+
+    private void AddPathsToLocalPlayerInfo()
+    {
+        signupScript.playerInfo.itemsFolder = "Users/" + signupScript.playerInfo.name + "/Items";
+        signupScript.playerInfo.imageFolder = "Users/" + signupScript.playerInfo.name + "/Images";
+        signupScript.playerInfo.avatarFolder = "Users/" + signupScript.playerInfo.name + "/Avatars";
+        RenderTexture renderTexture = Resources.Load<RenderTexture>("RenderTextures/Avatar1View");
+        CopyDefaultAvatar(renderTexture, "Assets/Resources/" + signupScript.playerInfo.avatarFolder);
+        signupScript.playerInfo.currentAvatar = "Avatar1View";
+    }
+
+    private void UpdatePlayerInfos()
+    {
+        UI_Manager.instance.playerInfos.Add(signupScript.playerInfo);
+        UI_Manager.instance.UpdateJson();
+        UI_Manager.instance.currentUser = UI_Manager.instance.playerInfos.Count - 1;
+        UI_Manager.instance.MakeLoader();
+    }
+
     #endregion
 
     #region public-functions
@@ -77,41 +119,23 @@ public class SelectCountryScript : MonoBehaviour
         UI_Manager.instance.Back();
     }
 
-
-
     public void LoadViewProfileScreen()
     {
-        UI_Manager.instance.playerInfos.Add(signupScript.playerInfo);
         try
         {
-            Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name);
-            Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name + "/Images");
-            Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name + "/Items");
-            Directory.CreateDirectory("Assets/Resources/Users/" + signupScript.playerInfo.name + "/Avatars");
-            signupScript.playerInfo.itemsFolder = "Users/" + signupScript.playerInfo.name + "/Items";
-            signupScript.playerInfo.imageFolder = "Users/" + signupScript.playerInfo.name + "/Images";
-            signupScript.playerInfo.avatarFolder = "Users/" + signupScript.playerInfo.name + "/Avatars";
-            RenderTexture renderTexture = Resources.Load<RenderTexture>("RenderTextures/Avatar1View");
-            CopyDefaultAvatar(renderTexture, "Assets/Resources/"+signupScript.playerInfo.avatarFolder);
-            signupScript.playerInfo.currentAvatar = "Avatar1View";
+            CreatePlayerDirectories();
+            AddPathsToLocalPlayerInfo();
         }
         catch (IOException ex)
         {
             UI_Manager.instance.MakePopup(ex.Message);
         }
-        UI_Manager.instance.UpdateJson();
-        UI_Manager.instance.currentUser = UI_Manager.instance.playerInfos.Count-1;
-        UI_Manager.instance.MakeLoader();
+        UpdatePlayerInfos();
         AssetDatabase.Refresh();
         UI_Manager.instance.NextScreen(UI_Manager.Screen.ViewProfileScreen);
     }
 
     #endregion
-
-    #region Coroutines
-
-
-    #endregion
-
+    
     #endregion
 }

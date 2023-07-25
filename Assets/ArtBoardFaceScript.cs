@@ -10,10 +10,6 @@ public class ArtBoardFaceScript : MonoBehaviour
 
     #region functions
 
-    #region private-functions
-    
-    #endregion
-
     #region public-functions
 
     public void Back()

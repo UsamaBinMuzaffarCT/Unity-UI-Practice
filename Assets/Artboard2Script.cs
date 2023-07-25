@@ -18,6 +18,15 @@ public class Artboard2Script : MonoBehaviour
     #region functions
     #region private-functions
 
+    //Unity Functions
+
+    private void Awake()
+    {
+        PopulateScrollView();
+    }
+
+    // Non-Unity Functions
+
     private bool CheckExtention(String input)
     {
         String result = input.Substring(input.Length - 4);
@@ -36,10 +45,9 @@ public class Artboard2Script : MonoBehaviour
         }
     }
 
-    private void UpdateProfile()
+    private List<string> GetItemsPaths()
     {
-        ClearScrollView();
-        List<string> avatarPaths = new List<string>();
+        List<string> itemPaths = new List<string>();
         DirectoryInfo dir = new DirectoryInfo("Assets/Resources/" + UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].itemsFolder);
         FileInfo[] info = dir.GetFiles("*.*");
 
@@ -47,21 +55,23 @@ public class Artboard2Script : MonoBehaviour
         {
             if (CheckExtention(f.FullName))
             {
-                avatarPaths.Add(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].itemsFolder + "/" + f.Name.ToString().Substring(0, f.Name.ToString().Length - 4));
+                itemPaths.Add(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].itemsFolder + "/" + f.Name.ToString().Substring(0, f.Name.ToString().Length - 4));
             }
         }
+        return itemPaths;
+    }
 
-        foreach (string avatarPath in avatarPaths)
+    private void PopulateScrollView()
+    {
+        ClearScrollView();
+        List<string> itemPaths = GetItemsPaths();
+
+        foreach (string avatarPath in itemPaths)
         {
             Image loadedPhoto = Instantiate(photo);
             loadedPhoto.transform.SetParent(photoContainer.transform);
             loadedPhoto.sprite = Resources.Load<Sprite>(avatarPath);
         }
-    }
-
-    private void Awake()
-    {
-        UpdateProfile();
     }
 
     #endregion

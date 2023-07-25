@@ -9,8 +9,6 @@ public class ArtboardColorPanelScript : MonoBehaviour
     #endregion
 
     #region functions
-    #region private-functions
-    #endregion
 
     #region public-functions
 

@@ -8,6 +8,7 @@ public class ScreenScriptableObject : ScriptableObject
 {
     public List<ScreenInfo> Screens;
 }
+
 [Serializable]
 public class ScreenInfo
 {

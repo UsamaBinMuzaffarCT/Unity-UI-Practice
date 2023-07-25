@@ -17,10 +17,14 @@ public class ConfirmPasswordScript : MonoBehaviour
 
     #region private-functions
 
+    // Unity Functions
+
     private void Awake()
     {
         username.text = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].name;
     }
+
+    // Non-Unity Functions
 
     #endregion
 

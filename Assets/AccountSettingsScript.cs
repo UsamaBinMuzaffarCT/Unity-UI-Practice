@@ -9,9 +9,7 @@ public class AccountSettingsScript : MonoBehaviour
     #endregion
 
     #region functions
-    #region private-functions
-    #endregion
-
+    
     #region public-functions
 
     public void Back()
@@ -21,7 +19,7 @@ public class AccountSettingsScript : MonoBehaviour
 
     public void LogOut()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.WannaLoginScreen, true, true);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.WannaLoginScreen, true, false);
     }
 
     public void LoadOldNewPasswordScreen()

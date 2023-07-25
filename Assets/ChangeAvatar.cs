@@ -14,6 +14,8 @@ public class ChangeAvatar : MonoBehaviour
 
     #region functions
 
+    // Unity Functions
+
     private void Awake()
     {
         rawImage = GetComponent<RawImage>();
@@ -26,6 +28,8 @@ public class ChangeAvatar : MonoBehaviour
     {
         UI_Manager.OnAvatarButtonClick -= UpdateAvatar;
     }
+
+    // Non-Unity Functions
 
     public void UpdateAvatar()
     {

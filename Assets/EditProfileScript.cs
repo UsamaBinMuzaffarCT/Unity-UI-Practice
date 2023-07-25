@@ -6,17 +6,23 @@ using UnityEngine;
 public class EditProfileScript : MonoBehaviour
 {
     #region variables
+
     [SerializeField] private TMP_Text namePlaceholder;
+    
     #endregion
 
     #region functions
 
     #region private-functions
 
+    // Unity Functions
+
     private void Awake()
     {
         namePlaceholder.text = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].name;
     }
+
+    // Non-Unity Functions
 
     #endregion
 

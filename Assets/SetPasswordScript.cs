@@ -23,6 +23,18 @@ public class SetPasswordScript : MonoBehaviour
 
     #region private-functions
 
+    // Unity Functions
+
+    private void Awake()
+    {
+        password.contentType = TMP_InputField.ContentType.Password;
+        confirmPassword.contentType = TMP_InputField.ContentType.Password;
+        showPass = showConfirmPass = false;
+        signupScript = UI_Manager.instance.signupScript;
+    }
+
+    // Non-Unity Functions
+
     private void HidePassword(TMP_InputField password)
     {
         password.contentType = TMP_InputField.ContentType.Password;
@@ -31,14 +43,6 @@ public class SetPasswordScript : MonoBehaviour
     private void ShowPassword(TMP_InputField password)
     {
         password.contentType = TMP_InputField.ContentType.Standard;
-    }
-
-    private void Awake()
-    {
-        password.contentType = TMP_InputField.ContentType.Password;
-        confirmPassword.contentType = TMP_InputField.ContentType.Password;
-        showPass = showConfirmPass = false;
-        signupScript = UI_Manager.instance.signupScript;
     }
 
     private bool CheckSpaces(string text)
@@ -64,8 +68,7 @@ public class SetPasswordScript : MonoBehaviour
     }
 
     private bool CheckPasswords()
-    {
-        
+    {   
         if(password.text == confirmPassword.text)
         {
             return true;
@@ -112,7 +115,7 @@ public class SetPasswordScript : MonoBehaviour
 
     public void TogglePassword()
     {
-        if(passwordHideButton.transform.parent.GetComponent<TMP_InputField>().contentType == TMP_InputField.ContentType.Password)
+        if(showPass)
         {
             ShowPassword(password);
             showPass = false;

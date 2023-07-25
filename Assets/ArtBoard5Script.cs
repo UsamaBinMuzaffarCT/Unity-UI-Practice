@@ -9,8 +9,6 @@ public class ArtBoard5Script : MonoBehaviour
     #endregion
 
     #region functions
-    #region private-functions
-    #endregion
 
     #region public-functions
 

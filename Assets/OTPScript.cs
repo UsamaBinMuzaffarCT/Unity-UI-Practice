@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class OTPScript : MonoBehaviour
 {
     #region variables
+    
     [SerializeField] private List<TMP_InputField> inputFields;
     [SerializeField] private float time;
     [SerializeField] private TMP_Text timerText;
@@ -41,7 +42,6 @@ public class OTPScript : MonoBehaviour
     {
         while (time > 0)
         {
-            //StartCoroutine(Wait(1f));
             time -= Time.deltaTime;
             float minutes = Mathf.FloorToInt((time + 1) / 60);
             float seconds = Mathf.FloorToInt((time + 1) % 60);
@@ -91,8 +91,6 @@ public class OTPScript : MonoBehaviour
     #endregion
 
     #region public-functions
-
-
 
     public void Back()
     {

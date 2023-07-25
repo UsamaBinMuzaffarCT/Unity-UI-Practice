@@ -6,17 +6,28 @@ using UnityEngine.UI;
 public class ArtboardColorsScript : MonoBehaviour
 {
     #region variables
+
     [SerializeField] private GameObject colorPalette;
     [SerializeField] private GameObject colorContentZone;
     [SerializeField] private Color centerColor;
     [SerializeField] private int numColors = 24;
     [SerializeField] private List<Color> colors;
+
     #endregion
 
     #region functions
 
     #region private-functions
+
+    // Unity Functions
     
+    private void Awake()
+    {
+        PopulateColors();
+    }
+
+    // Non-Unity Functions
+
     private List<Color> ColorsInterpolation()
     {
         Color startColor = Color.white;
@@ -41,10 +52,10 @@ public class ArtboardColorsScript : MonoBehaviour
         return intermediateColors;
     }
 
-    private void Awake()
+    private void PopulateColors()
     {
         colors = ColorsInterpolation();
-        foreach(Color color in colors)
+        foreach (Color color in colors)
         {
             GameObject loaded = Instantiate(colorPalette);
             loaded.transform.SetParent(colorContentZone.transform, false);

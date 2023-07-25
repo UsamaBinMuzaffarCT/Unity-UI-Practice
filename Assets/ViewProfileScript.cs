@@ -11,9 +11,11 @@ using UnityEngine.UI;
 public class ViewProfileScript : MonoBehaviour
 {
     #region variables
+    
     [SerializeField] Image photo;
     [SerializeField] GameObject photoContainer;
     [SerializeField] TMP_Text username;
+    
     #endregion
 
     #region functions
@@ -28,6 +30,15 @@ public class ViewProfileScript : MonoBehaviour
     #endregion
 
     #region private-functions
+
+    // Unity Functions
+
+    private void Start()
+    {
+        UpdateProfile();
+    }
+
+    // Non-Unity Functions
 
     private bool CheckExtention(String input)
     {
@@ -77,12 +88,7 @@ public class ViewProfileScript : MonoBehaviour
             loadedPhoto.sprite = Resources.Load<Sprite>(imagePath);
         }
     }
-
-    private void Awake()
-    {
-        UpdateProfile();
-    }
-
+    
     private void CopyFile(string sourceFilePath, string destinationFilePath)
     {
         if (File.Exists(sourceFilePath))
@@ -134,11 +140,4 @@ public class ViewProfileScript : MonoBehaviour
     #endregion
 
     #endregion
-}
-
-
-[Serializable]
-public class Stats
-{
-
 }

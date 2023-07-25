@@ -18,10 +18,14 @@ public class EnterNameScript : MonoBehaviour
 
     #region private-functions
 
+    // Unity Functions
+
     private void Awake()
     {
         signupScript = UI_Manager.instance.signupScript;
     }
+
+    // Non-Unity Functions
 
     private bool CheckNames()
     {

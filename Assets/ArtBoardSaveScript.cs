@@ -9,9 +9,7 @@ public class ArtBoardSaveScript : MonoBehaviour
     #endregion
 
     #region functions
-    #region private-functions
-    #endregion
-
+      
     #region public-functions
 
     public void Back()

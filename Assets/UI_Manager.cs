@@ -156,7 +156,7 @@ public class UI_Manager : MonoBehaviour
         Invoke("LoadWannaLoginScreen", 3f);
     }
 
-    private bool CheckExtention(String input)
+    private bool CheckExtentionForMetaFiles(String input)
     {
         String result = input.Substring(input.Length - 4);
         if (result == "meta")
@@ -183,7 +183,7 @@ public class UI_Manager : MonoBehaviour
 
         foreach (FileInfo f in info)
         {
-            if (CheckExtention(f.FullName))
+            if (CheckExtentionForMetaFiles(f.FullName))
             {
                 avatarPaths.Add("RenderTextures/" + f.Name.ToString().Substring(0, f.Name.ToString().Length - 14));
             }
@@ -228,9 +228,6 @@ public class UI_Manager : MonoBehaviour
             return ""; 
         }
     }
-
-    // make init function
-    
 
     private void LoadWannaLoginScreen()
     {

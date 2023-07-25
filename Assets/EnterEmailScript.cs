@@ -16,10 +16,14 @@ public class EnterEmailScript : MonoBehaviour
     #region functions
     #region private-functions
 
+    // Unity Functions
+
     private void Awake()
     {
         signupScript = UI_Manager.instance.signupScript;
     }
+
+    // Non Unity Functions
 
     private bool IsValidEmail(string email)
     {
