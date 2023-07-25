@@ -103,7 +103,7 @@ public class SelectCountryScript : MonoBehaviour
         UI_Manager.instance.currentUser = UI_Manager.instance.playerInfos.Count-1;
         UI_Manager.instance.MakeLoader();
         AssetDatabase.Refresh();
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.O_ViewProfileScreen);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ViewProfileScreen);
     }
 
     #endregion

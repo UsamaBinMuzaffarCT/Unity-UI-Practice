@@ -72,7 +72,7 @@ public class SettingsScript : MonoBehaviour
 
     public void LoadaccountSettingsScreen()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.Q_AccountSettingsScreen);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.AccountSettingsScreen);
     }
 
     #endregion

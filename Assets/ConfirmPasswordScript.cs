@@ -38,7 +38,7 @@ public class ConfirmPasswordScript : MonoBehaviour
             UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].password = newPassword.text;
             UI_Manager.instance.currentUser = -1;
             UI_Manager.instance.UpdateJson();
-            UI_Manager.instance.NextScreen(UI_Manager.Screen.C_LoginScreen, true);
+            UI_Manager.instance.NextScreen(UI_Manager.Screen.LoginScreen, true);
             Destroy(gameObject);
         }
         else

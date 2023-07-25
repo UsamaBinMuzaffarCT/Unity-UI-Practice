@@ -58,7 +58,7 @@ public class EnterNumberScript : MonoBehaviour
             if (ExistingPhoneNumber(phoneNumber.text))
             {
                 signupScript.playerInfo.email = phoneNumber.text;
-                UI_Manager.instance.NextScreen(UI_Manager.Screen.H_SetPasswordScreen);
+                UI_Manager.instance.NextScreen(UI_Manager.Screen.SetPasswordScreen);
                 ClearInputFields();
             }
             else

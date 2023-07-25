@@ -121,7 +121,7 @@ public class OTPScript : MonoBehaviour
         {
             if (timeLeft)
             {
-                UI_Manager.instance.NextScreen(UI_Manager.Screen.J_EnterNameScreen, add: false);
+                UI_Manager.instance.NextScreen(UI_Manager.Screen.EnterNameScreen, add: false);
             }
             else
             {

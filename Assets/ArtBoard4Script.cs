@@ -21,21 +21,21 @@ public class ArtBoard4Script : MonoBehaviour
 
     public void LoadArtBoardWishlist()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.ZA_ArtBoardWishlist);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardWishlist);
     }
     public void LoadArtBoardFace()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.Z_ArtBoardFace);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardFace);
     }
 
     public void LoadArtBoard5()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.W_ArtBoard5);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoard5);
     }
 
     public void LoadArtBoardSave()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.ZB_ArtBoardSave);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardSave);
     }
 
     #endregion

@@ -21,12 +21,12 @@ public class AccountSettingsScript : MonoBehaviour
 
     public void LogOut()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.B_WannaLoginScreen, true, true);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.WannaLoginScreen, true, true);
     }
 
     public void LoadOldNewPasswordScreen()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.M_OldNewPassScreen);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.OldNewPassScreen);
     }
 
     #endregion

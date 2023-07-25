@@ -75,26 +75,26 @@ public class Artboard2Script : MonoBehaviour
 
     public void LoadArtBoardColorsScreen()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.Y_ArtBoardColors);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardColors);
     }
     public void LoadArtBoardColorPanelScreen()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.X_ArtBoardColorPanel);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardColorPanel);
     }
 
     public void LoadArtBoard4()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.V_ArtBoard4);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoard4);
     }
 
     public void LoadArtBoardFace()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.Z_ArtBoardFace);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardFace);
     }
 
     public void LoadArtBoardSave()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.ZB_ArtBoardSave);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardSave);
     }
 
     #endregion

@@ -46,7 +46,7 @@ public class ForgotPasswordScript : MonoBehaviour
     {
         if (CheckAndSetUser())
         {
-            UI_Manager.instance.NextScreen(UI_Manager.Screen.L_ConfirmPassScreen);
+            UI_Manager.instance.NextScreen(UI_Manager.Screen.ConfirmPassScreen);
         }
         else
         {
@@ -56,7 +56,7 @@ public class ForgotPasswordScript : MonoBehaviour
 
     public void LoadSignupScreen()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.D_SignUpScreen);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.SignUpScreen);
     }
 
     #endregion

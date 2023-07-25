@@ -30,12 +30,12 @@ public class EditProfileScript : MonoBehaviour
     public void LoadViewProfileScreen()
     {
 
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.O_ViewProfileScreen,true);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ViewProfileScreen,true);
     }
 
     public void LoadArdBoardScreen()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.S_ArtBoard1);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoard1);
     }
 
     #endregion

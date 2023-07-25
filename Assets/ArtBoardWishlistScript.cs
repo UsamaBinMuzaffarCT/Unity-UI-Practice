@@ -21,12 +21,12 @@ public class ArtBoardWishlistScript : MonoBehaviour
 
     public void LoadArtBoardFace()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.Z_ArtBoardFace);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardFace);
     }
 
     public void LoadArtBoardSave()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.ZB_ArtBoardSave);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardSave);
     }
 
     #endregion

@@ -96,7 +96,7 @@ public class SetPasswordScript : MonoBehaviour
             if(IsPasswordValid(password.text) && password.text.Length>=8)
             {
                 signupScript.playerInfo.password = password.text;
-                UI_Manager.instance.NextScreen(UI_Manager.Screen.G_OTPScreen);
+                UI_Manager.instance.NextScreen(UI_Manager.Screen.OTPScreen);
                 ClearInputFields();
             }
             else

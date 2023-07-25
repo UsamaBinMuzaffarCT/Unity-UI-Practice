@@ -60,7 +60,7 @@ public class OldNewPassScript : MonoBehaviour
                         UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].password = newPassword.text;
                         UI_Manager.instance.UpdateJson();
                         UI_Manager.instance.currentUser = -1;
-                        UI_Manager.instance.NextScreen(UI_Manager.Screen.C_LoginScreen, true);
+                        UI_Manager.instance.NextScreen(UI_Manager.Screen.LoginScreen, true);
                     }
                     else
                     {
@@ -86,7 +86,7 @@ public class OldNewPassScript : MonoBehaviour
     public void LoadForgotPasswordScreen()
     {
         UI_Manager.instance.currentUser = -1;
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.K_ForgoPassScreen,true);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ForgotPassScreen,true);
     }
 
     public void DelayedLoadLoginScreen()

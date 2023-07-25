@@ -42,34 +42,34 @@ public class UI_Manager : MonoBehaviour
 
     public enum Screen
     {
-        A_LoadingPanel,
-        B_WannaLoginScreen,
-        C_LoginScreen,
-        D_SignUpScreen,
-        E_EnterNumberScreen,
-        F_EnterEmailScreen,
-        G_OTPScreen,
-        H_SetPasswordScreen,
-        I_LogoScreen,
-        J_EnterNameScreen,
-        K_ForgoPassScreen,
-        L_ConfirmPassScreen,
-        M_OldNewPassScreen,
-        N_SelectCountryScreen,
-        O_ViewProfileScreen,
-        P_SettingsScreen,
-        Q_AccountSettingsScreen,
-        R_EditProfileScreen,
-        S_ArtBoard1,
-        T_ArtBoard2,
-        U_ArtBoard3,
-        V_ArtBoard4,
-        W_ArtBoard5,
-        X_ArtBoardColorPanel,
-        Y_ArtBoardColors,
-        Z_ArtBoardFace,
-        ZA_ArtBoardWishlist,
-        ZB_ArtBoardSave
+        LoadingPanel,
+        WannaLoginScreen,
+        LoginScreen,
+        SignUpScreen,
+        EnterNumberScreen,
+        EnterEmailScreen,
+        OTPScreen,
+        SetPasswordScreen,
+        LogoScreen,
+        EnterNameScreen,
+        ForgotPassScreen,
+        ConfirmPassScreen,
+        OldNewPassScreen,
+        SelectCountryScreen,
+        ViewProfileScreen,
+        SettingsScreen,
+        AccountSettingsScreen,
+        EditProfileScreen,
+        ArtBoard1,
+        ArtBoard2,
+        ArtBoard3,
+        ArtBoard4,
+        ArtBoard5,
+        ArtBoardColorPanel,
+        ArtBoardColors,
+        ArtBoardFace,
+        ArtBoardWishlist,
+        ArtBoardSave
     }
 
     #endregion
@@ -216,7 +216,7 @@ public class UI_Manager : MonoBehaviour
     // make starting UI function
     void Start()
     {
-       GameObject loadedScreen = Instantiate(screens.Screens.Find(x=>x.screen==Screen.I_LogoScreen).prefab);
+       GameObject loadedScreen = Instantiate(screens.Screens.Find(x=>x.screen==Screen.LogoScreen).prefab);
        loadedScreen.transform.SetParent(canvas.transform, false);
        currentScreen = loadedScreen;
        Invoke("GoToLogin", 3f);
@@ -225,7 +225,7 @@ public class UI_Manager : MonoBehaviour
     // Naming convention for loading
     private void GoToLogin()
     {
-        GameObject loadedScreen = Instantiate(screens.Screens.Find(x => x.screen == Screen.B_WannaLoginScreen).prefab);
+        GameObject loadedScreen = Instantiate(screens.Screens.Find(x => x.screen == Screen.WannaLoginScreen).prefab);
         loadedScreen.transform.SetParent(canvas.transform, false);
         currentScreen.SetActive(false);
         currentScreen = loadedScreen;
@@ -306,10 +306,7 @@ public class UI_Manager : MonoBehaviour
 
     public static void RaiseButtonClickEvent()
     {
-        if (OnAvatarButtonClick != null)
-        {
-            OnAvatarButtonClick.Invoke();
-        }
+        OnAvatarButtonClick?.Invoke();
     }
 
     public void UpdateJson()
@@ -338,7 +335,7 @@ public class UI_Manager : MonoBehaviour
 
     public void MakeLoader()
     {
-        GameObject loadingScreen = Instantiate(screens.Screens.Find(x => x.screen == Screen.A_LoadingPanel).prefab);
+        GameObject loadingScreen = Instantiate(screens.Screens.Find(x => x.screen == Screen.LoadingPanel).prefab);
         loadingScreen.transform.SetParent(canvas.transform, false);
     }
 

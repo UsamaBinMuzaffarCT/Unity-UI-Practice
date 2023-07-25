@@ -52,18 +52,18 @@ public class LoginScript : MonoBehaviour
 
     public void LoadSignupScreen()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.D_SignUpScreen);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.SignUpScreen);
     }
     public void LoadViewProfileScreen()
     {
         if (CheckLogin())
         {
-            UI_Manager.instance.NextScreen(UI_Manager.Screen.O_ViewProfileScreen);
+            UI_Manager.instance.NextScreen(UI_Manager.Screen.ViewProfileScreen);
         }
     }
     public void LoadForgotPasswordScreen()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.K_ForgoPassScreen);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ForgotPassScreen);
     }
     public void DelayedLoadViewProfile()
     {

@@ -54,7 +54,7 @@ public class EnterNameScript : MonoBehaviour
         if(CheckNames())
         {
             signupScript.playerInfo.name = nameField.text;
-            UI_Manager.instance.NextScreen(UI_Manager.Screen.N_SelectCountryScreen);
+            UI_Manager.instance.NextScreen(UI_Manager.Screen.SelectCountryScreen);
             ClearInputFields();
         }
         else

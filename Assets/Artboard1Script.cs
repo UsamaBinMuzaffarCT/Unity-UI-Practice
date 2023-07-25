@@ -60,13 +60,11 @@ public class Artboard1Script : MonoBehaviour
 
     private void UpdateCurrentAssetPath(string name)
     {
-        //string path = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].avatarFolder;
-        //path = path + "/" + name;
         UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatar = name;
         UI_Manager.RaiseButtonClickEvent();
     }
 
-    private void Awake()
+    private void Start()
     {
         UpdateProfile();
     }
@@ -82,12 +80,12 @@ public class Artboard1Script : MonoBehaviour
 
     public void LoadArtBoard2Screen()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.T_ArtBoard2);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoard2);
     }
 
     public void LoadArtBoardSave()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.ZB_ArtBoardSave);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardSave);
     }
 
     #endregion

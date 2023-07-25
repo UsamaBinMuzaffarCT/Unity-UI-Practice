@@ -21,13 +21,13 @@ public class ArtBoardSaveScript : MonoBehaviour
 
     public void LoadViewProfile()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.O_ViewProfileScreen,true);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ViewProfileScreen,true);
         UI_Manager.instance.UpdateJson();
         Destroy(gameObject);
     }
     public void LoadArtBoardFace()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.Z_ArtBoardFace);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardFace);
     }
 
     #endregion

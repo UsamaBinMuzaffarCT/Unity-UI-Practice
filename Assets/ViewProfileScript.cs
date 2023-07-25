@@ -107,16 +107,16 @@ public class ViewProfileScript : MonoBehaviour
 
     public void LoadEditProfileScreen()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.R_EditProfileScreen);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.EditProfileScreen);
     }
 
     public void LoadSettingsScreen()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.P_SettingsScreen);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.SettingsScreen);
     }
     public void LoadArtBoardScreen()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.S_ArtBoard1);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoard1);
     }
 
     public void AddPhoto()

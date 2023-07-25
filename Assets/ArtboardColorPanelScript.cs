@@ -21,12 +21,12 @@ public class ArtboardColorPanelScript : MonoBehaviour
 
     public void LoadArtBoardFace() 
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.Z_ArtBoardFace);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardFace);
     }
 
     public void LoadArtBoardColorsScreen()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.Y_ArtBoardColors);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardColors);
     }
 
     #endregion

@@ -45,22 +45,22 @@ public class SignupScript : MonoBehaviour
 
     public void LoadSetPasswordScreen()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.H_SetPasswordScreen);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.SetPasswordScreen);
     }
 
     public void LoadNumberScreen()
     {
         playerInfo = CreateNewPlayer();
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.E_EnterNumberScreen);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.EnterNumberScreen);
     }
     public void LoadEmailScreen()
     {
         playerInfo = CreateNewPlayer();
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.F_EnterEmailScreen);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.EnterEmailScreen);
     }
     public void LoadLoginScreen()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.C_LoginScreen);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.LoginScreen);
     }
 
     public void DelayedLoadViewProfile()

@@ -60,7 +60,7 @@ public class EnterEmailScript : MonoBehaviour
             if (ExistingEmail(email.text))
             {
                 signupScript.playerInfo.email = email.text;
-                UI_Manager.instance.NextScreen(UI_Manager.Screen.H_SetPasswordScreen);
+                UI_Manager.instance.NextScreen(UI_Manager.Screen.SetPasswordScreen);
                 ClearInputFields();
             }
             else
