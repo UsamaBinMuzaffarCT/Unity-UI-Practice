@@ -13,7 +13,6 @@ public class Artboard2Script : MonoBehaviour
     [SerializeField] private Image photo;
     [SerializeField] private GameObject photoContainer;
     private string itemsFolderPath;
-    private Vector3 prev;
 
     #endregion
 
@@ -24,8 +23,6 @@ public class Artboard2Script : MonoBehaviour
 
     private void Awake()
     {
-        prev = CustomizationManager.instance.cameraView.transform.position;
-        CustomizationManager.instance.MoveCameraTo(CustomizationManager.CameraPositionNames.Torso);
         itemsFolderPath = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].itemsFolder;
         PopulateScrollView();
     }
@@ -85,9 +82,7 @@ public class Artboard2Script : MonoBehaviour
 
     public void Back()
     {
-        CustomizationManager.instance.cameraView.transform.position = prev;
         UI_Manager.instance.Back();
-        Destroy(gameObject);
     }
 
     public void LoadArtBoardColorsScreen()

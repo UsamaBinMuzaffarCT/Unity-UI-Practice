@@ -5,27 +5,12 @@ using UnityEngine;
 public class CustomizationManager : MonoBehaviour
 {
 
-    #region enumerators
-
-    public enum CameraPositionNames
-    {
-        Front,
-        Face,
-        Torso,
-        Feet,
-        FaceSide
-    }
-
-    #endregion
-
     #region variables
 
     #region public-variables
 
     public static CustomizationManager instance { get; private set; }
     public AvatarsScriptableObject avatars;
-    public CameraPositions cameraPositions;
-    public GameObject cameraView;
 
     #endregion
 
@@ -86,11 +71,6 @@ public class CustomizationManager : MonoBehaviour
         loaded.transform.SetParent(avatarHolder.transform);
         loaded.transform.rotation = Quaternion.Euler(0,180f,0);
         UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarID = id;
-    }
-
-    public void MoveCameraTo(CameraPositionNames position)
-    {
-        cameraView.transform.position = cameraPositions.CameraPositionsList.Find(x => x.names == position).position;
     }
 
     #endregion

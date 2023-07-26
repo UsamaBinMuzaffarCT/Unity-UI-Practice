@@ -22,7 +22,6 @@ public class Artboard1Script : MonoBehaviour
 
     private void Awake()
     {
-        CustomizationManager.instance.MoveCameraTo(CustomizationManager.CameraPositionNames.Front);
         avatarIDs = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].avatarIDs;
     }
 
