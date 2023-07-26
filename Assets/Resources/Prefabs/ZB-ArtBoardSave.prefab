@@ -5516,7 +5516,7 @@ GameObject:
   - component: {fileID: 5548380914367720900}
   - component: {fileID: 2314486081351365440}
   m_Layer: 5
-  m_Name: Button-jacket
+  m_Name: Button-boots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5570,7 +5570,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e0dc26e1547dfa54db032438a51d95d5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68a64662e92abfc4da3ced0c310ab7ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

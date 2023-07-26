@@ -28,6 +28,8 @@ public class ViewProfileScript : MonoBehaviour
     // Unity Functions
     private void Awake()
     {
+        CustomizationManager.instance.UpdateAvatar(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarID);
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.front);
         imagesFolderPath = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].imageFolder;
     }
 

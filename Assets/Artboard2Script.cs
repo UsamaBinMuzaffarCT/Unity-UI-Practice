@@ -82,6 +82,7 @@ public class Artboard2Script : MonoBehaviour
 
     public void Back()
     {
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.instance.prevPosition);
         UI_Manager.instance.Back();
     }
 
@@ -101,12 +102,29 @@ public class Artboard2Script : MonoBehaviour
 
     public void LoadArtBoardFace()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardFace);
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.face);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardFace,add:false);
+    }
+
+    public void MoveCameraToTorso()
+    {
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.torso);
+    }
+
+    public void MoveCameraToFace()
+    {
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.face);
+    }
+
+    public void MoveCameraToFeet()
+    {
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.feet);
     }
 
     public void LoadArtBoardSave()
     {
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardSave);
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.front);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardSave, add: false);
     }
 
     #endregion

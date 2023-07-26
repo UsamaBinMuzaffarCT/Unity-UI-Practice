@@ -15,4 +15,6 @@ public class Avatar
     public int id;
     public GameObject avatar;
     public Sprite image;
+    public List<CustomizationManager.Positions> cameraPositions;
 }
+

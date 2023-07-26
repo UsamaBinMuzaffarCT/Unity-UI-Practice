@@ -12,6 +12,7 @@ public class Artboard1Script : MonoBehaviour
     [SerializeField] private Image photo;
     [SerializeField] private GameObject photoContainer;
     private List<int> avatarIDs;
+
     #endregion
 
     #region functions
@@ -22,6 +23,7 @@ public class Artboard1Script : MonoBehaviour
 
     private void Awake()
     {
+        CustomizationManager.instance.prevPosition = CustomizationManager.PostionNames.front;
         avatarIDs = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].avatarIDs;
     }
 
@@ -69,13 +71,27 @@ public class Artboard1Script : MonoBehaviour
         UI_Manager.instance.Back();
     }
 
+    public void LoadArtBoard2ScreenFace()
+    {
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.face);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoard2);
+    }
+
+    public void LoadArtBoard2ScreenFeet()
+    {
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.feet);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoard2);
+    }
+
     public void LoadArtBoard2Screen()
     {
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.torso);
         UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoard2);
     }
 
     public void LoadArtBoardSave()
     {
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.front);
         UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardSave);
     }
 

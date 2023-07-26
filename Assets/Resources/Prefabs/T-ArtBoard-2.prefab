@@ -190,7 +190,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4229169485257990312}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6946313162884345847}
+        m_TargetAssemblyTypeName: Artboard2Script, Assembly-CSharp
+        m_MethodName: MoveCameraToTorso
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &299208854201678718
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +655,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1101259603223475204}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6946313162884345847}
+        m_TargetAssemblyTypeName: Artboard2Script, Assembly-CSharp
+        m_MethodName: MoveCameraToTorso
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1469730698847118248
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,7 +999,7 @@ GameObject:
   - component: {fileID: 6181283550725002534}
   - component: {fileID: 5776267765710024579}
   m_Layer: 5
-  m_Name: Button-jacket
+  m_Name: Button-boots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1029,7 +1053,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e0dc26e1547dfa54db032438a51d95d5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68a64662e92abfc4da3ced0c310ab7ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1082,7 +1106,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6181283550725002534}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6946313162884345847}
+        m_TargetAssemblyTypeName: Artboard2Script, Assembly-CSharp
+        m_MethodName: MoveCameraToFeet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1799755032381570293
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,7 +1891,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4784020078275412028}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6946313162884345847}
+        m_TargetAssemblyTypeName: Artboard2Script, Assembly-CSharp
+        m_MethodName: MoveCameraToFace
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3721668158112641727
 GameObject:
   m_ObjectHideFlags: 0
@@ -3518,7 +3566,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 925252234254737797}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6946313162884345847}
+        m_TargetAssemblyTypeName: Artboard2Script, Assembly-CSharp
+        m_MethodName: MoveCameraToTorso
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7244072071698485693
 GameObject:
   m_ObjectHideFlags: 0

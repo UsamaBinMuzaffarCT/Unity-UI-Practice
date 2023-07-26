@@ -14,6 +14,7 @@ public class ArtBoardFaceScript : MonoBehaviour
 
     public void Back()
     {
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.instance.prevPosition);
         UI_Manager.instance.Back();
     }
 
