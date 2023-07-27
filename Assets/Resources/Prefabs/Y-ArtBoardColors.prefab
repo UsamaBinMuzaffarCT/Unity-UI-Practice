@@ -4467,8 +4467,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorPalette: {fileID: 2488628197181985983, guid: ad3227d086fc15f4f83ff165cf9113f4, type: 3}
   colorContentZone: {fileID: 6667838505909277192}
-  centerColor: {r: 0.2264151, g: 0.093519285, b: 0, a: 0}
-  numColors: 50
+  centerColor: {r: 0.3679245, g: 0.24869014, b: 0.16452472, a: 0}
+  numColors: 36
   colors: []
 --- !u!1 &8710652525395052905
 GameObject:

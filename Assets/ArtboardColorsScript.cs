@@ -30,8 +30,11 @@ public class ArtboardColorsScript : MonoBehaviour
 
     private List<Color> ColorsInterpolation()
     {
+        string endColorHex = "#3A1800";
+
         Color startColor = Color.white;
-        Color endColor = Color.black;
+        Color endColor;
+        ColorUtility.TryParseHtmlString(endColorHex,out endColor);
         float stepSize = 1f / numColors;
         List<Color> intermediateColors = new List<Color>();
         for (int i = 0; i < numColors; i++) 
