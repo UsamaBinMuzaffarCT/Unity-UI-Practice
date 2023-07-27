@@ -28,8 +28,8 @@ public class ViewProfileScript : MonoBehaviour
     // Unity Functions
     private void Awake()
     {
-        CustomizationManager.instance.UpdateAvatar(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarID);
-        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.front);
+        CustomizationManager.instance.UpdateAvatar(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarID, UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarGender);
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PositionNames.front);
         imagesFolderPath = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].imageFolder;
     }
 
@@ -78,7 +78,7 @@ public class ViewProfileScript : MonoBehaviour
     {
         AssetDatabase.Refresh();
         ClearScrollView();
-        CustomizationManager.instance.UpdateAvatar(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarID);
+        CustomizationManager.instance.UpdateAvatar(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarID, UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarGender);
         username.text = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].name;
         List<string> imagePaths = GetImagePaths();
         foreach (string imagePath in imagePaths)

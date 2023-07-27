@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +8,12 @@ public class Artboard1Script : MonoBehaviour
 
     [SerializeField] private Image photo;
     [SerializeField] private GameObject photoContainer;
+    [SerializeField] private Button optionsButtonHeart;
+    [SerializeField] private Button optionsButtonDress;
+    [SerializeField] private Button optionsButtonPerson;
+    [SerializeField] private Button optionsButtonSweater;
+    [SerializeField] private Button optionsButtonShirt;
+    [SerializeField] private Button optionsButtonBoots;
     private List<int> avatarIDs;
 
     #endregion
@@ -23,7 +26,13 @@ public class Artboard1Script : MonoBehaviour
 
     private void Awake()
     {
-        CustomizationManager.instance.prevPosition = CustomizationManager.PostionNames.front;
+        optionsButtonPerson.onClick.AddListener(() => LoadArtBoard2Screen(CustomizationManager.PositionNames.face, CustomizationManager.Customizer.Hair));
+        optionsButtonDress.onClick.AddListener(() => LoadArtBoard2Screen(CustomizationManager.PositionNames.torso, CustomizationManager.Customizer.Clothes));
+        optionsButtonBoots.onClick.AddListener(() => LoadArtBoard2Screen(CustomizationManager.PositionNames.feet, CustomizationManager.Customizer.Shoes));
+        optionsButtonSweater.onClick.AddListener(() => LoadArtBoard2Screen(CustomizationManager.PositionNames.torso, CustomizationManager.Customizer.Clothes));
+        optionsButtonShirt.onClick.AddListener(() => LoadArtBoard2Screen(CustomizationManager.PositionNames.torso, CustomizationManager.Customizer.Clothes));
+        optionsButtonHeart.onClick.AddListener(() => LoadArtBoardWishlist());
+        CustomizationManager.instance.prevPosition = CustomizationManager.PositionNames.front;
         avatarIDs = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].avatarIDs;
     }
 
@@ -49,7 +58,14 @@ public class Artboard1Script : MonoBehaviour
         {
             Image loadedPhoto = Instantiate(photo);
             loadedPhoto.transform.SetParent(photoContainer.transform);
-            loadedPhoto.sprite = CustomizationManager.instance.avatars.avatars.Find(x=>x.id == id).image;
+            if (UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarGender == CustomizationManager.Gender.Male)
+            {
+                loadedPhoto.sprite = CustomizationManager.instance.avatars.avatars.Find(x => x.id == id).maleImage;
+            }
+            else
+            {
+                loadedPhoto.sprite = CustomizationManager.instance.avatars.avatars.Find(x => x.id == id).femaleImage;
+            }
             loadedPhoto.GetComponent<AvatarInfo>().id = id;
             loadedPhoto.gameObject.transform.GetComponent<Button>().onClick.AddListener(() => UpdateCurrentAssetPath(id));
         }
@@ -59,7 +75,7 @@ public class Artboard1Script : MonoBehaviour
     {
         UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarID = id;
         UI_Manager.TriggerAvatarButtonEvent();
-        CustomizationManager.instance.UpdateAvatar(id);
+        CustomizationManager.instance.UpdateAvatar(id, UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarGender);
     }
 
     #endregion
@@ -71,27 +87,22 @@ public class Artboard1Script : MonoBehaviour
         UI_Manager.instance.Back();
     }
 
-    public void LoadArtBoard2ScreenFace()
+    public void LoadArtBoard2Screen(CustomizationManager.PositionNames positionName, CustomizationManager.Customizer customizer)
     {
-        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.face);
+        CustomizationManager.instance.SetCustomizer(customizer);
+        CustomizationManager.instance.MoveCameraTo(positionName);
         UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoard2);
     }
 
-    public void LoadArtBoard2ScreenFeet()
+    public void LoadArtBoardWishlist()
     {
-        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.feet);
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoard2);
-    }
-
-    public void LoadArtBoard2Screen()
-    {
-        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.torso);
-        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoard2);
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PositionNames.front);
+        UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardWishlist);
     }
 
     public void LoadArtBoardSave()
     {
-        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.front);
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PositionNames.front);
         UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardSave);
     }
 

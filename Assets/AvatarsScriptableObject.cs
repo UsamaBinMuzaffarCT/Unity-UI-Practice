@@ -13,8 +13,12 @@ public class AvatarsScriptableObject : ScriptableObject
 public class Avatar
 {
     public int id;
-    public GameObject avatar;
-    public Sprite image;
-    public List<CustomizationManager.Positions> cameraPositions;
+    public CustomizationManager.Class Class;
+    public GameObject maleAvatar;
+    public GameObject femaleAvatar;
+    public Sprite maleImage;
+    public Sprite femaleImage;
+    public List<CustomizationManager.Positions> maleCameraPositions;
+    public List<CustomizationManager.Positions> femaleCameraPositions;
 }
 

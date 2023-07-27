@@ -19,14 +19,14 @@ public class ArtBoardSaveScript : MonoBehaviour
 
     public void LoadViewProfile()
     {
-        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.front);
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PositionNames.front);
         UI_Manager.instance.NextScreen(UI_Manager.Screen.ViewProfileScreen,true);
         UI_Manager.instance.UpdateJson();
         Destroy(gameObject);
     }
     public void LoadArtBoardFace()
     {
-        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.face);
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PositionNames.face);
         UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardFace);
     }
 

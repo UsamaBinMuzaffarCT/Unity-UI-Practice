@@ -19,11 +19,13 @@ public class ArtboardColorPanelScript : MonoBehaviour
 
     public void LoadArtBoardFace() 
     {
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PositionNames.face);
         UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardFace);
     }
 
     public void LoadArtBoardColorsScreen()
     {
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PositionNames.face);
         UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardColors);
     }
 

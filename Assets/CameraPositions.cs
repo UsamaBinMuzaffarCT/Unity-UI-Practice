@@ -11,5 +11,5 @@ public class CameraPositions : ScriptableObject
 public class Position
 {
     public Vector3 position;
-    public CustomizationManager.PostionNames positionName;
+    public CustomizationManager.PositionNames positionName;
 }

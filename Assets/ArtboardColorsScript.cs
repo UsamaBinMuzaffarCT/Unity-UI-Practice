@@ -73,15 +73,18 @@ public class ArtboardColorsScript : MonoBehaviour
     }
     public void LoadArtBoardColorPanelScreen()
     {
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PositionNames.front);
         UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardColorPanel);
     }
     public void LoadArtBoardSave()
     {
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PositionNames.front);
         UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardSave);
     }
 
     public void LoadArtBoardFace()
     {
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PositionNames.face);
         UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardFace);
     }
 

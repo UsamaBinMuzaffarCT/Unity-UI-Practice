@@ -23,7 +23,7 @@ public class ArtBoard4Script : MonoBehaviour
     }
     public void LoadArtBoardFace()
     {
-        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.face);
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PositionNames.face);
         UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardFace);
     }
 
@@ -34,7 +34,7 @@ public class ArtBoard4Script : MonoBehaviour
 
     public void LoadArtBoardSave()
     {
-        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.front);
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PositionNames.front);
         UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardSave);
     }
 

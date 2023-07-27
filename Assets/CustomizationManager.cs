@@ -12,14 +12,36 @@ public class CustomizationManager : MonoBehaviour
     public class Positions
     {
         public Vector3 position;
-        public PostionNames postionName;
+        public PositionNames postionName;
     }
 
     #endregion
 
     #region enumerators
 
-    public enum PostionNames
+    public enum Customizer
+    {
+        Hair,
+        Face,
+        Clothes,
+        Shoes
+    }
+
+    public enum Gender
+    {
+        Male,
+        Female
+    }
+
+    public enum Class
+    {
+        Human,
+        Elf,
+        Orc,
+        Demon
+    }
+
+    public enum PositionNames
     {
         front,
         face,
@@ -35,12 +57,14 @@ public class CustomizationManager : MonoBehaviour
 
     public static CustomizationManager instance { get; private set; }
     public AvatarsScriptableObject avatars;
-    public PostionNames prevPosition;
+    public PositionNames currentPosition;
+    public PositionNames prevPosition;
+    public Customizer customizer;
 
     #endregion
 
     #region private-variables
-
+    
     [SerializeField] private GameObject avatarHolder;
     [SerializeField] private GameObject cameraView;
     [SerializeField] private float glideSpeed = 1.0f;
@@ -104,22 +128,37 @@ public class CustomizationManager : MonoBehaviour
 
     #region public-functions
 
-    public void UpdateAvatar(int id)
+    public void SetCustomizer(Customizer customizer)
     {
-        GameObject loaded = Instantiate(avatars.avatars.Find(x => x.id == id).avatar);
-        positions = avatars.avatars.Find(x => x.id == id).cameraPositions;
+        this.customizer = customizer;
+    }
+
+    public void UpdateAvatar(int id, Gender gender, PositionNames positionName = PositionNames.front)
+    {
+        GameObject loaded;
+        if (gender == Gender.Male)
+        {
+            loaded = Instantiate(avatars.avatars.Find(x => x.id == id).maleAvatar);
+            positions = avatars.avatars.Find(x => x.id == id).maleCameraPositions;
+        }
+        else
+        {
+            loaded = Instantiate(avatars.avatars.Find(x => x.id == id).femaleAvatar);
+            positions = avatars.avatars.Find(x => x.id == id).femaleCameraPositions;
+        }
         int layer = LayerMask.NameToLayer("Avatar");
         DisableAllAvatars(layer);
         ChangeChildrenLayer(loaded, layer);
         loaded.transform.SetParent(avatarHolder.transform);
         loaded.transform.rotation = Quaternion.Euler(0,180f,0);
         UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarID = id;
-        MoveCameraTo(PostionNames.front);
+        MoveCameraTo(positionName);
     }
 
-    public void MoveCameraTo(PostionNames postionName)
+    public void MoveCameraTo(PositionNames postionName)
     {
         StartCoroutine(GlideCameraTo(positions.Find(x => x.postionName == postionName).position));
+        currentPosition = postionName;
     }
 
     #endregion

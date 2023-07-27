@@ -23,29 +23,29 @@ public class ArtBoard5Script : MonoBehaviour
     }
     public void LoadArtBoardFace()
     {
-        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.face);
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PositionNames.face);
         UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardFace);
     }
 
     public void LoadArtBoardSave()
     {
-        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.front);
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PositionNames.front);
         UI_Manager.instance.NextScreen(UI_Manager.Screen.ArtBoardSave);
     }
 
     public void MoveCameraToTorso()
     {
-        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.torso);
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PositionNames.torso);
     }
 
     public void MoveCameraToFace()
     {
-        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.face);
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PositionNames.face);
     }
 
     public void MoveCameraToFeet()
     {
-        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PostionNames.feet);
+        CustomizationManager.instance.MoveCameraTo(CustomizationManager.PositionNames.feet);
     }
 
     #endregion

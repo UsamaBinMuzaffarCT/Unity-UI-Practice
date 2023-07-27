@@ -374,19 +374,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1210394824698155316}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5632983322117510522}
-        m_TargetAssemblyTypeName: Artboard1Script, Assembly-CSharp
-        m_MethodName: LoadArtBoard2Screen
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1371707676276141917
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,19 +786,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5249204736367420042}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3132377646879598408}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &3132377646879598408
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,6 +880,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   photo: {fileID: 9219736826734154417, guid: 5ec1e8ea1d183f641b698bdf27e27152, type: 3}
   photoContainer: {fileID: 6522102061488134511}
+  optionsButtonHeart: {fileID: 7082643344463631912}
+  optionsButtonDress: {fileID: 3174912863472277900}
+  optionsButtonPerson: {fileID: 587184587495354584}
+  optionsButtonSweater: {fileID: 1078125223493702274}
+  optionsButtonShirt: {fileID: 3477190111641170044}
+  optionsButtonBoots: {fileID: 2612136291368457011}
 --- !u!1 &3499619587741500705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,19 +1092,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6983608128112515890}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5632983322117510522}
-        m_TargetAssemblyTypeName: Artboard1Script, Assembly-CSharp
-        m_MethodName: LoadArtBoard2ScreenFeet
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &4682403243787671562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,19 +1293,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3040517391603756621}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5632983322117510522}
-        m_TargetAssemblyTypeName: Artboard1Script, Assembly-CSharp
-        m_MethodName: LoadArtBoard2ScreenFace
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &5205709493234392739
 GameObject:
   m_ObjectHideFlags: 0
@@ -1456,19 +1414,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2190142931588812453}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &6380787605503726035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2287,19 +2233,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2463621565899173057}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5632983322117510522}
-        m_TargetAssemblyTypeName: Artboard1Script, Assembly-CSharp
-        m_MethodName: LoadArtBoard2Screen
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8951573917579745276
 GameObject:
   m_ObjectHideFlags: 0
@@ -2420,19 +2354,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3059414243690961979}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5632983322117510522}
-        m_TargetAssemblyTypeName: Artboard1Script, Assembly-CSharp
-        m_MethodName: LoadArtBoard2Screen
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &9002246670404394063
 GameObject:
   m_ObjectHideFlags: 0
