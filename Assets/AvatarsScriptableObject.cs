@@ -18,7 +18,12 @@ public class Avatar
     public GameObject femaleAvatar;
     public Sprite maleImage;
     public Sprite femaleImage;
+    public List<CustomizationManager.SpriteWithID> maleOutfits;
+    public List<CustomizationManager.SpriteWithID> femaleOutfits;
+    public List<CustomizationManager.SpriteWithID> maleSkin;
+    public List<CustomizationManager.SpriteWithID> femaleSkin;
     public List<CustomizationManager.Positions> maleCameraPositions;
     public List<CustomizationManager.Positions> femaleCameraPositions;
 }
+
 

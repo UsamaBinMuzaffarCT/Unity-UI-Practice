@@ -22,6 +22,9 @@ public class UI_Manager : MonoBehaviour
         public string itemsFolder;
         public List<int> avatarIDs;
         public int currentAvatarID;
+        public int currentAvatarOutfit;
+        public int currentAvatarSkin;
+        public string currentSkinColor;
         public CustomizationManager.Gender currentAvatarGender;
 
         public PlayerInfo() 
@@ -34,6 +37,9 @@ public class UI_Manager : MonoBehaviour
             password = "";
             name = "";
             currentAvatarID = 0;
+            currentAvatarOutfit = 0;
+            currentAvatarSkin = 0;
+            currentSkinColor = ColorUtility.ToHtmlStringRGB(Color.white);
             currentAvatarGender = CustomizationManager.Gender.Male;
         }
     }

@@ -15,10 +15,66 @@ MonoBehaviour:
   avatars:
   - id: 0
     Class: 0
-    maleAvatar: {fileID: 1673772039625721556, guid: 515be455d6138ef418d19bd7cc764ce2, type: 3}
-    femaleAvatar: {fileID: 5492270165673973196, guid: aa1a7f6650fce7044894048149054ebc, type: 3}
+    maleAvatar: {fileID: 4966390433262311404, guid: 5d268075eeb2f1b4c9bc2bfcc73a3e4f, type: 3}
+    femaleAvatar: {fileID: 163872079546534292, guid: 8df58261cd3520c43907e7f1f9a8181a, type: 3}
     maleImage: {fileID: 21300000, guid: 9bb9b7dc5be7f464fb2ba39abfaf6b15, type: 3}
     femaleImage: {fileID: 21300000, guid: 4004070cc3222354fb2cb411f760d082, type: 3}
+    maleOutfits:
+    - id: 0
+      sprite: {fileID: 21300000, guid: c377670540593704e8bf62640c81d996, type: 3}
+    - id: 1
+      sprite: {fileID: 21300000, guid: 5853149d90d54ac41b3acd0802d363b4, type: 3}
+    - id: 2
+      sprite: {fileID: 21300000, guid: 7a6bfbb026b402142823def5386f3f29, type: 3}
+    - id: 3
+      sprite: {fileID: 21300000, guid: 6bf80582d149f6a41b70026ec464525e, type: 3}
+    - id: 4
+      sprite: {fileID: 21300000, guid: 732949108fe9ee34297ba47bdae26aa0, type: 3}
+    - id: 5
+      sprite: {fileID: 21300000, guid: f5667c7c76799484f87a223d3a9db5e1, type: 3}
+    femaleOutfits:
+    - id: 0
+      sprite: {fileID: 21300000, guid: e50e1b525fa928e4db60d90a47f9f76e, type: 3}
+    - id: 1
+      sprite: {fileID: 21300000, guid: 88526cc2009551b46b374dd965530560, type: 3}
+    - id: 2
+      sprite: {fileID: 21300000, guid: c56bbe4a36320a44f97f6d9575269453, type: 3}
+    - id: 3
+      sprite: {fileID: 21300000, guid: 51f5551a82ceb504bb8016e54126dd3e, type: 3}
+    - id: 4
+      sprite: {fileID: 21300000, guid: 1e7b3faf3f8591c4fba9687ce53fa07b, type: 3}
+    - id: 5
+      sprite: {fileID: 21300000, guid: f055f80171f7f9e469c120342d16a3ce, type: 3}
+    maleSkin:
+    - id: 0
+      sprite: {fileID: 21300000, guid: 4b25ec3fa85dae94394733309cce44f4, type: 3}
+    - id: 1
+      sprite: {fileID: 21300000, guid: 2e91a006fd9cd5145ab300f287803d47, type: 3}
+    - id: 2
+      sprite: {fileID: 21300000, guid: a983227441150c548b0f004a80f40ce3, type: 3}
+    - id: 3
+      sprite: {fileID: 21300000, guid: 2d262e9550f57d04fba5643596308536, type: 3}
+    - id: 4
+      sprite: {fileID: 21300000, guid: f9b6a2fb20529504a808ab61b0131f2c, type: 3}
+    - id: 5
+      sprite: {fileID: 21300000, guid: 855e3372f417f5b4089fadb2695622a1, type: 3}
+    - id: 6
+      sprite: {fileID: 21300000, guid: de8fc2d798b7dee4998a2c7001527014, type: 3}
+    femaleSkin:
+    - id: 0
+      sprite: {fileID: 21300000, guid: 9604e965b0d14664786a8bde5c02d2d8, type: 3}
+    - id: 1
+      sprite: {fileID: 21300000, guid: 79abaf3737de1a341a27223a787fbbed, type: 3}
+    - id: 2
+      sprite: {fileID: 21300000, guid: ec02ada538693854db0fe7d1fb1f8eb7, type: 3}
+    - id: 3
+      sprite: {fileID: 21300000, guid: bc8843c67f1b33c4289ede90bfebffb0, type: 3}
+    - id: 4
+      sprite: {fileID: 21300000, guid: c7c54954fbf6ab3438fc95b3a12f89fc, type: 3}
+    - id: 5
+      sprite: {fileID: 21300000, guid: 4869c029e4dadf749b0aee02e7600521, type: 3}
+    - id: 6
+      sprite: {fileID: 21300000, guid: 1595a8a73edfcab45a4081f90eb70c4b, type: 3}
     maleCameraPositions:
     - position: {x: 0, y: 0.9, z: -1.7}
       postionName: 0

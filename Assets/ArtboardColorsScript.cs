@@ -55,6 +55,12 @@ public class ArtboardColorsScript : MonoBehaviour
         return intermediateColors;
     }
 
+    private void SetSkinColor(Color color)
+    {
+        UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentSkinColor = "#" + ColorUtility.ToHtmlStringRGB(color);
+        CustomizationManager.instance.UpdateSkinColor(color);
+    }
+
     private void PopulateColors()
     {
         colors = ColorsInterpolation();
@@ -63,6 +69,7 @@ public class ArtboardColorsScript : MonoBehaviour
             GameObject loaded = Instantiate(colorPalette);
             loaded.transform.SetParent(colorContentZone.transform, false);
             loaded.GetComponent<Image>().color = color;
+            loaded.GetComponent<Button>().onClick.AddListener(()=>SetSkinColor(color));
         }
     }
 

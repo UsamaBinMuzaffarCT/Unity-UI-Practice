@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CustomizationManager : MonoBehaviour
@@ -16,6 +17,13 @@ public class CustomizationManager : MonoBehaviour
     }
 
     #endregion
+
+    [Serializable]
+    public class SpriteWithID
+    {
+        public int id;
+        public Sprite sprite;
+    }
 
     #region enumerators
 
@@ -124,9 +132,124 @@ public class CustomizationManager : MonoBehaviour
         }
     }
 
+    private void SetAvatarSkin(GameObject avatar)
+    {
+        foreach (Transform child2 in avatar.transform)
+        {
+            if (child2.name == "Skin" || child2.name == "Hair")
+            {
+                foreach (Transform child3 in child2.transform)
+                {
+                    if (child3.gameObject.GetComponent<AvatarInfo>().id == UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarSkin)
+                    {
+                        child3.gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        child3.gameObject.SetActive(false);
+                    }
+                }
+            }
+            if (child2.name == "Outfits")
+            {
+                foreach (Transform child3 in child2.transform)
+                {
+                    if (child3.gameObject.GetComponent<AvatarInfo>().id == UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarOutfit)
+                    {
+                        child3.gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        child3.gameObject.SetActive(false);
+                    }
+                }
+            }
+        }
+    }
+
     #endregion
 
     #region public-functions
+
+    public void UpdateSkinColor(Color color)
+    {
+        int layer = LayerMask.NameToLayer("Avatar");
+        foreach (Transform child in avatarHolder.transform)
+        {
+            if(child.gameObject.layer == layer)
+            {
+                foreach (Transform item in child)
+                {
+                    if(item.transform.name == "Skin")
+                    {
+                        foreach (Transform item1 in item)
+                        {
+                            if(item1.gameObject.GetComponent<AvatarInfo>().id == UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarSkin)
+                            {
+                                foreach(Material mat in item1.gameObject.GetComponent<SkinnedMeshRenderer>().materials)
+                                {
+                                    mat.color = color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public void UpdateItem(int id)
+    {
+        int layer = LayerMask.NameToLayer("Avatar");
+        foreach (Transform child in avatarHolder.transform)
+        {
+            if(child.gameObject.layer == layer)
+            {
+                if(customizer == Customizer.Hair || customizer == Customizer.Face)
+                {
+                    foreach (Transform child2 in child.transform)
+                    {
+                        if (child2.name == "Skin" ||  child2.name == "Hair")
+                        {
+                            foreach(Transform child3 in child2.transform)
+                            {
+                                if(child3.gameObject.GetComponent<AvatarInfo>().id == id)
+                                {
+                                    child3.gameObject.SetActive(true);
+                                    UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarSkin = id;
+                                }
+                                else
+                                {
+                                    child3.gameObject.SetActive(false);
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (Transform child2 in child.transform)
+                    {
+                        if (child2.name == "Outfits")
+                        {
+                            foreach (Transform child3 in child2.transform)
+                            {
+                                if (child3.gameObject.GetComponent<AvatarInfo>().id == id)
+                                {
+                                    child3.gameObject.SetActive(true);
+                                    UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarOutfit = id;
+                                }
+                                else
+                                {
+                                    child3.gameObject.SetActive(false);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     public void SetCustomizer(Customizer customizer)
     {
@@ -153,6 +276,10 @@ public class CustomizationManager : MonoBehaviour
         loaded.transform.rotation = Quaternion.Euler(0,180f,0);
         UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarID = id;
         MoveCameraTo(positionName);
+        SetAvatarSkin(loaded);
+        Color color;
+        UnityEngine.ColorUtility.TryParseHtmlString(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentSkinColor, out color);
+        UpdateSkinColor(color);
     }
 
     public void MoveCameraTo(PositionNames postionName)

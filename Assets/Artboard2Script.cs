@@ -21,7 +21,6 @@ public class Artboard2Script : MonoBehaviour
     [SerializeField] private Button optionsButtonSweater;
     [SerializeField] private Button optionsButtonShirt;
     [SerializeField] private Button optionsButtonBoots;
-    private string itemsFolderPath;
 
     #endregion
 
@@ -50,7 +49,6 @@ public class Artboard2Script : MonoBehaviour
             femaleButton.GetComponentInChildren<TMP_Text>().fontStyle = TMPro.FontStyles.Bold;
             maleButton.GetComponentInChildren<TMP_Text>().fontStyle = TMPro.FontStyles.Normal;
         }
-        itemsFolderPath = UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].itemsFolder;
         PopulateScrollView();
     }
 
@@ -70,36 +68,62 @@ public class Artboard2Script : MonoBehaviour
     {
         foreach (Transform child in photoContainer.transform)
         {
-            Destroy(child);
+            Destroy(child.gameObject);
         }
-    }
-
-    private List<string> GetItemsPaths()
-    {
-        List<string> itemPaths = new List<string>();
-        DirectoryInfo dir = new DirectoryInfo("Assets/Resources/" + itemsFolderPath);
-        FileInfo[] info = dir.GetFiles("*.*");
-
-        foreach (FileInfo f in info)
-        {
-            if (CheckExtention(f.FullName))
-            {
-                itemPaths.Add(itemsFolderPath + "/" + f.Name.ToString().Substring(0, f.Name.ToString().Length - 4));
-            }
-        }
-        return itemPaths;
     }
 
     private void PopulateScrollView()
     {
         ClearScrollView();
-        List<string> itemPaths = GetItemsPaths();
-
-        foreach (string avatarPath in itemPaths)
+        if(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarGender == CustomizationManager.Gender.Male)
         {
-            Image loadedPhoto = Instantiate(photo);
-            loadedPhoto.transform.SetParent(photoContainer.transform);
-            loadedPhoto.sprite = Resources.Load<Sprite>(avatarPath);
+            if (CustomizationManager.instance.customizer == CustomizationManager.Customizer.Face || CustomizationManager.instance.customizer == CustomizationManager.Customizer.Hair)
+            {
+                foreach(CustomizationManager.SpriteWithID spriteWithID in CustomizationManager.instance.avatars.avatars.Find(x=>x.id == UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarID).maleSkin)
+                {
+                    Image loadedPhoto = Instantiate(photo);
+                    loadedPhoto.transform.SetParent(photoContainer.transform);
+                    loadedPhoto.sprite = spriteWithID.sprite;
+                    loadedPhoto.gameObject.GetComponent<AvatarInfo>().id = spriteWithID.id;
+                    loadedPhoto.gameObject.GetComponent<Button>().onClick.AddListener(() => CustomizationManager.instance.UpdateItem(spriteWithID.id));
+                }
+            }
+            else
+            {
+                foreach (CustomizationManager.SpriteWithID spriteWithID in CustomizationManager.instance.avatars.avatars.Find(x => x.id == UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarID).maleOutfits)
+                {
+                    Image loadedPhoto = Instantiate(photo);
+                    loadedPhoto.transform.SetParent(photoContainer.transform);
+                    loadedPhoto.sprite = spriteWithID.sprite;
+                    loadedPhoto.gameObject.GetComponent<AvatarInfo>().id = spriteWithID.id;
+                    loadedPhoto.gameObject.GetComponent<Button>().onClick.AddListener(() => CustomizationManager.instance.UpdateItem(spriteWithID.id));
+                }
+            }
+        }
+        else
+        {
+            if (CustomizationManager.instance.customizer == CustomizationManager.Customizer.Face || CustomizationManager.instance.customizer == CustomizationManager.Customizer.Hair)
+            {
+                foreach (CustomizationManager.SpriteWithID spriteWithID in CustomizationManager.instance.avatars.avatars.Find(x => x.id == UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarID).femaleSkin)
+                {
+                    Image loadedPhoto = Instantiate(photo);
+                    loadedPhoto.transform.SetParent(photoContainer.transform);
+                    loadedPhoto.sprite = spriteWithID.sprite;
+                    loadedPhoto.gameObject.GetComponent<AvatarInfo>().id = spriteWithID.id;
+                    loadedPhoto.gameObject.GetComponent<Button>().onClick.AddListener(() => CustomizationManager.instance.UpdateItem(spriteWithID.id));
+                }
+            }
+            else
+            {
+                foreach (CustomizationManager.SpriteWithID spriteWithID in CustomizationManager.instance.avatars.avatars.Find(x => x.id == UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarID).femaleOutfits)
+                {
+                    Image loadedPhoto = Instantiate(photo);
+                    loadedPhoto.transform.SetParent(photoContainer.transform);
+                    loadedPhoto.sprite = spriteWithID.sprite;
+                    loadedPhoto.gameObject.GetComponent<AvatarInfo>().id = spriteWithID.id;
+                    loadedPhoto.gameObject.GetComponent<Button>().onClick.AddListener(() => CustomizationManager.instance.UpdateItem(spriteWithID.id));
+                }
+            }
         }
     }
 
@@ -141,6 +165,7 @@ public class Artboard2Script : MonoBehaviour
     {
         CustomizationManager.instance.SetCustomizer(customizer);
         CustomizationManager.instance.MoveCameraTo(positionName);
+        PopulateScrollView();
     }
 
     public void LoadArtBoardSave()
@@ -165,17 +190,19 @@ public class Artboard2Script : MonoBehaviour
             CustomizationManager.instance.UpdateAvatar(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarID, CustomizationManager.Gender.Male, positionName: CustomizationManager.instance.currentPosition);
             UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarGender = CustomizationManager.Gender.Male;
         }
+        PopulateScrollView();
     }
 
     public void ToggelFemale()
     {
-        if(femaleButton.GetComponentInChildren<TMP_Text>().fontStyle == TMPro.FontStyles.Normal)
+        if (femaleButton.GetComponentInChildren<TMP_Text>().fontStyle == TMPro.FontStyles.Normal)
         {
             femaleButton.GetComponentInChildren<TMP_Text>().fontStyle = TMPro.FontStyles.Bold;
             maleButton.GetComponentInChildren<TMP_Text>().fontStyle = TMPro.FontStyles.Normal;
             CustomizationManager.instance.UpdateAvatar(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarID, CustomizationManager.Gender.Female, positionName: CustomizationManager.instance.currentPosition);
             UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarGender = CustomizationManager.Gender.Female;
         }
+        PopulateScrollView();
     }
 
     #endregion
