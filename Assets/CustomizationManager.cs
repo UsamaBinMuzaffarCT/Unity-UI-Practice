@@ -198,6 +198,33 @@ public class CustomizationManager : MonoBehaviour
         }
     }
 
+    public void UpdateHairColor(Color color)
+    {
+        int layer = LayerMask.NameToLayer("Avatar");
+        foreach (Transform child in avatarHolder.transform)
+        {
+            if (child.gameObject.layer == layer)
+            {
+                foreach (Transform item in child)
+                {
+                    if (item.transform.name == "Hair")
+                    {
+                        foreach (Transform item1 in item)
+                        {
+                            if (item1.gameObject.GetComponent<AvatarInfo>().id == UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarSkin)
+                            {
+                                foreach (Material mat in item1.gameObject.GetComponent<SkinnedMeshRenderer>().materials)
+                                {
+                                    mat.color = color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     public void UpdateItem(int id)
     {
         int layer = LayerMask.NameToLayer("Avatar");
@@ -280,6 +307,8 @@ public class CustomizationManager : MonoBehaviour
         Color color;
         UnityEngine.ColorUtility.TryParseHtmlString(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentSkinColor, out color);
         UpdateSkinColor(color);
+        UnityEngine.ColorUtility.TryParseHtmlString(UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentHairColor, out color);
+        UpdateHairColor(color);
     }
 
     public void MoveCameraTo(PositionNames postionName)
