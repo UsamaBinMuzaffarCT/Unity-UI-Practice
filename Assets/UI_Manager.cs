@@ -373,7 +373,7 @@ public class UI_Manager : MonoBehaviour
         }
         foreach (Transform child in canvas.transform)
         {
-            if(child.transform.tag == "loading")
+            if(child.transform.tag.Equals("loading"))
             {
                 Destroy(child.gameObject);
             }
@@ -413,7 +413,7 @@ public class UI_Manager : MonoBehaviour
             {
                 CheckPrevious();
             }
-            if(RemoveCloneFromName(loadedScreen) == "D-SignUpScreen")
+            if(RemoveCloneFromName(loadedScreen).Equals("D-SignUpScreen"))
             {
                 signupScript = loadedScreen.GetComponent<SignupScript>();
             }

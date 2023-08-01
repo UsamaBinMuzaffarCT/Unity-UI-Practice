@@ -72,6 +72,15 @@ public class Artboard2Script : MonoBehaviour
         }
     }
 
+    private void CreateButton(CustomizationManager.SpriteWithID spriteWithID)
+    {
+        Image loadedPhoto = Instantiate(photo);
+        loadedPhoto.transform.SetParent(photoContainer.transform);
+        loadedPhoto.sprite = spriteWithID.sprite;
+        loadedPhoto.gameObject.GetComponent<AvatarInfo>().id = spriteWithID.id;
+        loadedPhoto.gameObject.GetComponent<Button>().onClick.AddListener(() => CustomizationManager.instance.UpdateItem(spriteWithID.id));
+    }
+
     private void PopulateScrollView()
     {
         ClearScrollView();
@@ -81,22 +90,14 @@ public class Artboard2Script : MonoBehaviour
             {
                 foreach(CustomizationManager.SpriteWithID spriteWithID in CustomizationManager.instance.avatars.avatars.Find(x=>x.id == UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarID).maleSkin)
                 {
-                    Image loadedPhoto = Instantiate(photo);
-                    loadedPhoto.transform.SetParent(photoContainer.transform);
-                    loadedPhoto.sprite = spriteWithID.sprite;
-                    loadedPhoto.gameObject.GetComponent<AvatarInfo>().id = spriteWithID.id;
-                    loadedPhoto.gameObject.GetComponent<Button>().onClick.AddListener(() => CustomizationManager.instance.UpdateItem(spriteWithID.id));
+                    CreateButton(spriteWithID);
                 }
             }
             else
             {
                 foreach (CustomizationManager.SpriteWithID spriteWithID in CustomizationManager.instance.avatars.avatars.Find(x => x.id == UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarID).maleOutfits)
                 {
-                    Image loadedPhoto = Instantiate(photo);
-                    loadedPhoto.transform.SetParent(photoContainer.transform);
-                    loadedPhoto.sprite = spriteWithID.sprite;
-                    loadedPhoto.gameObject.GetComponent<AvatarInfo>().id = spriteWithID.id;
-                    loadedPhoto.gameObject.GetComponent<Button>().onClick.AddListener(() => CustomizationManager.instance.UpdateItem(spriteWithID.id));
+                    CreateButton(spriteWithID);
                 }
             }
         }
@@ -106,22 +107,14 @@ public class Artboard2Script : MonoBehaviour
             {
                 foreach (CustomizationManager.SpriteWithID spriteWithID in CustomizationManager.instance.avatars.avatars.Find(x => x.id == UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarID).femaleSkin)
                 {
-                    Image loadedPhoto = Instantiate(photo);
-                    loadedPhoto.transform.SetParent(photoContainer.transform);
-                    loadedPhoto.sprite = spriteWithID.sprite;
-                    loadedPhoto.gameObject.GetComponent<AvatarInfo>().id = spriteWithID.id;
-                    loadedPhoto.gameObject.GetComponent<Button>().onClick.AddListener(() => CustomizationManager.instance.UpdateItem(spriteWithID.id));
+                    CreateButton(spriteWithID);
                 }
             }
             else
             {
                 foreach (CustomizationManager.SpriteWithID spriteWithID in CustomizationManager.instance.avatars.avatars.Find(x => x.id == UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentAvatarID).femaleOutfits)
                 {
-                    Image loadedPhoto = Instantiate(photo);
-                    loadedPhoto.transform.SetParent(photoContainer.transform);
-                    loadedPhoto.sprite = spriteWithID.sprite;
-                    loadedPhoto.gameObject.GetComponent<AvatarInfo>().id = spriteWithID.id;
-                    loadedPhoto.gameObject.GetComponent<Button>().onClick.AddListener(() => CustomizationManager.instance.UpdateItem(spriteWithID.id));
+                    CreateButton(spriteWithID);
                 }
             }
         }

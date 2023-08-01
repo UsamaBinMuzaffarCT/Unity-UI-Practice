@@ -1033,8 +1033,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7bf77dad2ad6b4babe6d3be8eee7d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skin: {fileID: 2100000, guid: 38f6797f4d48261459473f25db61f9d6, type: 2}
-  skin1: {fileID: 2100000, guid: 4864dc7fe91c95c488c293240ddb6df3, type: 2}
+  hairHolder: {fileID: 6814530832126566982}
+  skinHolder: {fileID: 4660742975059214563}
+  outfitHolder: {fileID: 7626130635940883574}
 --- !u!1 &177294015111636393
 GameObject:
   m_ObjectHideFlags: 0

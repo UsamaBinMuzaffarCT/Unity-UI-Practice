@@ -34,13 +34,25 @@ public class ArtboardColorPanelScript : MonoBehaviour
         float hue = value;
         color = Color.HSVToRGB(hue, 1f, 1f);
         image.color = color;
+        image.GetComponentInChildren<TMP_Text>().color = Color.white;
         colorHexCode.text = ColorUtility.ToHtmlStringRGB(color);
         UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentHairColor = "#" + ColorUtility.ToHtmlStringRGB(color);
         CustomizationManager.instance.UpdateHairColor(color);
     }
+
     #endregion
 
     #region public-functions
+
+    public void ResetToDefaultHairColor()
+    {
+        Color newColor = Color.white;
+        image.color = newColor;
+        image.GetComponentInChildren<TMP_Text>().color = Color.black;
+        colorHexCode.text = ColorUtility.ToHtmlStringRGB(newColor);
+        UI_Manager.instance.playerInfos[UI_Manager.instance.currentUser].currentHairColor = "#" + ColorUtility.ToHtmlStringRGB(newColor);
+        CustomizationManager.instance.UpdateHairColor(newColor);
+    }
 
     public void Back()
     {
